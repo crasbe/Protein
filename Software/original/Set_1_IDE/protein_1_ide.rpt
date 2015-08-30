@@ -1,0 +1,903 @@
+|--------------------------------------------|
+|- ispLEVER Fitter Report File              -|
+|- Version 1.5.00.05.39.l1                       -|
+|- (c)Copyright, Lattice Semiconductor 2002 -|
+|--------------------------------------------|
+
+
+
+
+Project_Summary
+~~~~~~~~~~~~~~~
+
+Project Name :          protein_1_ide
+Project Path :          C:\Users\Bot2\Documents\Protein I_new_set\Set_1_IDE
+Project Fitted on :     Sat Jun 15 14:40:27 2013
+
+Device :                M4A5-64/32
+Package :               44PLCC
+Speed :                 -10
+Partnumber :            M4A5-64/32-10JC
+Source Format :         ABEL_Schematic
+
+
+// Project 'protein_1_ide' was Fitted Successfully! //
+
+
+Compilation_Times
+~~~~~~~~~~~~~~~~~
+Reading/DRC                                   0 sec
+Partition                                     0 sec
+Place                                         0 sec
+Route                                         0 sec
+Jedec/Report generation                       0 sec
+                                         --------
+Fitter                                   00:00:00
+
+
+Design_Summary
+~~~~~~~~~~~~~~
+  Total Input Pins :                 18
+  Total Output Pins :                13
+  Total Bidir I/O Pins :              1
+  Total Flip-Flops :                 18
+  Total Product Terms :              81
+  Total Reserved Pins :               0
+  Total Reserved Blocks :             0
+
+
+Device_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~~~~
+                                 Total
+                               Available  Used  Available  Utilization
+Dedicated Pins
+  Input-Only Pins                ..       ..     ..    -->    ..
+  Clock/Input Pins                2        1      1    -->    50%
+I/O Pins                         32       31      1    -->    96%
+Logic Macrocells                 64       32     32    -->    50%
+  Input Registers                32        1     31    -->     3%
+  Unusable Macrocells            ..        0     ..
+
+CSM Outputs/Total Block Inputs  132       89     43    -->    67%
+Logical Product Terms           320       84    236    -->    26%
+Product Term Clusters            64       19     45    -->    29%
+
+
+Blocks_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~~~~
+                                                                  # of PT  
+                   I/O    Inp    Macrocells   Macrocells   logic  clusters 
+          Fanin    Pins   Reg   Used Unusable  available    PTs   available  Pwr
+---------------------------------------------------------------------------------
+Maximum     33      8      8     --     --         16       80       16       -
+---------------------------------------------------------------------------------
+Block  A    25      8      0      8      0          8       30        7       Hi 
+Block  B    23      8      0      8      0          8       14       14       Hi 
+Block  C    26      7      1      8      0          8       32        8       Hi 
+Block  D    15      8      0      8      0          8        8       16       Hi 
+---------------------------------------------------------------------------------
+
+<Note> Four rightmost columns above reflect last status of the placement process.
+<Note> Pwr (Power) : Hi = High
+                     Lo = Low.
+
+
+Optimizer_and_Fitter_Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pin Assignment :                       Yes
+Group Assignment :                     No
+Pin Reservation :                      No (1)
+Block Reservation :                    No
+
+@Ignore_Project_Constraints :
+  Pin Assignments :                    No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+  Group Assignments :                  No
+  Macrocell Assignment :               No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+
+@Backannotate_Project_Constraints
+  Pin Assignments :                    No
+  Pin And Block Assignments :          No
+  Pin, Macrocell and Block :           No
+
+@Timing_Constraints :                  No
+
+@Global_Project_Optimization :
+  Balanced Partitioning :              Yes
+  Spread Placement :                   Yes
+
+  Note :
+    Pack Design :
+       Balanced Partitioning = No
+       Spread Placement      = No
+    Spread Design :
+       Balanced Partitioning = Yes
+       Spread Placement      = Yes
+
+@Logic_Synthesis :
+  Logic Reduction :                    Yes
+  Node Collapsing :                    Yes
+  D/T Synthesis :                      Yes
+  Clock Optimization :                 No
+  Input Register Optimization :        Yes
+  XOR Synthesis :                      Yes
+  Max. P-Term for Collapsing :         16
+  Max. P-Term for Splitting :          16
+  Max. Equation Fanin :                32
+  Keep Xor :                           Yes
+
+@Utilization_options
+  Max. % of macrocells used :          100
+  Max. % of block inputs used :        100
+  Max. % of segment lines used :       ---
+  Max. % of macrocells used :          ---
+
+
+@Import_Source_Constraint_Option       No
+
+@Zero_Hold_Time                        No
+
+@Pull_up                               Yes
+
+@User_Signature                        #H0
+
+@Output_Slew_Rate                      Default = Fast(2)
+
+@Power                                 Default = High(2)
+
+
+Device Options:
+<Note> 1 : Reserved unused I/Os can be independently driven to Low or High, and does not
+           follow the drive level set for the Global Configure Unused I/O Option.
+<Note> 2 : For user-specified constraints on individual signals, refer to the Output, 
+           Bidir and Burried Signal Lists.
+
+
+
+
+Pinout_Listing
+~~~~~~~~~~~~~~
+      | Pin  |Blk |Assigned|
+Pin No| Type |Pad |Pin     | Signal name
+---------------------------------------------------------------
+    1 |  GND |    |        |
+    2 |  I_O | A7 |   *    |a3
+3     |  I_O | A6 |   *    |a12
+4     |  I_O | A5 |   *    |a13
+5     |  I_O | A4 |   *    |a14
+6     |  I_O | A3 |   *    |a15
+7     |  I_O | A2 |   *    |a16
+8     |  I_O | A1 |   *    |a17
+9     |  I_O | A0 |   *    |a18
+10    | JTAG |    |        |
+11    | CkIn |    |        |
+12    |  GND |    |        |
+13    | JTAG |    |        |
+14    |  I_O | B0 |   *    |a19
+15    |  I_O | B1 |   *    |a20
+16    |  I_O | B2 |   *    |a21
+17    |  I_O | B3 |   *    |a22
+18    |  I_O | B4 |   *    |a23
+19    |  I_O | B5 |   *    |dtack
+20    |  I_O | B6 |   *    |greenledout
+21    |  I_O | B7 |   *    |irq_synched_last
+22    |  Vcc |    |        |
+23    |  GND |    |        |
+24    |  I_O | C7 |   *    |r_w
+25    |  I_O | C6 |   *    |nuds
+26    |  I_O | C5 |   *    |nas
+27    |  I_O | C4 |   *    |d14
+28    |  I_O | C3 |   *    |d15
+29    |  I_O | C2 |        |
+30    |  I_O | C1 |   *    |ide_irq
+31    |  I_O | C0 |   *    |nint2
+32    | JTAG |    |        |
+33    | CkIn |    |   *    |cdac
+34    |  GND |    |        |
+35    | JTAG |    |        |
+36    |  I_O | D0 |   *    |niow
+37    |  I_O | D1 |   *    |nior
+38    |  I_O | D2 |   *    |ncs1
+39    |  I_O | D3 |   *    |ncs0
+40    |  I_O | D4 |   *    |nidereset
+41    |  I_O | D5 |   *    |ls245datadirwrite
+42    |  I_O | D6 |   *    |nls245ena
+43    |  I_O | D7 |   *    |override
+44    |  Vcc |    |        |
+
+---------------------------------------------------------------------------
+
+<Note> Blk Pad : This notation refers to the Block I/O pad number in the device.
+<Note> Assigned Pin : user or dedicated input assignment (E.g. Clock pins).
+<Note> Pin Type : 
+           CkIn : Dedicated input or clock pin 
+           CLK  : Dedicated clock pin
+           INP  : Dedicated input pin
+           JTAG : JTAG Control and test pin
+           NC   : No connected
+
+
+
+Input_Signal_List
+~~~~~~~~~~~~~~~~~
+                 P R
+            Pin  r e O   Input 
+Pin Blk PTs Type e s E   Fanout Pwr Slew      Signal 
+----------------------------------------------------------------------
+  3  A   .  I/O          A-CD    Hi Fast      a12   
+  4  A   .  I/O          A-C-    Hi Fast      a13   
+  5  A   .  I/O          A-CD    Hi Fast      a14   
+  6  A   .  I/O          A-CD    Hi Fast      a15   
+  7  A   .  I/O          ABCD    Hi Fast      a16   
+  8  A   .  I/O          ABCD    Hi Fast      a17   
+  9  A   .  I/O          ABCD    Hi Fast      a18   
+ 14  B   .  I/O          ABCD    Hi Fast      a19   
+ 15  B   .  I/O          ABCD    Hi Fast      a20   
+ 16  B   .  I/O          ABCD    Hi Fast      a21   
+ 17  B   .  I/O          ABCD    Hi Fast      a22   
+ 18  B   .  I/O          ABCD    Hi Fast      a23   
+  2  A   .  I/O          -B--    Hi Fast      a3   
+ 30  C   .  I/O          ----    Hi Fast      ide_irq   
+ 26  C   .  I/O          A-CD    Hi Fast      nas   
+ 25  C   .  I/O          ---D    Hi Fast      nuds   
+ 24  C   .  I/O          ABCD    Hi Fast      r_w   
+ 33  .   . Ck/I          ABCD    -  Fast      cdac   
+----------------------------------------------------------------------
+
+<Note> Power : Hi = High
+               MH = Medium High
+               ML = Medium Low
+               Lo = Low
+
+
+
+Output_Signal_List
+~~~~~~~~~~~~~~~~~~
+                 P R
+            Pin  r e O   Output 
+Pin Blk PTs Type e s E   Fanout Pwr Slew      Signal 
+----------------------------------------------------------------------
+ 27  C   1  COM          ----    Hi Slow      d14   
+ 19  B   1  COM          ----    Hi Slow      dtack   
+ 20  B   1  DFF  * *     ----    Hi Slow      greenledout   
+ 21  B   1  DFF  * *     ----    Hi Slow      irq_synched_last   
+ 41  D   1  COM          ----    Hi Slow      ls245datadirwrite   
+ 39  D   1  COM          ----    Hi Slow      ncs0   
+ 38  D   1  COM          ----    Hi Slow      ncs1   
+ 40  D   1  DFF  * *     ----    Hi Slow      nidereset   
+ 31  C   1  COM          ----    Hi Slow      nint2   
+ 37  D   1  COM          ----    Hi Slow      nior   
+ 36  D   1  COM          ----    Hi Slow      niow   
+ 42  D   1  COM          ----    Hi Slow      nls245ena   
+ 43  D   1  COM          ----    Hi Slow      override   
+----------------------------------------------------------------------
+
+<Note> Power : Hi = High
+               MH = Medium High
+               ML = Medium Low
+               Lo = Low
+
+
+
+Bidir_Signal_List
+~~~~~~~~~~~~~~~~~
+                 P R
+            Pin  r e O   Bidir 
+Pin Blk PTs Type e s E   Fanout Pwr Slew      Signal 
+----------------------------------------------------------------------
+ 28  C   5  COM          A-C-    Hi Slow      d15   
+----------------------------------------------------------------------
+
+<Note> Power : Hi = High
+               MH = Medium High
+               ML = Medium Low
+               Lo = Low
+
+
+
+Buried_Signal_List
+~~~~~~~~~~~~~~~~~~
+                 P R
+            Pin  r e O   Node 
+#Mc Blk PTs Type e s E   Fanout Pwr Slew      Signal 
+----------------------------------------------------------------------
+ A8  A   2  DFF  * *     AB--    Hi Fast      DE0000_DONE_R   
+ B0  B   1  DFF  * *     -B--    Hi  -        RN_irq_synched_last   --> irq_synched_last
+ A13  A   3  COM          --C-    Hi Fast      d15_0   
+ A12  A   2  DFF  * *     A-C-    Hi Fast      d15_id_output   
+ A5  A   4  COM          -B--    Hi Fast      dtack_0   
+ C9  C   3  DFF  * *     --C-    Hi Fast      interrupt_flag   
+ C13  C   2  TFF  * *     --C-    Hi Fast      irq_passing_enabled   
+ B9  B   1  DFF  * *     --C-    Hi Fast      irq_rose   
+ C1  C   . In_D          -B--    Hi Fast      irq_synch0   --> ide_irq
+ B5  B   1  DFF  * *     -BC-    Hi Fast      irq_synched   
+ B13  B   1  DFF  * *     -B--    Hi Fast      irq_synched_last_last   
+ C5  C   4  DFF  * *     ABC-    Hi Fast      its_me_cnt0   
+ C4  C   8  DFF  * *     ABC-    Hi Fast      its_me_cnt1   
+ C1  C   7  DFF  * *     ABC-    Hi Fast      its_me_cnt2   
+ A0  A   7  DFF  * *     ABC-    Hi Fast      its_me_cnt3   
+ A1  A   2  TFF  * *     A-C-    Hi Fast      jeejee   
+ A9  A   4  COM          ---D    Hi Fast      override_0   
+ B4  B   5  TFF  * *     AB--    Hi Fast      stidreg0   
+ A4  A   4  TFF  * *     AB--    Hi Fast      stidreg1   
+ B8  B   3  TFF  * *     AB--    Hi Fast      stidreg2   
+----------------------------------------------------------------------
+
+<Note> Power : Hi = High
+               MH = Medium High
+               ML = Medium Low
+               Lo = Low
+
+
+
+
+Signals_Fanout_List
+~~~~~~~~~~~~~~~~~~~
+Signal Source  :    Fanout List
+-----------------------------------------------------------------------------
+        a23{ C}:      nls245ena{ D}           nior{ D}           niow{ D}
+               :            d15{ C}irq_passing_enabled{ C} interrupt_flag{ C}
+               :         jeejee{ A}    its_me_cnt3{ A}    its_me_cnt2{ C}
+               :    its_me_cnt1{ C}    its_me_cnt0{ C}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}     override_0{ A}
+               :        dtack_0{ A}          d15_0{ A}
+        a22{ C}:      nls245ena{ D}           nior{ D}           niow{ D}
+               :            d15{ C}irq_passing_enabled{ C} interrupt_flag{ C}
+               :         jeejee{ A}    its_me_cnt3{ A}    its_me_cnt2{ C}
+               :    its_me_cnt1{ C}    its_me_cnt0{ C}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}     override_0{ A}
+               :        dtack_0{ A}          d15_0{ A}
+        a21{ C}:      nls245ena{ D}           nior{ D}           niow{ D}
+               :            d15{ C}irq_passing_enabled{ C} interrupt_flag{ C}
+               :         jeejee{ A}    its_me_cnt3{ A}    its_me_cnt2{ C}
+               :    its_me_cnt1{ C}    its_me_cnt0{ C}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}     override_0{ A}
+               :        dtack_0{ A}          d15_0{ A}
+        a20{ C}:      nls245ena{ D}           nior{ D}           niow{ D}
+               :            d15{ C}irq_passing_enabled{ C} interrupt_flag{ C}
+               :         jeejee{ A}    its_me_cnt3{ A}    its_me_cnt2{ C}
+               :    its_me_cnt1{ C}    its_me_cnt0{ C}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}     override_0{ A}
+               :        dtack_0{ A}          d15_0{ A}
+        a19{ C}:      nls245ena{ D}           nior{ D}           niow{ D}
+               :            d15{ C}irq_passing_enabled{ C} interrupt_flag{ C}
+               :         jeejee{ A}    its_me_cnt3{ A}    its_me_cnt2{ C}
+               :    its_me_cnt1{ C}    its_me_cnt0{ C}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}     override_0{ A}
+               :        dtack_0{ A}          d15_0{ A}
+        a18{ B}:      nls245ena{ D}           nior{ D}           niow{ D}
+               :            d15{ C}irq_passing_enabled{ C} interrupt_flag{ C}
+               :         jeejee{ A}    its_me_cnt3{ A}    its_me_cnt2{ C}
+               :    its_me_cnt1{ C}    its_me_cnt0{ C}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}     override_0{ A}
+               :        dtack_0{ A}          d15_0{ A}
+        a17{ B}:      nls245ena{ D}           nior{ D}           niow{ D}
+               :            d15{ C}irq_passing_enabled{ C} interrupt_flag{ C}
+               :         jeejee{ A}    its_me_cnt3{ A}    its_me_cnt2{ C}
+               :    its_me_cnt1{ C}    its_me_cnt0{ C}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}     override_0{ A}
+               :        dtack_0{ A}          d15_0{ A}
+        a16{ B}:      nls245ena{ D}           nior{ D}           niow{ D}
+               :            d15{ C}irq_passing_enabled{ C} interrupt_flag{ C}
+               :         jeejee{ A}    its_me_cnt3{ A}    its_me_cnt2{ C}
+               :    its_me_cnt1{ C}    its_me_cnt0{ C}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}     override_0{ A}
+               :        dtack_0{ A}          d15_0{ A}
+        a15{ B}:      nls245ena{ D}           nior{ D}           niow{ D}
+               :            d15{ C}irq_passing_enabled{ C} interrupt_flag{ C}
+               :         jeejee{ A}    its_me_cnt3{ A}    its_me_cnt2{ C}
+               :    its_me_cnt1{ C}    its_me_cnt0{ C}     override_0{ A}
+               :        dtack_0{ A}          d15_0{ A}
+        a14{ B}:      nls245ena{ D}           nior{ D}           niow{ D}
+               :            d15{ C}irq_passing_enabled{ C} interrupt_flag{ C}
+               :         jeejee{ A}    its_me_cnt3{ A}    its_me_cnt2{ C}
+               :    its_me_cnt1{ C}    its_me_cnt0{ C}     override_0{ A}
+               :        dtack_0{ A}          d15_0{ A}
+        a13{ B}:            d15{ C}irq_passing_enabled{ C} interrupt_flag{ C}
+               :         jeejee{ A}    its_me_cnt3{ A}    its_me_cnt2{ C}
+               :    its_me_cnt1{ C}    its_me_cnt0{ C}     override_0{ A}
+               :        dtack_0{ A}          d15_0{ A}
+        a12{ B}:           ncs0{ D}           ncs1{ D}            d15{ C}
+               :irq_passing_enabled{ C} interrupt_flag{ C}         jeejee{ A}
+               :    its_me_cnt3{ A}    its_me_cnt2{ C}    its_me_cnt1{ C}
+               :    its_me_cnt0{ C}     override_0{ A}        dtack_0{ A}
+               :          d15_0{ A}
+         a3{ B}:       stidreg0{ B}
+        nas{ D}:      nls245ena{ D}           nior{ D}           niow{ D}
+               :    its_me_cnt3{ A}    its_me_cnt2{ C}    its_me_cnt1{ C}
+               :    its_me_cnt0{ C}        dtack_0{ A}          d15_0{ A}
+       nuds{ D}:           niow{ D}
+        r_w{ D}:ls245datadirwrite{ D}           nior{ D}           niow{ D}
+               :irq_passing_enabled{ C} interrupt_flag{ C}         jeejee{ A}
+               :       stidreg2{ B}       stidreg1{ A}       stidreg0{ B}
+               :          d15_0{ A}
+ irq_synch0{ D}:    irq_synched{ B}
+RN_irq_synched_last{ C}:irq_synched_last_last{ B}       irq_rose{ B}
+        d15{ D}:irq_passing_enabled{ C} interrupt_flag{ C}         jeejee{ A}
+irq_passing_enabled{ D}:            d15{ C}irq_passing_enabled{ C} interrupt_flag{ C}
+interrupt_flag{ D}:          nint2{ C}            d15{ C} interrupt_flag{ C}
+     jeejee{ B}:            d15{ C}         jeejee{ A}
+irq_synched{ C}:irq_synched_last{ B}            d15{ C}       irq_rose{ B}
+irq_synched_last_last{ C}:       irq_rose{ B}
+   irq_rose{ C}: interrupt_flag{ C}
+its_me_cnt3{ B}:irq_passing_enabled{ C} interrupt_flag{ C}         jeejee{ A}
+               :    its_me_cnt3{ A}  d15_id_output{ A}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}
+its_me_cnt2{ D}:irq_passing_enabled{ C} interrupt_flag{ C}         jeejee{ A}
+               :    its_me_cnt3{ A}    its_me_cnt2{ C}  d15_id_output{ A}
+               :       stidreg2{ B}       stidreg1{ A}       stidreg0{ B}
+its_me_cnt1{ D}:irq_passing_enabled{ C} interrupt_flag{ C}         jeejee{ A}
+               :    its_me_cnt3{ A}    its_me_cnt2{ C}    its_me_cnt1{ C}
+               :  d15_id_output{ A}       stidreg2{ B}       stidreg1{ A}
+               :       stidreg0{ B}
+its_me_cnt0{ D}:irq_passing_enabled{ C} interrupt_flag{ C}         jeejee{ A}
+               :    its_me_cnt3{ A}    its_me_cnt2{ C}    its_me_cnt1{ C}
+               :    its_me_cnt0{ C}  d15_id_output{ A}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}
+d15_id_output{ B}:            d15{ C}  d15_id_output{ A}
+DE0000_DONE_R{ B}:    greenledout{ B}       irq_rose{ B}  DE0000_DONE_R{ A}
+   stidreg2{ C}:  d15_id_output{ A}  DE0000_DONE_R{ A}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}
+   stidreg1{ B}:  d15_id_output{ A}  DE0000_DONE_R{ A}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}
+   stidreg0{ C}:  d15_id_output{ A}  DE0000_DONE_R{ A}       stidreg2{ B}
+               :       stidreg1{ A}       stidreg0{ B}
+ override_0{ B}:       override{ D}
+    dtack_0{ B}:          dtack{ B}
+      d15_0{ B}:            d15{ C}            d14{ C}
+-----------------------------------------------------------------------------
+
+<Note> {.} : Indicates block location of signal
+
+
+Set_Reset_Summary
+~~~~~~~~~~~~~~~~~
+
+Block  A
+block level set pt   : GND
+block level reset pt : GND
+Equations :
+|     |     |Block|Block| Signal
+| Reg |Mode |Set  |Reset| Name
++-----+-----+-----+-----+------------------------
+|  *  |  S  | BS  | BR  | its_me_cnt3
+|  *  |  S  | BS  | BR  | stidreg1
+|  *  |  S  | BS  | BR  | DE0000_DONE_R
+|  *  |  S  | BS  | BR  | d15_id_output
+|  *  |  S  | BS  | BR  | jeejee
+|     |     |     |     | dtack_0
+|     |     |     |     | override_0
+|     |     |     |     | d15_0
+|     |     |     |     | a18
+|     |     |     |     | a17
+|     |     |     |     | a16
+|     |     |     |     | a15
+|     |     |     |     | a14
+|     |     |     |     | a12
+|     |     |     |     | a13
+|     |     |     |     | a3
+
+
+Block  B
+block level set pt   : GND
+block level reset pt : GND
+Equations :
+|     |     |Block|Block| Signal
+| Reg |Mode |Set  |Reset| Name
++-----+-----+-----+-----+------------------------
+|  *  |  S  | BS  | BR  | irq_synched_last
+|  *  |  S  | BS  | BR  | greenledout
+|     |     |     |     | dtack
+|  *  |  S  | BS  | BR  | stidreg0
+|  *  |  S  | BS  | BR  | stidreg2
+|  *  |  S  | BS  | BR  | irq_synched
+|  *  |  S  | BS  | BR  | RN_irq_synched_last
+|  *  |  S  | BS  | BR  | irq_rose
+|  *  |  S  | BS  | BR  | irq_synched_last_last
+|     |     |     |     | a23
+|     |     |     |     | a22
+|     |     |     |     | a21
+|     |     |     |     | a20
+|     |     |     |     | a19
+
+
+Block  C
+block level set pt   : GND
+block level reset pt : GND
+Equations :
+|     |     |Block|Block| Signal
+| Reg |Mode |Set  |Reset| Name
++-----+-----+-----+-----+------------------------
+|     |     |     |     | d15
+|     |     |     |     | nint2
+|     |     |     |     | d14
+|  *  |  S  | BS  | BR  | its_me_cnt1
+|  *  |  S  | BS  | BR  | its_me_cnt2
+|  *  |  S  | BS  | BR  | its_me_cnt0
+|  *  |  S  | BS  | BR  | interrupt_flag
+|  *  |  S  | BS  | BR  | irq_passing_enabled
+|     |     |     |     | ide_irq
+|     |     |     |     | irq_synch0
+|     |     |     |     | r_w
+|     |     |     |     | nas
+|     |     |     |     | nuds
+
+
+Block  D
+block level set pt   : GND
+block level reset pt : GND
+Equations :
+|     |     |Block|Block| Signal
+| Reg |Mode |Set  |Reset| Name
++-----+-----+-----+-----+------------------------
+|     |     |     |     | override
+|     |     |     |     | nls245ena
+|     |     |     |     | ls245datadirwrite
+|  *  |  S  | BS  | BR  | nidereset
+|     |     |     |     | ncs0
+|     |     |     |     | ncs1
+|     |     |     |     | nior
+|     |     |     |     | niow
+
+
+<Note> (S) means the macrocell is configured in synchronous mode
+       i.e. it uses the block-level set and reset pt.
+       (A) means the macrocell is configured in asynchronous mode
+       i.e. it can have its independant set or reset pt.
+       (BS) means the block-level set pt is selected.
+       (BR) means the block-level reset pt is selected.
+
+
+
+
+BLOCK_A_LOGIC_ARRAY_FANIN
+~~~~~~~~~~~~~~~~~~~~~~~~~
+CSM             Signal    Source        CSM             Signal    Source
+------------------------------------    ------------------------------------
+mx A0        stidreg1     mcell  A4     mx A17             a18         pin 9
+mx A1             a12         pin 3     mx A18             a21        pin 16
+mx A2             ...           ...     mx A19             a15         pin 6
+mx A3             a19        pin 14     mx A20     its_me_cnt0     mcell  C5
+mx A4          jeejee     mcell  A1     mx A21             d15        pin 28
+mx A5             a17         pin 8     mx A22             a13         pin 4
+mx A6     its_me_cnt2     mcell  C1     mx A23   DE0000_DONE_R     mcell  A8
+mx A7             ...           ...     mx A24             a22        pin 17
+mx A8             ...           ...     mx A25     its_me_cnt1     mcell  C4
+mx A9             a23        pin 18     mx A26             a16         pin 7
+mx A10             nas        pin 26     mx A27             ...           ...
+mx A11        stidreg0     mcell  B4     mx A28             r_w        pin 24
+mx A12             a20        pin 15     mx A29        stidreg2     mcell  B8
+mx A13     its_me_cnt3     mcell  A0     mx A30             ...           ...
+mx A14             a14         pin 5     mx A31             ...           ...
+mx A15   d15_id_output    mcell  A12     mx A32             ...           ...
+mx A16             ...           ...
+----------------------------------------------------------------------------
+
+
+BLOCK_B_LOGIC_ARRAY_FANIN
+~~~~~~~~~~~~~~~~~~~~~~~~~
+CSM             Signal    Source        CSM             Signal    Source
+------------------------------------    ------------------------------------
+mx B0        stidreg1     mcell  A4     mx B17             a18         pin 9
+mx B1             a17         pin 8     mx B18             ...           ...
+mx B2             ...           ...     mx B19      irq_synch0      inode 83
+mx B3             a19        pin 14     mx B20             a22        pin 17
+mx B4         dtack_0     mcell  A5     mx B21     its_me_cnt2     mcell  C1
+mx B5irq_synched_last_last    mcell  B13     mx B22             ...           ...
+mx B6             a21        pin 16     mx B23   DE0000_DONE_R     mcell  A8
+mx B7     irq_synched     mcell  B5     mx B24             ...           ...
+mx B8              a3         pin 2     mx B25     its_me_cnt1     mcell  C4
+mx B9             a23        pin 18     mx B26             a16         pin 7
+mx B10             r_w        pin 24     mx B27             ...           ...
+mx B11        stidreg0     mcell  B4     mx B28     its_me_cnt0     mcell  C5
+mx B12             a20        pin 15     mx B29             ...           ...
+mx B13     its_me_cnt3     mcell  A0     mx B30             ...           ...
+mx B14        stidreg2     mcell  B8     mx B31             ...           ...
+mx B15             ...           ...     mx B32             ...           ...
+mx B16RN_irq_synched_last     mcell  B0
+----------------------------------------------------------------------------
+
+
+BLOCK_C_LOGIC_ARRAY_FANIN
+~~~~~~~~~~~~~~~~~~~~~~~~~
+CSM             Signal    Source        CSM             Signal    Source
+------------------------------------    ------------------------------------
+mx C0  interrupt_flag     mcell  C9     mx C17             a18         pin 9
+mx C1irq_passing_enabled    mcell  C13     mx C18             a21        pin 16
+mx C2             a12         pin 3     mx C19     its_me_cnt0     mcell  C5
+mx C3             a15         pin 6     mx C20             a22        pin 17
+mx C4          jeejee     mcell  A1     mx C21             a19        pin 14
+mx C5             a17         pin 8     mx C22             ...           ...
+mx C6     its_me_cnt2     mcell  C1     mx C23             d15        pin 28
+mx C7     irq_synched     mcell  B5     mx C24             a20        pin 15
+mx C8             ...           ...     mx C25     its_me_cnt1     mcell  C4
+mx C9             a23        pin 18     mx C26             a16         pin 7
+mx C10             nas        pin 26     mx C27             ...           ...
+mx C11             ...           ...     mx C28             r_w        pin 24
+mx C12             a13         pin 4     mx C29             ...           ...
+mx C13     its_me_cnt3     mcell  A0     mx C30             ...           ...
+mx C14             a14         pin 5     mx C31           d15_0    mcell  A13
+mx C15   d15_id_output    mcell  A12     mx C32             ...           ...
+mx C16        irq_rose     mcell  B9
+----------------------------------------------------------------------------
+
+
+BLOCK_D_LOGIC_ARRAY_FANIN
+~~~~~~~~~~~~~~~~~~~~~~~~~
+CSM             Signal    Source        CSM             Signal    Source
+------------------------------------    ------------------------------------
+mx D0             ...           ...     mx D17             a18         pin 9
+mx D1             a12         pin 3     mx D18             ...           ...
+mx D2             ...           ...     mx D19             ...           ...
+mx D3             a15         pin 6     mx D20             a22        pin 17
+mx D4            nuds        pin 25     mx D21             a19        pin 14
+mx D5             a17         pin 8     mx D22             ...           ...
+mx D6             a21        pin 16     mx D23             ...           ...
+mx D7             ...           ...     mx D24             a20        pin 15
+mx D8             ...           ...     mx D25             ...           ...
+mx D9             a23        pin 18     mx D26             a16         pin 7
+mx D10             nas        pin 26     mx D27             ...           ...
+mx D11             ...           ...     mx D28             r_w        pin 24
+mx D12             a14         pin 5     mx D29             ...           ...
+mx D13      override_0     mcell  A9     mx D30             ...           ...
+mx D14             ...           ...     mx D31             ...           ...
+mx D15             ...           ...     mx D32             ...           ...
+mx D16             ...           ...
+----------------------------------------------------------------------------
+
+<Note> CSM indicates the mux inputs from the Central Switch Matrix.
+<Note> Source indicates where the signal comes from (pin or macrocell). 
+
+
+
+
+PostFit_Equations
+~~~~~~~~~~~~~~~~~
+
+
+ P-Terms   Fan-in  Fan-out  Type  Name (attributes)
+---------  ------  -------  ----  -----------------
+   0          0        1    Pin   override 
+   1          1        1    Pin   override.OE 
+   0          0        1    Pin   dtack 
+   1          1        1    Pin   dtack.OE 
+   1          1        1    Pin   irq_synched_last.D 
+   1          1        1    Pin   irq_synched_last.C 
+   1          1        1    Pin   greenledout.D 
+   1          1        1    Pin   greenledout.C 
+   1          0        1    Pin   nidereset.D 
+   1          1        1    Pin   nidereset.C 
+   1         11        1    Pin   nls245ena- 
+   1          1        1    Pin   ls245datadirwrite 
+   1          1        1    Pin   ncs0 
+   1          1        1    Pin   ncs1 
+   1         12        1    Pin   nior- 
+   1         13        1    Pin   niow- 
+   0          0        1    Pin   nint2 
+   1          1        1    Pin   nint2.OE 
+   5         17        1    Pin   d15 
+   1          1        1    Pin   d15.OE 
+   0          0        1    Pin   d14 
+   1          1        1    Pin   d14.OE 
+   2         19        1    Node  irq_passing_enabled.T 
+   1          1        1    Node  irq_passing_enabled.C 
+   3         21        1    Node  interrupt_flag.D- 
+   1          1        1    Node  interrupt_flag.C 
+   2         19        1    Node  jeejee.T 
+   1          1        1    Node  jeejee.C 
+   1          1        1    Node  irq_synch0.D 
+   1          1        1    Node  irq_synch0.C 
+   1          1        1    Node  irq_synched.D 
+   1          1        1    Node  irq_synched.C 
+   1          1        1    Node  irq_synched_last_last.D 
+   1          1        1    Node  irq_synched_last_last.C 
+   1          4        1    Node  irq_rose.D 
+   1          1        1    Node  irq_rose.C 
+   7         17        1    NodeX1  its_me_cnt3.D.X1 
+   1         11        1    NodeX2  its_me_cnt3.D.X2 
+   1          1        1    Node  its_me_cnt3.C 
+   7         16        1    NodeX1  its_me_cnt2.D.X1 
+   1         10        1    NodeX2  its_me_cnt2.D.X2 
+   1          1        1    Node  its_me_cnt2.C 
+   8         15        1    Node  its_me_cnt1.D 
+   1          1        1    Node  its_me_cnt1.C 
+   4         14        1    Node  its_me_cnt0.D 
+   1          1        1    Node  its_me_cnt0.C 
+   2          5        1    NodeX1  d15_id_output.D.X1 
+   1          7        1    NodeX2  d15_id_output.D.X2 
+   1          1        1    Node  d15_id_output.C 
+   2          4        1    Node  DE0000_DONE_R.D 
+   1          1        1    Node  DE0000_DONE_R.C 
+   3         16        1    Node  stidreg2.T 
+   1          1        1    Node  stidreg2.C 
+   4         16        1    Node  stidreg1.T 
+   1          1        1    Node  stidreg1.C 
+   5         17        1    Node  stidreg0.T 
+   1          1        1    Node  stidreg0.C 
+   4         12        1    Node  override_0 
+   4         13        1    Node  dtack_0 
+   3         14        1    Node  d15_0 
+=========
+ 105                 P-Term Total: 105
+                       Total Pins: 32
+                      Total Nodes: 19
+            Average P-Term/Output: 2
+
+
+Equations:
+
+override = (0);
+
+override.OE = (override_0);
+
+dtack = (0);
+
+dtack.OE = (dtack_0);
+
+irq_synched_last.D = (irq_synched.Q);
+
+irq_synched_last.C = (cdac);
+
+greenledout.D = (!DE0000_DONE_R.Q);
+
+greenledout.C = (cdac);
+
+nidereset.D = (1);
+
+nidereset.C = (cdac);
+
+!nls245ena = (!a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15);
+
+ls245datadirwrite = (!r_w);
+
+ncs0 = (a12);
+
+ncs1 = (!a12);
+
+!nior = (!a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & r_w & !nas & !a14 & !a15);
+
+!niow = (!a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !r_w & !nas & !a14 & !a15 & !nuds);
+
+nint2 = (0);
+
+nint2.OE = (interrupt_flag.Q);
+
+d15 = (!a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & d15_id_output.Q
+     # !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !a14 & a15 & !a12 & !a13 & irq_synched.Q
+     # !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !a14 & a15 & !a12 & !a13 & irq_passing_enabled.Q
+     # !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !a14 & a15 & a12 & !a13 & interrupt_flag.Q
+     # !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !a14 & a15 & !a12 & a13 & jeejee.Q);
+
+d15.OE = (d15_0);
+
+d14 = (0);
+
+d14.OE = (d15_0);
+
+irq_passing_enabled.T = (!its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !r_w & !a14 & a15 & !a12 & !a13 & !d15 & irq_passing_enabled.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !r_w & !a14 & a15 & !a12 & !a13 & d15 & !irq_passing_enabled.Q);
+
+irq_passing_enabled.C = (cdac);
+
+!interrupt_flag.D = (irq_passing_enabled.Q & irq_rose.Q
+     # !irq_rose.Q & !interrupt_flag.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !r_w & !a14 & a15 & a12 & !a13 & !d15);
+
+interrupt_flag.C = (cdac);
+
+jeejee.T = (!its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !r_w & !a14 & a15 & !a12 & a13 & !d15 & jeejee.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !r_w & !a14 & a15 & !a12 & a13 & d15 & !jeejee.Q);
+
+jeejee.C = (cdac);
+
+irq_synch0.D = (ide_irq);
+
+irq_synch0.C = (cdac);
+
+irq_synched.D = (irq_synch0.Q);
+
+irq_synched.C = (cdac);
+
+irq_synched_last_last.D = (irq_synched_last.Q);
+
+irq_synched_last_last.C = (cdac);
+
+irq_rose.D = (DE0000_DONE_R.Q & irq_synched.Q & irq_synched_last.Q & !irq_synched_last_last.Q);
+
+irq_rose.C = (cdac);
+
+its_me_cnt3.D.X1 = (its_me_cnt3.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # its_me_cnt3.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15
+     # its_me_cnt3.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a12
+     # its_me_cnt3.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a13
+     # its_me_cnt3.Q & its_me_cnt2.Q & its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # its_me_cnt2.Q & its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !nas & a14
+     # its_me_cnt2.Q & its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !nas & a15 & a12 & a13);
+
+its_me_cnt3.D.X2 = (its_me_cnt2.Q & its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas);
+
+its_me_cnt3.C = (cdac);
+
+its_me_cnt2.D.X1 = (its_me_cnt2.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # its_me_cnt2.Q & its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # its_me_cnt2.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15
+     # its_me_cnt2.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a12
+     # its_me_cnt2.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a13
+     # its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !nas & a14
+     # its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !nas & a15 & a12 & a13);
+
+its_me_cnt2.D.X2 = (its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas);
+
+its_me_cnt2.C = (cdac);
+
+its_me_cnt1.D = (!its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # !its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15
+     # its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15
+     # !its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a12
+     # its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a12
+     # !its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a13
+     # its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a13);
+
+its_me_cnt1.C = (cdac);
+
+its_me_cnt0.D = (!its_me_cnt0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # !its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15
+     # !its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a12
+     # !its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a13);
+
+its_me_cnt0.C = (cdac);
+
+d15_id_output.D.X1 = (d15_id_output.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & !its_me_cnt1.Q & its_me_cnt0.Q & !d15_id_output.Q);
+
+d15_id_output.D.X2 = (!its_me_cnt3.Q & !its_me_cnt2.Q & !its_me_cnt1.Q & its_me_cnt0.Q & stidreg2.Q & !stidreg1.Q & !stidreg0.Q);
+
+d15_id_output.C = (cdac);
+
+DE0000_DONE_R.D = (DE0000_DONE_R.Q
+     # stidreg2.Q & !stidreg1.Q & !stidreg0.Q);
+
+DE0000_DONE_R.C = (cdac);
+
+stidreg2.T = (stidreg2.Q & stidreg1.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & stidreg2.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !r_w
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & stidreg1.Q & stidreg0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & r_w);
+
+stidreg2.C = (cdac);
+
+stidreg1.T = (stidreg2.Q & stidreg1.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & stidreg2.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !r_w
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & stidreg1.Q & stidreg0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & r_w
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !stidreg1.Q & stidreg0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !r_w);
+
+stidreg1.C = (cdac);
+
+stidreg0.T = (stidreg2.Q & stidreg1.Q & stidreg0.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & stidreg0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !r_w
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !stidreg2.Q & stidreg1.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & r_w
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !stidreg2.Q & !stidreg1.Q & !stidreg0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !a3
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & stidreg2.Q & !stidreg1.Q & !stidreg0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & r_w);
+
+stidreg0.C = (cdac);
+
+override_0 = (!a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !a14 & !a15
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !a14 & !a12
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !a14 & !a13);
+
+dtack_0 = (!a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a12
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a13);
+
+d15_0 = (!a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & r_w & !nas
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & r_w & !nas & !a14 & a15 & !a12
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & r_w & !nas & !a14 & a15 & !a13);
+
+
+Reverse-Polarity Equations:
+

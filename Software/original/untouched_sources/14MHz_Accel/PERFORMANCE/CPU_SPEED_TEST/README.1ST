@@ -1,0 +1,36 @@
+I wrote this program to test the speed increase of CPU operations by a 14 MHz
+68000 accelerator. The speed tests run a loop of about 200.000 times the
+same command (source and (if necessary) destination are data registers) and
+disables multitasking by doing this.
+Only MC68000/10 are detected. MC68020/30/40 and Kickstart 2.0 are NOT
+supported (a guru maybe possible !) !
+
+If you have 16 bit fastram cmp, clr, not and neg will be +10%.
+
+
+Files:
+
+  CPU_test_PAL  - speed test program on 640x256 screen
+  CPU_test_NTSC - speed test program on 640x400 screen
+                  (only the screen resolution differs)
+
+  PAL_68000_14MHz.iff  - IFF picture of my result (68000 / 14 MHz / PAL)
+  PAL_68010_7MHz.iff   - IFF picture of my result (68010 /  7 MHz / PAL)
+  PAL_68010_14MHz.iff  - IFF picture of my result (68010 / 14 MHz / PAL)
+  NTSC_68000_14MHz.iff - IFF picture of my result (68000 / 14 MHz / NTSC)
+  NTSC_68010_7MHz.iff  - IFF picture of my result (68010 /  7 MHz / NTSC)
+  NTSC_68010_14MHz.iff - IFF picture of my result (68010 / 14 MHz / NTSC)
+
+  Readme.1st - this file
+
+Please email me results of 68000/10 7/14 MHz accelerator boards (e.g.
+AdSpeed). Thanks.
+
+
+Joerg.Richter@arbi.informatik.uni-oldenburg.de
+
+
+-------------------------------------------------------------------------
+/* The world is cruel and blind - let's have a good time */
+
+

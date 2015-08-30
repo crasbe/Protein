@@ -1,0 +1,13 @@
+Starting EDIF2BLIF....
+readEDIF ended normally.
+
+Inspect circuit DRAM_ADD_REF
+    Number of input ports   : 19
+    Number of output ports  : 11
+    Number of bidir ports   : 0
+    Number of instances     : 155
+    Number of nets          : 174
+
+No design errors found in circuit DRAM_ADD_REF
+
+WriteBLIF ended normally.

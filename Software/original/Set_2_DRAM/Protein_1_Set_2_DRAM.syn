@@ -1,0 +1,13 @@
+JDF B
+// Created by Version 1.5 
+PROJECT Protein_1_Set_2_DRAM
+DESIGN protein_1_set_2_dram Normal
+DEVKIT M4A5-64/32-10JC
+ENTRY Schematic/Verilog HDL
+MODULE clockport_decode.sch
+MODSTYLE clockport_decode Normal
+MODULE ..\work_sources\Set_2_DRAM.v
+MODSTYLE Set_2_DRAM Normal
+SYNTHESIS_TOOL Synplify
+SIMULATOR_TOOL ActiveHDL
+TOPMODULE clockport_decode

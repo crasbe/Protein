@@ -1,0 +1,70 @@
+Tests on A2000B with 3Mbyte (512K chip, 512K slow and 2M fast) 14MHz
+
+::::::::::::::
+mips
+::::::::::::::
+
+time before:  438461349 seconds      182911 microseconds
+time after :  438461349 seconds      962912 microseconds
+time diff  :          0 seconds      780001 microseconds
+OR         : 0.780001 seconds
+performance: 1.282050 MIPS
+
+
+::::::::::::::
+si
+::::::::::::::
+
+System Information v2.0b
+Kramden Utilities (c) 1988,1989 Pregnant Badger Software
+
+            Computer Name:  Amiga
+         Operating System:  Kickstart v34.5, Workbench v34.28
+           Main Processor:  Motorola 68000
+  Verical Blank Frequency:  50Hz
+   Power Supply Frequency:  50Hz
+             Custom Chips:  Normal Agnus, Normal Denise
+               Video Mode:  PAL
+      Normal Display Size:  640 x 256
+     Maximum Display Size:  466 x 312
+       Pixel Aspect Ratio:  1:0.944
+
+Memory List:
+
+     Address Range     Pri   Attr  Size  Description
+  $00200020-$003FFFFF   +0  $0005  2.0M  expansion ram
+  $00C004E8-$00C7E7FF   +0  $0005  0.5M  Fast Memory
+  $00000420-$0007FFFF  -10  $0003  0.5M  Chip Memory
+
+Computing Performance relative to:
+
+                   A1000  IBM/XT
+         Integer:   1.9     6.2
+  Floating Point:   1.6    12.0
+
+
+::::::::::::::
+speed
+::::::::::::::
+
+SPEED 2.00 - Amiga Performance Analyser by Jez San (c)1989 Argonaut Software.
+
+This tests two aspects of your Amiga system :-
+a) The approximate clockspeed the processor is running at.
+b) The approximate system performance in the form of a benchmark.
+
+Both figures a & b are important for different reasons eg: Despite
+having a fast clockspeed, your machine may not run at its full
+system performance, due to Waitstates, Cache's, Burstfetches etc
+Hence the need for a good measure of both clockspeed AND realworld
+performance when compared to a normally aspirated Amiga.
+
+The Amiga EXEC reckons that a 68000 processor is installed in this system.
+Analysing clockspeed... Took 126 ticks, which is 13.74 Mhz +-2% (fig A)
+
+Computing 10,000 SlightlyMoistSmallRocks in... 485 ticks.
+
+1.44 times (fig B) the speed of a normal Amiga at 7.159 Mhz +-2%.
+0.48 times the speed of an A2620 at 14.318 Mhz +-2%.
+
+Rating against an A2620 : Yawn.

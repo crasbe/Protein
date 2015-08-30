@@ -1,0 +1,156 @@
+
+[Device]
+Family = M4A5;
+PartNumber = M4A5-64/32-10JC;
+Package = 44PLCC;
+PartType = M4A5-64/32;
+Speed = -10;
+Operating_condition = COM;
+Status = Production;
+EN_PinGLB = Yes;
+EN_PinMacrocell = Yes;
+
+[Revision]
+Parent = m4a5.lci;
+DATE = 06/16/2013;
+TIME = 20:51:25;
+Source_Format = Schematic_Verilog_HDL;
+Synthesis = Synplify;
+
+[Ignore Assignments]
+
+[Clear Assignments]
+
+[Backannotate Assignments]
+
+[Global Constraints]
+
+[Location Assignments]
+layer = OFF;
+cpu_d12 = Pin, 28, -, C, -;
+cpu_d13 = Pin, 27, -, C, -;
+cpu_d14 = Pin, 26, -, C, -;
+cpu_d15 = Pin, 25, -, C, -;
+mux_switch = Pin, 17, -, B, -;
+enab = Pin, 20, -, B, -;
+cpu_reset = Pin, 39, -, D, -;
+cpu_nuds = Pin, 38, -, D, -;
+cpu_nlds = Pin, 37, -, D, -;
+cpu_nas = Pin, 40, -, D, -;
+cpu_clk = Pin, 11, -, -, -;
+A23 = Pin, 41, -, D, -;
+A22 = Pin, 42, -, D, -;
+A21 = Pin, 43, -, D, -;
+A20 = Pin, 3, -, A, -;
+A19 = Pin, 5, -, A, -;
+A18 = Pin, 7, -, A, -;
+A17 = Pin, 9, -, A, -;
+A16 = Pin, 15, -, B, -;
+A6 = Pin, 16, -, B, -;
+A5 = Pin, 14, -, B, -;
+A4 = Pin, 8, -, A, -;
+A3 = Pin, 6, -, A, -;
+A2 = Pin, 4, -, A, -;
+A1 = Pin, 2, -, A, -;
+dram_nras0 = Pin, 31, -, C, -;
+dram_ras1 = Pin, 36, -, D, -;
+dram_ras2 = Pin, 18, -, B, -;
+dram_ras3 = Pin, 19, -, B, -;
+C_CS = Pin, 21, -, B, -;
+dram_nucas = Pin, 29, -, C, -;
+dram_nlcas = Pin, 30, -, C, -;
+
+[Group Assignments]
+layer = OFF;
+
+[Resource Reservations]
+layer = OFF;
+
+[Fitter Report Format]
+
+[Power]
+
+[Source Constraint Option]
+
+[Fast Bypass]
+
+[OSM Bypass]
+
+[Input Registers]
+
+[Netlist/Delay Format]
+NetList = VERILOG;
+
+[IO Types]
+layer = OFF;
+
+[Pullup]
+Default = UP;
+
+[Slewrate]
+SLOW = cpu_d12, cpu_d13, cpu_d14, cpu_d15, C_CS, dram_nlcas, dram_nras0, dram_nucas, 
+	dram_ras1, dram_ras2, dram_ras3, mux_switch;
+
+[Region]
+
+[Timing Constraints]
+
+[HSI Attributes]
+
+[Input Delay]
+
+[opt global constraints list]
+
+[Explorer User Settings]
+
+[Pin attributes list]
+
+[global constraints list]
+
+[Global Constraints Process Update]
+
+[pin lock limitation]
+
+[LOCATION ASSIGNMENTS LIST]
+
+[RESOURCE RESERVATIONS LIST]
+
+[individual constraints list]
+
+[Attributes list setting]
+
+[Timing Analyzer]
+
+[PLL Assignments]
+
+[Dual Function Macrocell]
+
+[Explorer Results]
+
+[VHDL synplify constraints]
+
+[VHDL spectrum constraints]
+
+[verilog synplify constraints]
+
+[verilog spectrum constraints]
+
+[VHDL synplify constraints list]
+
+[VHDL spectrum constraints list]
+
+[verilog synplify constraints list]
+
+[verilog spectrum constraints list]
+
+[Constraint Version]
+version = 1.0;
+
+[ORP ASSIGNMENTS]
+layer = OFF;
+
+[Node attribute]
+layer = OFF;
+
+[SYMBOL/MODULE attribute]
+layer = OFF;

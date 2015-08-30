@@ -1,0 +1,64 @@
+#$ TOOL ispLEVER Classic 1.5.00.05.39.l1
+#$ DATE Fri Apr 05 17:04:15 2013
+#$ TITLE clockport_decod.bls 
+#$ PROPERTY Lattice LOCK C_CS 21
+#$ PROPERTY Lattice LOCK A23 41
+#$ PROPERTY Lattice LOCK A22 42
+#$ PROPERTY Lattice LOCK A20 3
+#$ PROPERTY Lattice LOCK A19 5
+#$ PROPERTY Lattice LOCK A21 43
+#$ PROPERTY Lattice LOCK A18 7
+#$ PROPERTY Lattice LOCK A17 9
+#$ PROPERTY Lattice LOCK A16 15
+#$ MODULE clockport_decod
+#$ PINS 9 C_CS:21'o'  A21:43 A19:5 A20:3 A23:41 A22:42 A18:7 A17:9 A16:15
+#$ NODES 11 N_15'o'  N_8'o'  N_9'o'  N_10'o'  N_11'o'  N_12'o'  N_13'o'  N_14'o'  N_5'o'  N_6'o'  N_7'o' 
+.model clockport_decod
+.inputs N_8.BLIF N_9.BLIF N_10.BLIF N_11.BLIF N_12.BLIF N_13.BLIF N_14.BLIF \
+N_5.BLIF N_6.BLIF N_7.BLIF A23.BLIF A22.BLIF A20.BLIF A19.BLIF A21.BLIF \
+A18.BLIF A17.BLIF A16.BLIF N_15.BLIF
+.outputs N_15 N_8 N_9 N_10 N_11 N_12 N_13 N_14 N_5 N_6 N_7 C_CS
+.names N_8.BLIF N_9.BLIF N_15
+0- 1
+-0 1
+11 0
+.names N_13.BLIF N_12.BLIF N_11.BLIF N_10.BLIF N_8
+1111 1
+--0- 0
+-0-- 0
+0--- 0
+---0 0
+.names N_14.BLIF N_5.BLIF N_6.BLIF N_7.BLIF N_9
+0000 1
+--1- 0
+-1-- 0
+1--- 0
+---1 0
+.names A23.BLIF N_10
+1 1
+0 0
+.names A22.BLIF N_11
+1 1
+0 0
+.names A20.BLIF N_12
+1 1
+0 0
+.names A19.BLIF N_13
+1 1
+0 0
+.names A21.BLIF N_14
+1 1
+0 0
+.names A18.BLIF N_5
+1 1
+0 0
+.names A17.BLIF N_6
+1 1
+0 0
+.names A16.BLIF N_7
+1 1
+0 0
+.names N_15.BLIF C_CS
+1 1
+0 0
+.end

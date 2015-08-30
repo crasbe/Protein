@@ -1,0 +1,194 @@
+#PLAFILE protein_1_ide.tt4
+#DATE    06/24/2011
+#DESIGN  <no design name>
+#DEVICE  mach463a
+
+DATA LOCATION DE0000_DONE_R:A_8	// NOD
+DATA LOCATION RN_irq_synched_last:B_0	// NOD {irq_synched_last}
+DATA LOCATION a12:A_*_3	// INP
+DATA LOCATION a13:A_*_4	// INP
+DATA LOCATION a14:A_*_5	// INP
+DATA LOCATION a15:A_*_6	// INP
+DATA LOCATION a16:A_*_7	// INP
+DATA LOCATION a17:A_*_8	// INP
+DATA LOCATION a18:A_*_9	// INP
+DATA LOCATION a19:B_*_14	// INP
+DATA LOCATION a20:B_*_15	// INP
+DATA LOCATION a21:B_*_16	// INP
+DATA LOCATION a22:B_*_17	// INP
+DATA LOCATION a23:B_*_18	// INP
+DATA LOCATION a3:A_*_2	// INP
+DATA LOCATION cdac:*_*_33	// Cin
+DATA LOCATION d14:C_12_27	// OUT
+DATA LOCATION d15:C_8_28	//  IO
+DATA LOCATION d15_0:A_13	// NOD
+DATA LOCATION d15_id_output:A_12	// NOD
+DATA LOCATION dtack:B_1_19	// OUT
+DATA LOCATION dtack_0:A_5	// NOD
+DATA LOCATION greenledout:B_12_20	// OUT
+DATA LOCATION ide_irq:C_*_30	// INP
+DATA LOCATION interrupt_flag:C_9	// NOD
+DATA LOCATION irq_passing_enabled:C_13	// NOD
+DATA LOCATION irq_rose:B_9	// NOD
+DATA LOCATION irq_synch0:C_83_30	// Rin {ide_irq}
+DATA LOCATION irq_synched:B_5	// NOD
+DATA LOCATION irq_synched_last:B_0_21	//  IO {RN_irq_synched_last}
+DATA LOCATION irq_synched_last_last:B_13	// NOD
+DATA LOCATION its_me_cnt0:C_5	// NOD
+DATA LOCATION its_me_cnt1:C_4	// NOD
+DATA LOCATION its_me_cnt2:C_1	// NOD
+DATA LOCATION its_me_cnt3:A_0	// NOD
+DATA LOCATION jeejee:A_1	// NOD
+DATA LOCATION ls245datadirwrite:D_1_41	// OUT
+DATA LOCATION nas:C_*_26	// INP
+DATA LOCATION ncs0:D_9_39	// OUT
+DATA LOCATION ncs1:D_4_38	// OUT
+DATA LOCATION nidereset:D_8_40	// OUT
+DATA LOCATION nint2:C_0_31	// OUT
+DATA LOCATION nior:D_5_37	// OUT
+DATA LOCATION niow:D_2_36	// OUT
+DATA LOCATION nls245ena:D_12_42	// OUT
+DATA LOCATION nuds:C_*_25	// INP
+DATA LOCATION override:D_0_43	// OUT
+DATA LOCATION override_0:A_9	// NOD
+DATA LOCATION r_w:C_*_24	// INP
+DATA LOCATION stidreg0:B_4	// NOD
+DATA LOCATION stidreg1:A_4	// NOD
+DATA LOCATION stidreg2:B_8	// NOD
+DATA IO_DIR   a12:IN
+DATA IO_DIR   a13:IN
+DATA IO_DIR   a14:IN
+DATA IO_DIR   a15:IN
+DATA IO_DIR   a16:IN
+DATA IO_DIR   a17:IN
+DATA IO_DIR   a18:IN
+DATA IO_DIR   a19:IN
+DATA IO_DIR   a20:IN
+DATA IO_DIR   a21:IN
+DATA IO_DIR   a22:IN
+DATA IO_DIR   a23:IN
+DATA IO_DIR   a3:IN
+DATA IO_DIR   cdac:IN
+DATA IO_DIR   d14:OUT
+DATA IO_DIR   d15:BI
+DATA IO_DIR   dtack:OUT
+DATA IO_DIR   greenledout:OUT
+DATA IO_DIR   ide_irq:IN
+DATA IO_DIR   irq_synched_last:OUT
+DATA IO_DIR   ls245datadirwrite:OUT
+DATA IO_DIR   nas:IN
+DATA IO_DIR   ncs0:OUT
+DATA IO_DIR   ncs1:OUT
+DATA IO_DIR   nidereset:OUT
+DATA IO_DIR   nint2:OUT
+DATA IO_DIR   nior:OUT
+DATA IO_DIR   niow:OUT
+DATA IO_DIR   nls245ena:OUT
+DATA IO_DIR   nuds:IN
+DATA IO_DIR   override:OUT
+DATA IO_DIR   r_w:IN
+DATA INPUT_REGISTER  irq_synch0
+DATA GLB_CLOCK  cdac
+DATA PW_LEVEL  a23:0
+DATA SLEW      a23:0
+DATA PW_LEVEL  a22:0
+DATA SLEW      a22:0
+DATA PW_LEVEL  a21:0
+DATA SLEW      a21:0
+DATA PW_LEVEL  a20:0
+DATA SLEW      a20:0
+DATA PW_LEVEL  a19:0
+DATA SLEW      a19:0
+DATA PW_LEVEL  a18:0
+DATA SLEW      a18:0
+DATA PW_LEVEL  a17:0
+DATA SLEW      a17:0
+DATA PW_LEVEL  a16:0
+DATA SLEW      a16:0
+DATA PW_LEVEL  a15:0
+DATA SLEW      a15:0
+DATA PW_LEVEL  a14:0
+DATA SLEW      a14:0
+DATA PW_LEVEL  a13:0
+DATA SLEW      a13:0
+DATA PW_LEVEL  a12:0
+DATA SLEW      a12:0
+DATA PW_LEVEL  a3:0
+DATA SLEW      a3:0
+DATA PW_LEVEL  nas:0
+DATA SLEW      nas:0
+DATA PW_LEVEL  nuds:0
+DATA SLEW      nuds:0
+DATA PW_LEVEL  r_w:0
+DATA SLEW      r_w:0
+DATA SLEW      cdac:0
+DATA PW_LEVEL  ide_irq:0
+DATA SLEW      ide_irq:0
+DATA PW_LEVEL  override:0
+DATA SLEW      override:1
+DATA PW_LEVEL  dtack:0
+DATA SLEW      dtack:1
+DATA PW_LEVEL  irq_synched_last:0
+DATA SLEW      irq_synched_last:1
+DATA PW_LEVEL  greenledout:0
+DATA SLEW      greenledout:1
+DATA PW_LEVEL  nidereset:0
+DATA SLEW      nidereset:1
+DATA PW_LEVEL  nls245ena:0
+DATA SLEW      nls245ena:1
+DATA PW_LEVEL  ls245datadirwrite:0
+DATA SLEW      ls245datadirwrite:1
+DATA PW_LEVEL  ncs0:0
+DATA SLEW      ncs0:1
+DATA PW_LEVEL  ncs1:0
+DATA SLEW      ncs1:1
+DATA PW_LEVEL  nior:0
+DATA SLEW      nior:1
+DATA PW_LEVEL  niow:0
+DATA SLEW      niow:1
+DATA PW_LEVEL  nint2:0
+DATA SLEW      nint2:1
+DATA PW_LEVEL  d15:0
+DATA SLEW      d15:1
+DATA PW_LEVEL  d14:0
+DATA SLEW      d14:1
+DATA PW_LEVEL  irq_passing_enabled:0
+DATA SLEW      irq_passing_enabled:0
+DATA PW_LEVEL  interrupt_flag:0
+DATA SLEW      interrupt_flag:0
+DATA PW_LEVEL  jeejee:0
+DATA SLEW      jeejee:0
+DATA PW_LEVEL  irq_synch0:0
+DATA SLEW      irq_synch0:0
+DATA PW_LEVEL  irq_synched:0
+DATA SLEW      irq_synched:0
+DATA PW_LEVEL  irq_synched_last_last:0
+DATA SLEW      irq_synched_last_last:0
+DATA PW_LEVEL  irq_rose:0
+DATA SLEW      irq_rose:0
+DATA PW_LEVEL  its_me_cnt3:0
+DATA SLEW      its_me_cnt3:0
+DATA PW_LEVEL  its_me_cnt2:0
+DATA SLEW      its_me_cnt2:0
+DATA PW_LEVEL  its_me_cnt1:0
+DATA SLEW      its_me_cnt1:0
+DATA PW_LEVEL  its_me_cnt0:0
+DATA SLEW      its_me_cnt0:0
+DATA PW_LEVEL  d15_id_output:0
+DATA SLEW      d15_id_output:0
+DATA PW_LEVEL  DE0000_DONE_R:0
+DATA SLEW      DE0000_DONE_R:0
+DATA PW_LEVEL  stidreg2:0
+DATA SLEW      stidreg2:0
+DATA PW_LEVEL  stidreg1:0
+DATA SLEW      stidreg1:0
+DATA PW_LEVEL  stidreg0:0
+DATA SLEW      stidreg0:0
+DATA PW_LEVEL  override_0:0
+DATA SLEW      override_0:0
+DATA PW_LEVEL  dtack_0:0
+DATA SLEW      dtack_0:0
+DATA PW_LEVEL  d15_0:0
+DATA SLEW      d15_0:0
+DATA PW_LEVEL  RN_irq_synched_last:0
+END

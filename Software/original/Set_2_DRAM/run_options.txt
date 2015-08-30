@@ -1,0 +1,63 @@
+#-- Synopsys, Inc.
+#-- Version E-2011.03LC
+#-- Project file C:\users\bot2\documents\protein i_new_set\set_2_dram\run_options.txt
+#-- Written on Sun Jun 16 17:07:39 2013
+
+
+#project files
+add_file -verilog "$LIB/cpld/lattice.v"
+add_file -verilog "C:/ispLEVER_Classic1_5/ispcpld/generic/verilog/synplify/generic.v"
+add_file -verilog "./protein_1_set_2_dram.h"
+add_file -verilog "../work_sources/Set_2_DRAM.v"
+
+
+#implementation: "set_2_dram"
+impl -add set_2_dram -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+
+#device options
+set_option -technology mach
+set_option -part M4A5-64
+set_option -package ""
+set_option -speed_grade ""
+set_option -part_companion ""
+
+#compilation/mapping options
+set_option -top_module "Set_2_DRAM"
+
+# mapper_options
+set_option -frequency 1
+set_option -write_verilog 0
+set_option -write_vhdl 0
+
+# Lattice ispMACH4000
+set_option -maxfanin 20
+set_option -maxterms 16
+set_option -areadelay 0
+set_option -disable_io_insertion 0
+
+# NFilter
+set_option -popfeed 0
+set_option -constprop 0
+set_option -createhierarchy 0
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 1
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "./Set_2_DRAM.edi"
+
+#set log file 
+set_option log_file "C:/users/bot2/documents/protein i_new_set/set_2_dram/set_2_dram.srf" 
+impl -active "set_2_dram"

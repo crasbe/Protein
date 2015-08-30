@@ -1,0 +1,9 @@
+
+GROUP MACH_SEG_A jeejee its_me_cnt3 stidreg1 d15_id_output DE0000_DONE_R 
+      d15_0 dtack_0 override_0 
+GROUP MACH_SEG_B greenledout irq_synched_last RN_irq_synched_last stidreg0 
+      stidreg2 irq_rose irq_synched irq_synched_last_last dtack 
+GROUP MACH_SEG_C interrupt_flag irq_passing_enabled its_me_cnt2 its_me_cnt1 
+      its_me_cnt0 d15 d14 nint2 ide_irq irq_synch0 
+GROUP MACH_SEG_D nidereset niow nior nls245ena override ls245datadirwrite 
+      ncs1 ncs0 

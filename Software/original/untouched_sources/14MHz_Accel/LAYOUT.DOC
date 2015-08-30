@@ -1,0 +1,136 @@
+DOCUMENTATION LAYOUT    V 2.0
+=============================
+
+
+
+I added two multiplexer to switch between 7 and 14 MHz. This was necessary
+because some software had problems at 14 MHz (e.g. Janus.library). The
+multiplexers I use has four channels with each two inputs and one output.
+Five signals (\VMA, \VPA, E-CLK, \DTACK and CLK) must be switched.
+So we need two multiplexers.
+
+The multiplexer MUST! be a fast (F) type, otherwise the gate delay is
+be too long.
+
+Here's how I connected it :
+
+    16       15       14       13       12       11       10        9
+     |        |        |        |        |        |        |        |
+|-------------------------------------------------------------------------|
+|   +5V      EN     \DTACK   \DTACK   \DTACK     CLK      CLK      CLK    |
+|                   original  sync      out     7MHz     14MHz     out    |
+|                                                                         |
+|                                74 F 157                                 |
+|                                                                         |
+|           \VPA     \VPA     \VPA     E-CLK    E-CLK    E-CLK            |
+|   SEL    original  sync      out    original  DIV 2     out     Ground  |
+|-------------------------------------------------------------------------|
+     |        |        |        |        |        |        |        |
+     1        2        3        4        5        6        7        8
+
+
+
+    16       15       14       13       12       11       10        9
+     |        |        |        |        |        |        |        |
+|-------------------------------------------------------------------------|
+|   +5V      EN                                 \VMA     \VMA      \VMA   |
+|                                              orginal   sync       out   |
+|                                                                         |
+|                                74 F 157                                 |
+|                                                                         |
+|                                                                         |
+|   SEL                                                           Ground  |
+|-------------------------------------------------------------------------|
+     |        |        |        |        |        |        |        |
+     1        2        3        4        5        6        7        8
+
+
+
+The SEL is now synconized with 7 MHz so that you simply can switch between
+7 and 14 MHz without \HALT (this was in the last release) while the Amiga
+is running and it shouldn't crash.
+This is done with a D-flipflop 74F74 (also fast (F) type!) :
+
+   14       13       12       11       10        9        8
+    |        |        |        |        |        |        |
+|------------------------------------------------------------|
+|  +5V                                                       |
+|                                                            |
+|                          74 F 74                           |
+|                                                            |
+|                                                            |
+|           Switch                                           |
+|  +5V      input    7 MHz     +5V      SEL            Ground|
+|------------------------------------------------------------|
+     |        |        |        |        |        |       |
+     1        2        3        4        5        6       7
+
+
+(Switch input is +5V or Ground)
+(SEL is select output used by the 74F157 as input)
+
+
+
+The next thing I added is a jumper (J1). This will vary the way \DTACK is
+syncronized. The middle must be connected with the left OR the right side.
+(74LS27/2 is connected with 74LS74/9 or with \DTACK - some machines only
+work one way ... because it's an Amiga !)
+
+To smooth the flanks I added eight (C3-C10) capacitors (100nF).
+
+
+
+REBUILDING :
+-----------------------------------------------------------------------------
+
+It's double sided. The lower side is the reflected image.
+I made a hardcopy and it looks well. For better results use a 2:1 scale if
+you can.
+There's only one through-connect (between the 74F157 and 74LS112).
+
+Amiga 500 owner should not plug the MC 68000 in a socket (it's to high), but
+they will need a 64 pin socket as a distance to the ROM.
+
+The accelerator plugs by two 32 pin strips in the CPU-socket.
+
+
+Parts you need besides :
+
+- 2x 74 F 157
+- 1x 74 F 74
+- 1x 74 F 86 (replace for 74 LS 86)
+- 8x 100nF
+- 2x 22pF
+- 2x 560 Ohm
+- 1x 10KOhm
+- 1x 64 pin socket
+- 2x 32 pin strips
+- 1x single switch
+
+-----------------------------------------------------------------------------
+
+Wanting to know the acceleration precise I wrote a CPU performance test
+program (See performance directory). Look at my tests and things come clear.
+
+
+Special thanks to Livio Plos for his great and cheap Amiga accelerator.
+Thanks Livio !
+
+Any critiques, suggestions, questions, etc. are welcome !
+
+Joerg Richter
+Dresdener Strasse 21
+2150 Buxtehude
+GERMANY
+
+EMail: Joerg.Richter@arbi.informatik.uni-oldenburg.de
+
+
+---------------------------------------------------------------------------
+
+How to get a PCB :
+
+If you want this PCB you may buy it from Joerg or Livio for DM 50,- or US 30$,
+this include shareware contribute.
+
+

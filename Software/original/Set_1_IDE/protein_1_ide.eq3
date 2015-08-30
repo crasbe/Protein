@@ -1,0 +1,250 @@
+ ispLEVER Classic 1.5.00.05.39.l1 Linked Equations File
+Copyright(C), 1992-2011, Lattice Semiconductor Corp.
+All Rights Reserved.
+
+Design autoboot_ide created  Sat Jun 15 14:40:26 2013
+
+
+ P-Terms   Fan-in  Fan-out  Type  Name (attributes)
+---------  ------  -------  ----  -----------------
+   0          0        1    Pin   override 
+   1          1        1    Pin   override.OE 
+   0          0        1    Pin   dtack 
+   1          1        1    Pin   dtack.OE 
+   1          1        1    Pin   irq_synched_last.D 
+   1          1        1    Pin   irq_synched_last.C 
+   1          1        1    Pin   greenledout.D 
+   1          1        1    Pin   greenledout.C 
+   1          0        1    Pin   nidereset.D 
+   1          1        1    Pin   nidereset.C 
+   1         11        1    Pin   nls245ena- 
+   1          1        1    Pin   ls245datadirwrite 
+   1          1        1    Pin   ncs0 
+   1          1        1    Pin   ncs1 
+   1         12        1    Pin   nior- 
+   1         13        1    Pin   niow- 
+   0          0        1    Pin   nint2 
+   1          1        1    Pin   nint2.OE 
+   5         17        1    Pin   d15 
+   1          1        1    Pin   d15.OE 
+   0          0        1    Pin   d14 
+   1          1        1    Pin   d14.OE 
+   2         19        1    Node  irq_passing_enabled.T 
+   1          1        1    Node  irq_passing_enabled.C 
+   3         21        1    Node  interrupt_flag.D- 
+   1          1        1    Node  interrupt_flag.C 
+   2         19        1    Node  jeejee.T 
+   1          1        1    Node  jeejee.C 
+   1          1        1    Node  irq_synch0.D 
+   1          1        1    Node  irq_synch0.C 
+   1          1        1    Node  irq_synched.D 
+   1          1        1    Node  irq_synched.C 
+   1          1        1    Node  irq_synched_last_last.D 
+   1          1        1    Node  irq_synched_last_last.C 
+   1          4        1    Node  irq_rose.D 
+   1          1        1    Node  irq_rose.C 
+   7         17        1    NodeX1  its_me_cnt3.D.X1 
+   1         11        1    NodeX2  its_me_cnt3.D.X2 
+   1          1        1    Node  its_me_cnt3.C 
+   7         16        1    NodeX1  its_me_cnt2.D.X1 
+   1         10        1    NodeX2  its_me_cnt2.D.X2 
+   1          1        1    Node  its_me_cnt2.C 
+   8         15        1    Node  its_me_cnt1.D 
+   1          1        1    Node  its_me_cnt1.C 
+   4         14        1    Node  its_me_cnt0.D 
+   1          1        1    Node  its_me_cnt0.C 
+   2          5        1    NodeX1  d15_id_output.D.X1 
+   1          7        1    NodeX2  d15_id_output.D.X2 
+   1          1        1    Node  d15_id_output.C 
+   2          4        1    Node  DE0000_DONE_R.D 
+   1          1        1    Node  DE0000_DONE_R.C 
+   3         16        1    Node  stidreg2.T 
+   1          1        1    Node  stidreg2.C 
+   4         16        1    Node  stidreg1.T 
+   1          1        1    Node  stidreg1.C 
+   5         17        1    Node  stidreg0.T 
+   1          1        1    Node  stidreg0.C 
+   4         12        1    Node  override_0 
+   4         13        1    Node  dtack_0 
+   3         14        1    Node  d15_0 
+=========
+ 105                 P-Term Total: 105
+                       Total Pins: 32
+                      Total Nodes: 19
+            Average P-Term/Output: 2
+
+
+Equations:
+
+override = (0);
+
+override.OE = (override_0);
+
+dtack = (0);
+
+dtack.OE = (dtack_0);
+
+irq_synched_last.D = (irq_synched.Q);
+
+irq_synched_last.C = (cdac);
+
+greenledout.D = (!DE0000_DONE_R.Q);
+
+greenledout.C = (cdac);
+
+nidereset.D = (1);
+
+nidereset.C = (cdac);
+
+!nls245ena = (!a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15);
+
+ls245datadirwrite = (!r_w);
+
+ncs0 = (a12);
+
+ncs1 = (!a12);
+
+!nior = (!a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & r_w & !nas & !a14 & !a15);
+
+!niow = (!a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !r_w & !nas & !a14 & !a15 & !nuds);
+
+nint2 = (0);
+
+nint2.OE = (interrupt_flag.Q);
+
+d15 = (!a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & d15_id_output.Q
+     # !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !a14 & a15 & !a12 & !a13 & irq_synched.Q
+     # !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !a14 & a15 & !a12 & !a13 & irq_passing_enabled.Q
+     # !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !a14 & a15 & a12 & !a13 & interrupt_flag.Q
+     # !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !a14 & a15 & !a12 & a13 & jeejee.Q);
+
+d15.OE = (d15_0);
+
+d14 = (0);
+
+d14.OE = (d15_0);
+
+irq_passing_enabled.T = (!its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !r_w & !a14 & a15 & !a12 & !a13 & !d15 & irq_passing_enabled.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !r_w & !a14 & a15 & !a12 & !a13 & d15 & !irq_passing_enabled.Q);
+
+irq_passing_enabled.C = (cdac);
+
+!interrupt_flag.D = (irq_passing_enabled.Q & irq_rose.Q
+     # !irq_rose.Q & !interrupt_flag.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !r_w & !a14 & a15 & a12 & !a13 & !d15);
+
+interrupt_flag.C = (cdac);
+
+jeejee.T = (!its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !r_w & !a14 & a15 & !a12 & a13 & !d15 & jeejee.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !r_w & !a14 & a15 & !a12 & a13 & d15 & !jeejee.Q);
+
+jeejee.C = (cdac);
+
+irq_synch0.D = (ide_irq);
+
+irq_synch0.C = (cdac);
+
+irq_synched.D = (irq_synch0.Q);
+
+irq_synched.C = (cdac);
+
+irq_synched_last_last.D = (irq_synched_last.Q);
+
+irq_synched_last_last.C = (cdac);
+
+irq_rose.D = (DE0000_DONE_R.Q & irq_synched.Q & irq_synched_last.Q & !irq_synched_last_last.Q);
+
+irq_rose.C = (cdac);
+
+its_me_cnt3.D.X1 = (its_me_cnt3.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # its_me_cnt3.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15
+     # its_me_cnt3.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a12
+     # its_me_cnt3.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a13
+     # its_me_cnt3.Q & its_me_cnt2.Q & its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # its_me_cnt2.Q & its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !nas & a14
+     # its_me_cnt2.Q & its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !nas & a15 & a12 & a13);
+
+its_me_cnt3.D.X2 = (its_me_cnt2.Q & its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas);
+
+its_me_cnt3.C = (cdac);
+
+its_me_cnt2.D.X1 = (its_me_cnt2.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # its_me_cnt2.Q & its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # its_me_cnt2.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15
+     # its_me_cnt2.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a12
+     # its_me_cnt2.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a13
+     # its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !nas & a14
+     # its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & !a18 & a19 & a20 & !a21 & a22 & a23 & !nas & a15 & a12 & a13);
+
+its_me_cnt2.D.X2 = (its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas);
+
+its_me_cnt2.C = (cdac);
+
+its_me_cnt1.D = (!its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # !its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15
+     # its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15
+     # !its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a12
+     # its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a12
+     # !its_me_cnt1.Q & its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a13
+     # its_me_cnt1.Q & !its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a13);
+
+its_me_cnt1.C = (cdac);
+
+its_me_cnt0.D = (!its_me_cnt0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # !its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15
+     # !its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a12
+     # !its_me_cnt0.Q & !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a13);
+
+its_me_cnt0.C = (cdac);
+
+d15_id_output.D.X1 = (d15_id_output.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & !its_me_cnt1.Q & its_me_cnt0.Q & !d15_id_output.Q);
+
+d15_id_output.D.X2 = (!its_me_cnt3.Q & !its_me_cnt2.Q & !its_me_cnt1.Q & its_me_cnt0.Q & stidreg2.Q & !stidreg1.Q & !stidreg0.Q);
+
+d15_id_output.C = (cdac);
+
+DE0000_DONE_R.D = (DE0000_DONE_R.Q
+     # stidreg2.Q & !stidreg1.Q & !stidreg0.Q);
+
+DE0000_DONE_R.C = (cdac);
+
+stidreg2.T = (stidreg2.Q & stidreg1.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & stidreg2.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !r_w
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & stidreg1.Q & stidreg0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & r_w);
+
+stidreg2.C = (cdac);
+
+stidreg1.T = (stidreg2.Q & stidreg1.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & stidreg2.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !r_w
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & stidreg1.Q & stidreg0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & r_w
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !stidreg1.Q & stidreg0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !r_w);
+
+stidreg1.C = (cdac);
+
+stidreg0.T = (stidreg2.Q & stidreg1.Q & stidreg0.Q
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & stidreg0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !r_w
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !stidreg2.Q & stidreg1.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & r_w
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & !stidreg2.Q & !stidreg1.Q & !stidreg0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !a3
+     # !its_me_cnt3.Q & !its_me_cnt2.Q & its_me_cnt1.Q & !its_me_cnt0.Q & stidreg2.Q & !stidreg1.Q & !stidreg0.Q & !a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & r_w);
+
+stidreg0.C = (cdac);
+
+override_0 = (!a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !a14 & !a15
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !a14 & !a12
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !a14 & !a13);
+
+dtack_0 = (!a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & !nas
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a15
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a12
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & !nas & !a14 & !a13);
+
+d15_0 = (!a16 & a17 & a18 & a19 & a20 & !a21 & a22 & a23 & r_w & !nas
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & r_w & !nas & !a14 & a15 & !a12
+     # !a16 & a17 & a19 & a20 & !a21 & a22 & a23 & r_w & !nas & !a14 & a15 & !a13);
+
+
+Reverse-Polarity Equations:
+

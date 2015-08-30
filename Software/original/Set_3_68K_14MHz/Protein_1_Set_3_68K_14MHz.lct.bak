@@ -1,0 +1,124 @@
+
+[Device]
+Family = M4A5;
+PartNumber = M4A5-32/32-10JC;
+Package = 44PLCC;
+PartType = M4A5-32/32;
+Speed = -10;
+Operating_condition = COM;
+Status = Production;
+EN_PinGLB = Yes;
+EN_PinMacrocell = Yes;
+
+[Revision]
+Parent = m4a5.lci;
+DATE = 06/21/2011;
+TIME = 20:38:01;
+Source_Format = ABEL_Schematic;
+Synthesis = Synplify;
+
+[Ignore Assignments]
+
+[Clear Assignments]
+
+[Backannotate Assignments]
+
+[Global Constraints]
+
+[Location Assignments]
+layer = OFF;
+AS_ = Pin, 2, -, A, -;
+CDAC = Pin, 3, -, A, -;
+Clock_7_MHz = Pin, 11, -, -, -;
+DTACKin_ = Pin, 4, -, A, -;
+E_14MHz = Pin, 5, -, A, -;
+SW_7_14MHz = Pin, 6, -, A, -;
+VMA_CPU = Pin, 7, -, A, -;
+VPA_ = Pin, 8, -, A, -;
+Clock_7_14_MHz = Pin, 36, -, D, -;
+DTACKout_ = Pin, 9, -, A, -;
+E = Pin, 14, -, B, -;
+VMA_ = Pin, 15, -, B, -;
+VPA_Out = Pin, 16, -, B, -;
+
+[Group Assignments]
+layer = OFF;
+
+[Resource Reservations]
+layer = OFF;
+
+[Fitter Report Format]
+
+[Power]
+
+[Source Constraint Option]
+
+[Fast Bypass]
+
+[OSM Bypass]
+
+[Input Registers]
+
+[Netlist/Delay Format]
+
+[IO Types]
+layer = OFF;
+
+[Pullup]
+
+[Slewrate]
+SLOW = Clock_7_14_MHz, DTACKout_, E, VMA_, VPA_Out;
+
+[Region]
+
+[Timing Constraints]
+
+[HSI Attributes]
+
+[Input Delay]
+
+[Pin attributes list]
+
+[LOCATION ASSIGNMENTS LIST]
+
+[RESOURCE RESERVATIONS LIST]
+
+[Timing Analyzer]
+
+[global constraints list]
+
+[opt global constraints list]
+
+[Global Constraints Process Update]
+
+[Explorer Results]
+
+[Explorer User Settings]
+
+[VHDL synplify constraints]
+
+[VHDL spectrum constraints]
+
+[verilog synplify constraints]
+
+[verilog spectrum constraints]
+
+[VHDL synplify constraints list]
+
+[VHDL spectrum constraints list]
+
+[verilog synplify constraints list]
+
+[verilog spectrum constraints list]
+
+[Constraint Version]
+version = 1.0;
+
+[ORP ASSIGNMENTS]
+layer = OFF;
+
+[Node attribute]
+layer = OFF;
+
+[SYMBOL/MODULE attribute]
+layer = OFF;

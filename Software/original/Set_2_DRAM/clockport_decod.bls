@@ -1,0 +1,34 @@
+#$ TOOL SCH2BLF 1.5.00.01 
+#$ TITLE clockport_decod.bls 
+#$ PROPERTY Lattice LOCK C_CS 21
+#$ PROPERTY Lattice LOCK A23 41
+#$ PROPERTY Lattice LOCK A22 42
+#$ PROPERTY Lattice LOCK A20 3
+#$ PROPERTY Lattice LOCK A19 5
+#$ PROPERTY Lattice LOCK A21 43
+#$ PROPERTY Lattice LOCK A18 7
+#$ PROPERTY Lattice LOCK A17 9
+#$ PROPERTY Lattice LOCK A16 15
+#$ MODULE clockport_decod 
+#$ PINS 9  C_CS:21 A21:43 A19:5 A20:3 A23:41 A22:42 A18:7 A17:9 A16:15
+#$ NODES 11 N_15 N_8 N_9 N_10 N_11 N_12 N_13 N_14 N_5 N_6 N_7 
+#$ INTERFACE g_2nand 3 A'i' B'i' YN'o'
+#$ INTERFACE g_4and 5 A'i' B'i' C'i' D'i' Y'o'
+#$ INTERFACE g_4and4 5 AN'i' BN'i' CN'i' DN'i' Y'o'
+#$ INTERFACE g_input 2 I'i' O'o'
+#$ INTERFACE g_output 2 I'i' O'o'
+#$ PRIMITIVE I11 g_2nand 3 N_8 N_9 N_15
+#$ PRIMITIVE I12 g_4and 5 N_10 N_11 N_12 N_13 N_8
+#$ PRIMITIVE I13 g_4and4 5 N_14 N_5 N_6 N_7 N_9
+#$ PRIMITIVE I1 g_input 2 A23 N_10
+#$ PRIMITIVE I2 g_input 2 A22 N_11
+#$ PRIMITIVE I3 g_input 2 A20 N_12
+#$ PRIMITIVE I4 g_input 2 A19 N_13
+#$ PRIMITIVE I5 g_input 2 A21 N_14
+#$ PRIMITIVE I6 g_input 2 A18 N_5
+#$ PRIMITIVE I7 g_input 2 A17 N_6
+#$ PRIMITIVE I8 g_input 2 A16 N_7
+#$ PRIMITIVE I14 g_output 2 N_15 C_CS
+.model clockport_decod
+
+.end

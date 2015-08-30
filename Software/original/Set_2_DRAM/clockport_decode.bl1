@@ -1,0 +1,104 @@
+#$ TOOL ispLEVER Classic 1.5.00.05.39.l1
+#$ DATE Sun Jun 16 20:51:04 2013
+#$ TITLE clockport_decode.bls 
+#$ MODULE clockport_decode
+#$ PINS 32 dram_nlcas dram_nucas mux_switch dram_ras3 A1 A2 A3 A4 A5 A6 cpu_nas cpu_nlds \
+#  cpu_nuds cpu_clk cpu_reset enab dram_ras2 dram_ras1 dram_nras0 cpu_d15 cpu_d14 cpu_d13 \
+#  cpu_d12 C_CS'o'  A16 A17 A18 A21 A19 A20 A22 A23
+#$ NODES 23 N_27'o'  N_28'o'  N_29'o'  N_24'o'  N_12'o'  N_13'o'  N_14'o'  N_15'o'  N_16'o'  N_17'o'  N_18'o'  N_19'o'  N_20'o'  \
+#  N_1'o'  N_2'o'  N_3'o'  N_4'o'  N_5'o'  N_6'o'  N_7'o'  N_8'o'  N_10'o'  N_11'o' 
+#$ INTERFACE set_2_dram  31 cpu_a1'i'  cpu_a16'i'  cpu_a17'i'  cpu_a18'i'  cpu_a19'i'  cpu_a2'i'  cpu_a20'i'  \
+#  cpu_a21'i'  cpu_a22'i'  cpu_a23'i'  cpu_a3'i'  cpu_a4'i'  cpu_a5'i'  cpu_a6'i'  cpu_clk'i'  cpu_nas'i'  cpu_nlds'i'  cpu_nreset'i'  \
+#  cpu_nuds'i'  enab'i'  cpu_d12'o'  cpu_d13'o'  cpu_d14'o'  cpu_d15'o'  dram_nlcas'o'  dram_nras0'o'  dram_nras1'o'  \
+#  dram_nras2'o'  dram_nras3'o'  dram_nucas'o'  mux_switch'o' 
+#$ INSTANCE I15 set_2_dram 31 N_12 N_1 N_2 N_3 N_5 N_13 N_6 N_4 N_7 N_8 N_14 N_15 N_16 N_17 \
+#  N_29 N_18 N_19 N_28 N_20 N_27 cpu_d12 cpu_d13 cpu_d14 cpu_d15 dram_nlcas dram_nras0 \
+#  dram_ras1 dram_ras2 dram_ras3 dram_nucas mux_switch
+.model clockport_decode
+.inputs N_11.BLIF N_10.BLIF N_8.BLIF N_7.BLIF N_6.BLIF N_5.BLIF N_4.BLIF \
+N_3.BLIF N_2.BLIF N_1.BLIF A23.BLIF enab.BLIF cpu_reset.BLIF cpu_clk.BLIF \
+cpu_nuds.BLIF A22.BLIF cpu_nlds.BLIF cpu_nas.BLIF A6.BLIF A5.BLIF A4.BLIF \
+A3.BLIF A2.BLIF A1.BLIF A20.BLIF A19.BLIF A21.BLIF A18.BLIF A17.BLIF A16.BLIF \
+N_24.BLIF
+.outputs N_24 N_11 N_10 N_8 N_27 N_28 N_29 N_20 N_7 N_19 N_18 N_17 N_16 N_15 \
+N_14 N_13 N_12 N_6 N_5 N_4 N_3 N_2 N_1 C_CS
+.names N_11.BLIF N_10.BLIF N_24
+0- 1
+-0 1
+11 0
+.names N_5.BLIF N_6.BLIF N_7.BLIF N_8.BLIF N_11
+1111 1
+--0- 0
+-0-- 0
+0--- 0
+---0 0
+.names N_4.BLIF N_3.BLIF N_2.BLIF N_1.BLIF N_10
+0000 1
+--1- 0
+-1-- 0
+1--- 0
+---1 0
+.names A23.BLIF N_8
+1 1
+0 0
+.names enab.BLIF N_27
+1 1
+0 0
+.names cpu_reset.BLIF N_28
+1 1
+0 0
+.names cpu_clk.BLIF N_29
+1 1
+0 0
+.names cpu_nuds.BLIF N_20
+1 1
+0 0
+.names A22.BLIF N_7
+1 1
+0 0
+.names cpu_nlds.BLIF N_19
+1 1
+0 0
+.names cpu_nas.BLIF N_18
+1 1
+0 0
+.names A6.BLIF N_17
+1 1
+0 0
+.names A5.BLIF N_16
+1 1
+0 0
+.names A4.BLIF N_15
+1 1
+0 0
+.names A3.BLIF N_14
+1 1
+0 0
+.names A2.BLIF N_13
+1 1
+0 0
+.names A1.BLIF N_12
+1 1
+0 0
+.names A20.BLIF N_6
+1 1
+0 0
+.names A19.BLIF N_5
+1 1
+0 0
+.names A21.BLIF N_4
+1 1
+0 0
+.names A18.BLIF N_3
+1 1
+0 0
+.names A17.BLIF N_2
+1 1
+0 0
+.names A16.BLIF N_1
+1 1
+0 0
+.names N_24.BLIF C_CS
+1 1
+0 0
+.end

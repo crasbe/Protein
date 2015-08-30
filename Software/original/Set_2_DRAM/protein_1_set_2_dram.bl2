@@ -1,0 +1,836 @@
+#$ TOOL ispLEVER Classic 1.5.00.05.39.l1
+#$ DATE Sun Jun 16 20:51:04 2013
+#$ TITLE clockport_decode.bls 
+#$ MODULE protein_1_set_2_dram
+#$ PINS 32 dram_nlcas'o'  dram_nucas'o'  mux_switch'o'  dram_ras3'o'  A1 A2 A3 A4 A5 A6 cpu_nas \
+#  cpu_nlds cpu_nuds cpu_clk cpu_reset enab dram_ras2'o'  dram_ras1'o'  dram_nras0'o'  cpu_d15'o'  \
+#  cpu_d14'o'  cpu_d13'o'  cpu_d12'o'  C_CS'o'  A16 A17 A18 A21 A19 A20 A22 A23
+#$ NODES 165 N_27'o'  N_28'o'  N_29'o'  N_24'o'  N_12'o'  N_13'o'  N_14'o'  N_15'o'  N_16'o'  N_17'o'  N_18'o'  N_19'o'  N_20'o'  \
+#  N_1'o'  N_2'o'  N_3'o'  N_4'o'  N_5'o'  N_6'o'  N_7'o'  N_8'o'  N_10'o'  N_11'o'  I15/inst_access_ras I15/inst_rfsh_cas \
+#  I15/rfsh_select_0_ I15/rfsh_select_1_ I15/inst_cpu_nas_z I15/vcc_n_n \
+#  I15/rfsh_select4 I15/inst_access_cas I15/inst_read_cycle I15/G_35 I15/G_37 \
+#  I15/inst_write_cycle I15/cpu_d1215 I15/inst_autoconf_on I15/datout_0__n \
+#  I15/datout_1__n I15/datout_3__n I15/N_33 I15/rfsh_ras I15/un1_cpu_nlds_0__n \
+#  I15/un2_dram_nras0 I15/which_ras_3_2_0__n I15/un2_dram_nras1 \
+#  I15/which_ras_3_3_0__n I15/un2_dram_nras2 I15/which_ras_3_4_0__n \
+#  I15/un2_dram_nras3 I15/which_ras_3_5_0__n I15/un6_dram_nras0 I15/un6_dram_nras1 \
+#  I15/un6_dram_nras2 I15/un6_dram_nras3 I15/un2_dram_nlcas I15/un2_dram_nucas \
+#  I15/un6_dram_nras3_1 I15/un2_dram_nucas_1 I15/mem_selected I15/datout_0_x3_2_ \
+#  I15/N_24 I15/un1_cpu_a19 I15/autoconf_on6 I15/N_28 I15/N_26 I15/un1_read_cycle11 \
+#  I15/read_cycle_0_sqmuxa I15/cpu_a17_i I15/cpu_a16_i I15/cpu_a20_i I15/cpu_a18_i \
+#  I15/un1_cpu_nlds_i_0__n I15/autoconf_on6_i I15/enab_i I15/cpu_a5_i I15/cpu_a4_i \
+#  I15/cpu_a22_i I15/cpu_a21_i I15/cpu_a23_i I15/cpu_nuds_i I15/cpu_nlds_i \
+#  I15/rfsh_select_i_0__n I15/rfsh_select_i_1__n I15/rfsh_cas_i I15/cpu_clk_i \
+#  I15/cpu_a21_c I15/cpu_a22_c I15/cpu_a23_c I15/cpu_a1_c I15/cpu_a2_c I15/cpu_a3_c \
+#  I15/cpu_a4_c I15/cpu_a5_c I15/cpu_a6_c I15/cpu_a16_c I15/cpu_a17_c I15/cpu_a18_c \
+#  I15/cpu_a19_c I15/cpu_a20_c I15/cpu_nas_c I15/cpu_nlds_c I15/cpu_nuds_c \
+#  I15/cpu_clk_c I15/cpu_nreset_c I15/enab_c I15/mux_switchDFFRHreg \
+#  I15/read_cycle_0_sqmuxa_i I15/un1_read_cycle11_i I15/read_cycle_i I15/N_3_0 \
+#  I15/write_cycle_i I15/N_2_0 I15/datout_0_3__n I15/cpu_a6_c_i I15/cpu_a1_c_i \
+#  I15/N_24_0 I15/cpu_a2_c_i I15/N_26_0 I15/cpu_a3_c_i I15/datout_0_1__n I15/N_28_i \
+#  I15/datout_0_0__n I15/mem_selected_0 I15/which_ras_3_4_i_0__n \
+#  I15/which_ras_3_5_i_0__n I15/which_ras_3_2_i_0__n I15/which_ras_3_3_i_0__n \
+#  I15/un2_dram_nucas_i I15/un1_dram_nucas_i I15/un2_dram_nlcas_i \
+#  I15/un1_dram_nlcas_i I15/un2_dram_nras3_i I15/un6_dram_nras3_i \
+#  I15/un1_dram_nras3_i I15/un2_dram_nras2_i I15/un6_dram_nras2_i \
+#  I15/un1_dram_nras2_i I15/un2_dram_nras1_i I15/un6_dram_nras1_i \
+#  I15/un1_dram_nras1_i I15/un2_dram_nras0_i I15/un6_dram_nras0_i \
+#  I15/un1_dram_nras0_i I15/datout_0_1_0__n I15/un6_dram_nras0_1 \
+#  I15/un6_dram_nras2_1 I15/which_ras_3_2_1_0__n I15/which_ras_3_3_1_0__n \
+#  I15/which_ras_3_4_1_0__n I15/which_ras_3_5_1_0__n I15/mem_selected_0_1 \
+#  I15/mem_selected_0_2 I15/un1_cpu_a19_1 I15/un1_cpu_a19_2 I15/un1_cpu_a19_3 \
+#  I15/un1_cpu_a19_4 I15/un1_cpu_a19_5 I15/un1_cpu_a19_6 I15/autoconf_on6_1 \
+#  I15/autoconf_on6_2 I15/autoconf_on6_3 I15/cpu_d1215_1 I15/cpu_d1215_2 \
+#  I15/datout_0_1_3__n
+.model clockport_decode
+.inputs N_11.BLIF N_10.BLIF N_8.BLIF N_7.BLIF N_6.BLIF N_5.BLIF N_4.BLIF \
+N_3.BLIF N_2.BLIF N_1.BLIF A23.BLIF enab.BLIF cpu_reset.BLIF cpu_clk.BLIF \
+cpu_nuds.BLIF A22.BLIF cpu_nlds.BLIF cpu_nas.BLIF A6.BLIF A5.BLIF A4.BLIF \
+A3.BLIF A2.BLIF A1.BLIF A20.BLIF A19.BLIF A21.BLIF A18.BLIF A17.BLIF A16.BLIF \
+N_24.BLIF N_12.BLIF N_13.BLIF N_14.BLIF N_15.BLIF N_16.BLIF N_17.BLIF \
+N_29.BLIF N_18.BLIF N_19.BLIF N_28.BLIF N_20.BLIF N_27.BLIF \
+I15/inst_access_ras.BLIF I15/inst_rfsh_cas.BLIF I15/rfsh_select_0_.BLIF \
+I15/rfsh_select_1_.BLIF I15/inst_cpu_nas_z.BLIF I15/vcc_n_n.BLIF \
+I15/rfsh_select4.BLIF I15/inst_access_cas.BLIF I15/inst_read_cycle.BLIF \
+I15/G_35.BLIF I15/G_37.BLIF I15/inst_write_cycle.BLIF I15/cpu_d1215.BLIF \
+I15/inst_autoconf_on.BLIF I15/datout_0__n.BLIF I15/datout_1__n.BLIF \
+I15/datout_3__n.BLIF I15/N_33.BLIF I15/rfsh_ras.BLIF \
+I15/un1_cpu_nlds_0__n.BLIF I15/un2_dram_nras0.BLIF I15/which_ras_3_2_0__n.BLIF \
+I15/un2_dram_nras1.BLIF I15/which_ras_3_3_0__n.BLIF I15/un2_dram_nras2.BLIF \
+I15/which_ras_3_4_0__n.BLIF I15/un2_dram_nras3.BLIF \
+I15/which_ras_3_5_0__n.BLIF I15/un6_dram_nras0.BLIF I15/un6_dram_nras1.BLIF \
+I15/un6_dram_nras2.BLIF I15/un6_dram_nras3.BLIF I15/un2_dram_nlcas.BLIF \
+I15/un2_dram_nucas.BLIF I15/un6_dram_nras3_1.BLIF I15/un2_dram_nucas_1.BLIF \
+I15/mem_selected.BLIF I15/datout_0_x3_2_.BLIF I15/N_24.BLIF \
+I15/un1_cpu_a19.BLIF I15/autoconf_on6.BLIF I15/N_28.BLIF I15/N_26.BLIF \
+I15/un1_read_cycle11.BLIF I15/read_cycle_0_sqmuxa.BLIF I15/cpu_a17_i.BLIF \
+I15/cpu_a16_i.BLIF I15/cpu_a20_i.BLIF I15/cpu_a18_i.BLIF \
+I15/un1_cpu_nlds_i_0__n.BLIF I15/autoconf_on6_i.BLIF I15/enab_i.BLIF \
+I15/cpu_a5_i.BLIF I15/cpu_a4_i.BLIF I15/cpu_a22_i.BLIF I15/cpu_a21_i.BLIF \
+I15/cpu_a23_i.BLIF I15/cpu_nuds_i.BLIF I15/cpu_nlds_i.BLIF \
+I15/rfsh_select_i_0__n.BLIF I15/rfsh_select_i_1__n.BLIF I15/rfsh_cas_i.BLIF \
+I15/cpu_clk_i.BLIF I15/cpu_a21_c.BLIF I15/cpu_a22_c.BLIF I15/cpu_a23_c.BLIF \
+I15/cpu_a1_c.BLIF I15/cpu_a2_c.BLIF I15/cpu_a3_c.BLIF I15/cpu_a4_c.BLIF \
+I15/cpu_a5_c.BLIF I15/cpu_a6_c.BLIF I15/cpu_a16_c.BLIF I15/cpu_a17_c.BLIF \
+I15/cpu_a18_c.BLIF I15/cpu_a19_c.BLIF I15/cpu_a20_c.BLIF I15/cpu_nas_c.BLIF \
+I15/cpu_nlds_c.BLIF I15/cpu_nuds_c.BLIF I15/cpu_clk_c.BLIF \
+I15/cpu_nreset_c.BLIF I15/enab_c.BLIF I15/mux_switchDFFRHreg.BLIF \
+I15/read_cycle_0_sqmuxa_i.BLIF I15/un1_read_cycle11_i.BLIF \
+I15/read_cycle_i.BLIF I15/N_3_0.BLIF I15/write_cycle_i.BLIF I15/N_2_0.BLIF \
+I15/datout_0_3__n.BLIF I15/cpu_a6_c_i.BLIF I15/cpu_a1_c_i.BLIF I15/N_24_0.BLIF \
+I15/cpu_a2_c_i.BLIF I15/N_26_0.BLIF I15/cpu_a3_c_i.BLIF I15/datout_0_1__n.BLIF \
+I15/N_28_i.BLIF I15/datout_0_0__n.BLIF I15/mem_selected_0.BLIF \
+I15/which_ras_3_4_i_0__n.BLIF I15/which_ras_3_5_i_0__n.BLIF \
+I15/which_ras_3_2_i_0__n.BLIF I15/which_ras_3_3_i_0__n.BLIF \
+I15/un2_dram_nucas_i.BLIF I15/un1_dram_nucas_i.BLIF I15/un2_dram_nlcas_i.BLIF \
+I15/un1_dram_nlcas_i.BLIF I15/un2_dram_nras3_i.BLIF I15/un6_dram_nras3_i.BLIF \
+I15/un1_dram_nras3_i.BLIF I15/un2_dram_nras2_i.BLIF I15/un6_dram_nras2_i.BLIF \
+I15/un1_dram_nras2_i.BLIF I15/un2_dram_nras1_i.BLIF I15/un6_dram_nras1_i.BLIF \
+I15/un1_dram_nras1_i.BLIF I15/un2_dram_nras0_i.BLIF I15/un6_dram_nras0_i.BLIF \
+I15/un1_dram_nras0_i.BLIF I15/datout_0_1_0__n.BLIF I15/un6_dram_nras0_1.BLIF \
+I15/un6_dram_nras2_1.BLIF I15/which_ras_3_2_1_0__n.BLIF \
+I15/which_ras_3_3_1_0__n.BLIF I15/which_ras_3_4_1_0__n.BLIF \
+I15/which_ras_3_5_1_0__n.BLIF I15/mem_selected_0_1.BLIF \
+I15/mem_selected_0_2.BLIF I15/un1_cpu_a19_1.BLIF I15/un1_cpu_a19_2.BLIF \
+I15/un1_cpu_a19_3.BLIF I15/un1_cpu_a19_4.BLIF I15/un1_cpu_a19_5.BLIF \
+I15/un1_cpu_a19_6.BLIF I15/autoconf_on6_1.BLIF I15/autoconf_on6_2.BLIF \
+I15/autoconf_on6_3.BLIF I15/cpu_d1215_1.BLIF I15/cpu_d1215_2.BLIF \
+I15/datout_0_1_3__n.BLIF
+.outputs N_24 N_11 N_10 N_8 N_27 N_28 N_29 N_20 N_7 N_19 N_18 N_17 N_16 N_15 \
+N_14 N_13 N_12 N_6 N_5 N_4 N_3 N_2 N_1 C_CS cpu_d12 cpu_d12.OE cpu_d13 \
+cpu_d13.OE cpu_d14 cpu_d14.OE cpu_d15 cpu_d15.OE dram_nlcas dram_nras0 \
+dram_ras1 dram_ras2 dram_ras3 dram_nucas mux_switch I15/inst_access_ras.AR \
+I15/inst_access_ras.D I15/inst_access_ras.C I15/inst_rfsh_cas.D \
+I15/inst_rfsh_cas.C I15/rfsh_select_0_.D I15/rfsh_select_0_.C \
+I15/rfsh_select_1_.D I15/rfsh_select_1_.C I15/inst_cpu_nas_z.D \
+I15/inst_cpu_nas_z.C I15/vcc_n_n I15/rfsh_select4 I15/inst_access_cas.AR \
+I15/inst_access_cas.D I15/inst_access_cas.C I15/inst_read_cycle.AR \
+I15/inst_read_cycle.D I15/inst_read_cycle.C I15/G_35 I15/G_37 \
+I15/inst_write_cycle.AR I15/inst_write_cycle.D I15/inst_write_cycle.C \
+I15/cpu_d1215 I15/inst_autoconf_on.D I15/inst_autoconf_on.AP \
+I15/inst_autoconf_on.C I15/datout_0__n I15/datout_1__n I15/datout_3__n \
+I15/N_33 I15/rfsh_ras I15/un1_cpu_nlds_0__n I15/un2_dram_nras0 \
+I15/which_ras_3_2_0__n I15/un2_dram_nras1 I15/which_ras_3_3_0__n \
+I15/un2_dram_nras2 I15/which_ras_3_4_0__n I15/un2_dram_nras3 \
+I15/which_ras_3_5_0__n I15/un6_dram_nras0 I15/un6_dram_nras1 \
+I15/un6_dram_nras2 I15/un6_dram_nras3 I15/un2_dram_nlcas I15/un2_dram_nucas \
+I15/un6_dram_nras3_1 I15/un2_dram_nucas_1 I15/mem_selected I15/datout_0_x3_2_ \
+I15/N_24 I15/un1_cpu_a19 I15/autoconf_on6 I15/N_28 I15/N_26 \
+I15/un1_read_cycle11 I15/read_cycle_0_sqmuxa I15/cpu_a17_i I15/cpu_a16_i \
+I15/cpu_a20_i I15/cpu_a18_i I15/un1_cpu_nlds_i_0__n I15/autoconf_on6_i \
+I15/enab_i I15/cpu_a5_i I15/cpu_a4_i I15/cpu_a22_i I15/cpu_a21_i I15/cpu_a23_i \
+I15/cpu_nuds_i I15/cpu_nlds_i I15/rfsh_select_i_0__n I15/rfsh_select_i_1__n \
+I15/rfsh_cas_i I15/cpu_clk_i I15/cpu_a21_c I15/cpu_a22_c I15/cpu_a23_c \
+I15/cpu_a1_c I15/cpu_a2_c I15/cpu_a3_c I15/cpu_a4_c I15/cpu_a5_c I15/cpu_a6_c \
+I15/cpu_a16_c I15/cpu_a17_c I15/cpu_a18_c I15/cpu_a19_c I15/cpu_a20_c \
+I15/cpu_nas_c I15/cpu_nlds_c I15/cpu_nuds_c I15/cpu_clk_c I15/cpu_nreset_c \
+I15/enab_c I15/mux_switchDFFRHreg.AR I15/mux_switchDFFRHreg.D \
+I15/mux_switchDFFRHreg.C I15/read_cycle_0_sqmuxa_i I15/un1_read_cycle11_i \
+I15/read_cycle_i I15/N_3_0 I15/write_cycle_i I15/N_2_0 I15/datout_0_3__n \
+I15/cpu_a6_c_i I15/cpu_a1_c_i I15/N_24_0 I15/cpu_a2_c_i I15/N_26_0 \
+I15/cpu_a3_c_i I15/datout_0_1__n I15/N_28_i I15/datout_0_0__n \
+I15/mem_selected_0 I15/which_ras_3_4_i_0__n I15/which_ras_3_5_i_0__n \
+I15/which_ras_3_2_i_0__n I15/which_ras_3_3_i_0__n I15/un2_dram_nucas_i \
+I15/un1_dram_nucas_i I15/un2_dram_nlcas_i I15/un1_dram_nlcas_i \
+I15/un2_dram_nras3_i I15/un6_dram_nras3_i I15/un1_dram_nras3_i \
+I15/un2_dram_nras2_i I15/un6_dram_nras2_i I15/un1_dram_nras2_i \
+I15/un2_dram_nras1_i I15/un6_dram_nras1_i I15/un1_dram_nras1_i \
+I15/un2_dram_nras0_i I15/un6_dram_nras0_i I15/un1_dram_nras0_i \
+I15/datout_0_1_0__n I15/un6_dram_nras0_1 I15/un6_dram_nras2_1 \
+I15/which_ras_3_2_1_0__n I15/which_ras_3_3_1_0__n I15/which_ras_3_4_1_0__n \
+I15/which_ras_3_5_1_0__n I15/mem_selected_0_1 I15/mem_selected_0_2 \
+I15/un1_cpu_a19_1 I15/un1_cpu_a19_2 I15/un1_cpu_a19_3 I15/un1_cpu_a19_4 \
+I15/un1_cpu_a19_5 I15/un1_cpu_a19_6 I15/autoconf_on6_1 I15/autoconf_on6_2 \
+I15/autoconf_on6_3 I15/cpu_d1215_1 I15/cpu_d1215_2 I15/datout_0_1_3__n
+\
+
+.subckt set_2_dram cpu_a1.BLIF=N_12.BLIF cpu_a16.BLIF=N_1.BLIF cpu_a17.BLIF=N_2.BLIF \
+ cpu_a18.BLIF=N_3.BLIF cpu_a19.BLIF=N_5.BLIF cpu_a2.BLIF=N_13.BLIF cpu_a20.BLIF=N_6.BLIF \
+ cpu_a21.BLIF=N_4.BLIF cpu_a22.BLIF=N_7.BLIF cpu_a23.BLIF=N_8.BLIF cpu_a3.BLIF=N_14.BLIF \
+ cpu_a4.BLIF=N_15.BLIF cpu_a5.BLIF=N_16.BLIF cpu_a6.BLIF=N_17.BLIF cpu_clk.BLIF=N_29.BLIF \
+ cpu_nas.BLIF=N_18.BLIF cpu_nlds.BLIF=N_19.BLIF cpu_nreset.BLIF=N_28.BLIF cpu_nuds.BLIF=N_20.BLIF \
+ enab.BLIF=N_27.BLIF inst_access_ras.BLIF=I15/inst_access_ras.BLIF inst_rfsh_cas.BLIF=I15/inst_rfsh_cas.BLIF \
+ rfsh_select_0_.BLIF=I15/rfsh_select_0_.BLIF rfsh_select_1_.BLIF=I15/rfsh_select_1_.BLIF \
+ inst_cpu_nas_z.BLIF=I15/inst_cpu_nas_z.BLIF vcc_n_n.BLIF=I15/vcc_n_n.BLIF rfsh_select4.BLIF=I15/rfsh_select4.BLIF \
+ inst_access_cas.BLIF=I15/inst_access_cas.BLIF inst_read_cycle.BLIF=I15/inst_read_cycle.BLIF \
+ G_35.BLIF=I15/G_35.BLIF G_37.BLIF=I15/G_37.BLIF inst_write_cycle.BLIF=I15/inst_write_cycle.BLIF \
+ cpu_d1215.BLIF=I15/cpu_d1215.BLIF inst_autoconf_on.BLIF=I15/inst_autoconf_on.BLIF \
+ datout_0__n.BLIF=I15/datout_0__n.BLIF datout_1__n.BLIF=I15/datout_1__n.BLIF datout_3__n.BLIF=I15/datout_3__n.BLIF \
+ N_33.BLIF=I15/N_33.BLIF rfsh_ras.BLIF=I15/rfsh_ras.BLIF un1_cpu_nlds_0__n.BLIF=I15/un1_cpu_nlds_0__n.BLIF \
+ un2_dram_nras0.BLIF=I15/un2_dram_nras0.BLIF which_ras_3_2_0__n.BLIF=I15/which_ras_3_2_0__n.BLIF \
+ un2_dram_nras1.BLIF=I15/un2_dram_nras1.BLIF which_ras_3_3_0__n.BLIF=I15/which_ras_3_3_0__n.BLIF \
+ un2_dram_nras2.BLIF=I15/un2_dram_nras2.BLIF which_ras_3_4_0__n.BLIF=I15/which_ras_3_4_0__n.BLIF \
+ un2_dram_nras3.BLIF=I15/un2_dram_nras3.BLIF which_ras_3_5_0__n.BLIF=I15/which_ras_3_5_0__n.BLIF \
+ un6_dram_nras0.BLIF=I15/un6_dram_nras0.BLIF un6_dram_nras1.BLIF=I15/un6_dram_nras1.BLIF \
+ un6_dram_nras2.BLIF=I15/un6_dram_nras2.BLIF un6_dram_nras3.BLIF=I15/un6_dram_nras3.BLIF \
+ un2_dram_nlcas.BLIF=I15/un2_dram_nlcas.BLIF un2_dram_nucas.BLIF=I15/un2_dram_nucas.BLIF \
+ un6_dram_nras3_1.BLIF=I15/un6_dram_nras3_1.BLIF un2_dram_nucas_1.BLIF=I15/un2_dram_nucas_1.BLIF \
+ mem_selected.BLIF=I15/mem_selected.BLIF datout_0_x3_2_.BLIF=I15/datout_0_x3_2_.BLIF \
+ N_24.BLIF=I15/N_24.BLIF un1_cpu_a19.BLIF=I15/un1_cpu_a19.BLIF autoconf_on6.BLIF=I15/autoconf_on6.BLIF \
+ N_28.BLIF=I15/N_28.BLIF N_26.BLIF=I15/N_26.BLIF un1_read_cycle11.BLIF=I15/un1_read_cycle11.BLIF \
+ read_cycle_0_sqmuxa.BLIF=I15/read_cycle_0_sqmuxa.BLIF cpu_a17_i.BLIF=I15/cpu_a17_i.BLIF \
+ cpu_a16_i.BLIF=I15/cpu_a16_i.BLIF cpu_a20_i.BLIF=I15/cpu_a20_i.BLIF cpu_a18_i.BLIF=I15/cpu_a18_i.BLIF \
+ un1_cpu_nlds_i_0__n.BLIF=I15/un1_cpu_nlds_i_0__n.BLIF autoconf_on6_i.BLIF=I15/autoconf_on6_i.BLIF \
+ enab_i.BLIF=I15/enab_i.BLIF cpu_a5_i.BLIF=I15/cpu_a5_i.BLIF cpu_a4_i.BLIF=I15/cpu_a4_i.BLIF \
+ cpu_a22_i.BLIF=I15/cpu_a22_i.BLIF cpu_a21_i.BLIF=I15/cpu_a21_i.BLIF cpu_a23_i.BLIF=I15/cpu_a23_i.BLIF \
+ cpu_nuds_i.BLIF=I15/cpu_nuds_i.BLIF cpu_nlds_i.BLIF=I15/cpu_nlds_i.BLIF rfsh_select_i_0__n.BLIF=I15/rfsh_select_i_0__n.BLIF \
+ rfsh_select_i_1__n.BLIF=I15/rfsh_select_i_1__n.BLIF rfsh_cas_i.BLIF=I15/rfsh_cas_i.BLIF \
+ cpu_clk_i.BLIF=I15/cpu_clk_i.BLIF cpu_a21_c.BLIF=I15/cpu_a21_c.BLIF cpu_a22_c.BLIF=I15/cpu_a22_c.BLIF \
+ cpu_a23_c.BLIF=I15/cpu_a23_c.BLIF cpu_a1_c.BLIF=I15/cpu_a1_c.BLIF cpu_a2_c.BLIF=I15/cpu_a2_c.BLIF \
+ cpu_a3_c.BLIF=I15/cpu_a3_c.BLIF cpu_a4_c.BLIF=I15/cpu_a4_c.BLIF cpu_a5_c.BLIF=I15/cpu_a5_c.BLIF \
+ cpu_a6_c.BLIF=I15/cpu_a6_c.BLIF cpu_a16_c.BLIF=I15/cpu_a16_c.BLIF cpu_a17_c.BLIF=I15/cpu_a17_c.BLIF \
+ cpu_a18_c.BLIF=I15/cpu_a18_c.BLIF cpu_a19_c.BLIF=I15/cpu_a19_c.BLIF cpu_a20_c.BLIF=I15/cpu_a20_c.BLIF \
+ cpu_nas_c.BLIF=I15/cpu_nas_c.BLIF cpu_nlds_c.BLIF=I15/cpu_nlds_c.BLIF cpu_nuds_c.BLIF=I15/cpu_nuds_c.BLIF \
+ cpu_clk_c.BLIF=I15/cpu_clk_c.BLIF cpu_nreset_c.BLIF=I15/cpu_nreset_c.BLIF enab_c.BLIF=I15/enab_c.BLIF \
+ mux_switchDFFRHreg.BLIF=I15/mux_switchDFFRHreg.BLIF read_cycle_0_sqmuxa_i.BLIF=I15/read_cycle_0_sqmuxa_i.BLIF \
+ un1_read_cycle11_i.BLIF=I15/un1_read_cycle11_i.BLIF read_cycle_i.BLIF=I15/read_cycle_i.BLIF \
+ N_3_0.BLIF=I15/N_3_0.BLIF write_cycle_i.BLIF=I15/write_cycle_i.BLIF N_2_0.BLIF=I15/N_2_0.BLIF \
+ datout_0_3__n.BLIF=I15/datout_0_3__n.BLIF cpu_a6_c_i.BLIF=I15/cpu_a6_c_i.BLIF cpu_a1_c_i.BLIF=I15/cpu_a1_c_i.BLIF \
+ N_24_0.BLIF=I15/N_24_0.BLIF cpu_a2_c_i.BLIF=I15/cpu_a2_c_i.BLIF N_26_0.BLIF=I15/N_26_0.BLIF \
+ cpu_a3_c_i.BLIF=I15/cpu_a3_c_i.BLIF datout_0_1__n.BLIF=I15/datout_0_1__n.BLIF N_28_i.BLIF=I15/N_28_i.BLIF \
+ datout_0_0__n.BLIF=I15/datout_0_0__n.BLIF mem_selected_0.BLIF=I15/mem_selected_0.BLIF \
+ which_ras_3_4_i_0__n.BLIF=I15/which_ras_3_4_i_0__n.BLIF which_ras_3_5_i_0__n.BLIF=I15/which_ras_3_5_i_0__n.BLIF \
+ which_ras_3_2_i_0__n.BLIF=I15/which_ras_3_2_i_0__n.BLIF which_ras_3_3_i_0__n.BLIF=I15/which_ras_3_3_i_0__n.BLIF \
+ un2_dram_nucas_i.BLIF=I15/un2_dram_nucas_i.BLIF un1_dram_nucas_i.BLIF=I15/un1_dram_nucas_i.BLIF \
+ un2_dram_nlcas_i.BLIF=I15/un2_dram_nlcas_i.BLIF un1_dram_nlcas_i.BLIF=I15/un1_dram_nlcas_i.BLIF \
+ un2_dram_nras3_i.BLIF=I15/un2_dram_nras3_i.BLIF un6_dram_nras3_i.BLIF=I15/un6_dram_nras3_i.BLIF \
+ un1_dram_nras3_i.BLIF=I15/un1_dram_nras3_i.BLIF un2_dram_nras2_i.BLIF=I15/un2_dram_nras2_i.BLIF \
+ un6_dram_nras2_i.BLIF=I15/un6_dram_nras2_i.BLIF un1_dram_nras2_i.BLIF=I15/un1_dram_nras2_i.BLIF \
+ un2_dram_nras1_i.BLIF=I15/un2_dram_nras1_i.BLIF un6_dram_nras1_i.BLIF=I15/un6_dram_nras1_i.BLIF \
+ un1_dram_nras1_i.BLIF=I15/un1_dram_nras1_i.BLIF un2_dram_nras0_i.BLIF=I15/un2_dram_nras0_i.BLIF \
+ un6_dram_nras0_i.BLIF=I15/un6_dram_nras0_i.BLIF un1_dram_nras0_i.BLIF=I15/un1_dram_nras0_i.BLIF \
+ datout_0_1_0__n.BLIF=I15/datout_0_1_0__n.BLIF un6_dram_nras0_1.BLIF=I15/un6_dram_nras0_1.BLIF \
+ un6_dram_nras2_1.BLIF=I15/un6_dram_nras2_1.BLIF which_ras_3_2_1_0__n.BLIF=I15/which_ras_3_2_1_0__n.BLIF \
+ which_ras_3_3_1_0__n.BLIF=I15/which_ras_3_3_1_0__n.BLIF which_ras_3_4_1_0__n.BLIF=I15/which_ras_3_4_1_0__n.BLIF \
+ which_ras_3_5_1_0__n.BLIF=I15/which_ras_3_5_1_0__n.BLIF mem_selected_0_1.BLIF=I15/mem_selected_0_1.BLIF \
+ mem_selected_0_2.BLIF=I15/mem_selected_0_2.BLIF un1_cpu_a19_1.BLIF=I15/un1_cpu_a19_1.BLIF \
+ un1_cpu_a19_2.BLIF=I15/un1_cpu_a19_2.BLIF un1_cpu_a19_3.BLIF=I15/un1_cpu_a19_3.BLIF \
+ un1_cpu_a19_4.BLIF=I15/un1_cpu_a19_4.BLIF un1_cpu_a19_5.BLIF=I15/un1_cpu_a19_5.BLIF \
+ un1_cpu_a19_6.BLIF=I15/un1_cpu_a19_6.BLIF autoconf_on6_1.BLIF=I15/autoconf_on6_1.BLIF \
+ autoconf_on6_2.BLIF=I15/autoconf_on6_2.BLIF autoconf_on6_3.BLIF=I15/autoconf_on6_3.BLIF \
+ cpu_d1215_1.BLIF=I15/cpu_d1215_1.BLIF cpu_d1215_2.BLIF=I15/cpu_d1215_2.BLIF datout_0_1_3__n.BLIF=I15/datout_0_1_3__n.BLIF \
+ cpu_d12=cpu_d12 cpu_d12.OE=cpu_d12.OE cpu_d13=cpu_d13 cpu_d13.OE=cpu_d13.OE cpu_d14=cpu_d14 \
+ cpu_d14.OE=cpu_d14.OE cpu_d15=cpu_d15 cpu_d15.OE=cpu_d15.OE dram_nlcas=dram_nlcas \
+ dram_nras0=dram_nras0 dram_nras1=dram_ras1 dram_nras2=dram_ras2 dram_nras3=dram_ras3 \
+ dram_nucas=dram_nucas mux_switch=mux_switch inst_access_ras.AR=I15/inst_access_ras.AR \
+ inst_access_ras.D=I15/inst_access_ras.D inst_access_ras.C=I15/inst_access_ras.C inst_rfsh_cas.D=I15/inst_rfsh_cas.D \
+ inst_rfsh_cas.C=I15/inst_rfsh_cas.C rfsh_select_0_.D=I15/rfsh_select_0_.D rfsh_select_0_.C=I15/rfsh_select_0_.C \
+ rfsh_select_1_.D=I15/rfsh_select_1_.D rfsh_select_1_.C=I15/rfsh_select_1_.C inst_cpu_nas_z.D=I15/inst_cpu_nas_z.D \
+ inst_cpu_nas_z.C=I15/inst_cpu_nas_z.C vcc_n_n=I15/vcc_n_n rfsh_select4=I15/rfsh_select4 \
+ inst_access_cas.AR=I15/inst_access_cas.AR inst_access_cas.D=I15/inst_access_cas.D \
+ inst_access_cas.C=I15/inst_access_cas.C inst_read_cycle.AR=I15/inst_read_cycle.AR \
+ inst_read_cycle.D=I15/inst_read_cycle.D inst_read_cycle.C=I15/inst_read_cycle.C G_35=I15/G_35 \
+ G_37=I15/G_37 inst_write_cycle.AR=I15/inst_write_cycle.AR inst_write_cycle.D=I15/inst_write_cycle.D \
+ inst_write_cycle.C=I15/inst_write_cycle.C cpu_d1215=I15/cpu_d1215 inst_autoconf_on.D=I15/inst_autoconf_on.D \
+ inst_autoconf_on.AP=I15/inst_autoconf_on.AP inst_autoconf_on.C=I15/inst_autoconf_on.C \
+ datout_0__n=I15/datout_0__n datout_1__n=I15/datout_1__n datout_3__n=I15/datout_3__n \
+ N_33=I15/N_33 rfsh_ras=I15/rfsh_ras un1_cpu_nlds_0__n=I15/un1_cpu_nlds_0__n un2_dram_nras0=I15/un2_dram_nras0 \
+ which_ras_3_2_0__n=I15/which_ras_3_2_0__n un2_dram_nras1=I15/un2_dram_nras1 which_ras_3_3_0__n=I15/which_ras_3_3_0__n \
+ un2_dram_nras2=I15/un2_dram_nras2 which_ras_3_4_0__n=I15/which_ras_3_4_0__n un2_dram_nras3=I15/un2_dram_nras3 \
+ which_ras_3_5_0__n=I15/which_ras_3_5_0__n un6_dram_nras0=I15/un6_dram_nras0 un6_dram_nras1=I15/un6_dram_nras1 \
+ un6_dram_nras2=I15/un6_dram_nras2 un6_dram_nras3=I15/un6_dram_nras3 un2_dram_nlcas=I15/un2_dram_nlcas \
+ un2_dram_nucas=I15/un2_dram_nucas un6_dram_nras3_1=I15/un6_dram_nras3_1 un2_dram_nucas_1=I15/un2_dram_nucas_1 \
+ mem_selected=I15/mem_selected datout_0_x3_2_=I15/datout_0_x3_2_ N_24=I15/N_24 un1_cpu_a19=I15/un1_cpu_a19 \
+ autoconf_on6=I15/autoconf_on6 N_28=I15/N_28 N_26=I15/N_26 un1_read_cycle11=I15/un1_read_cycle11 \
+ read_cycle_0_sqmuxa=I15/read_cycle_0_sqmuxa cpu_a17_i=I15/cpu_a17_i cpu_a16_i=I15/cpu_a16_i \
+ cpu_a20_i=I15/cpu_a20_i cpu_a18_i=I15/cpu_a18_i un1_cpu_nlds_i_0__n=I15/un1_cpu_nlds_i_0__n \
+ autoconf_on6_i=I15/autoconf_on6_i enab_i=I15/enab_i cpu_a5_i=I15/cpu_a5_i cpu_a4_i=I15/cpu_a4_i \
+ cpu_a22_i=I15/cpu_a22_i cpu_a21_i=I15/cpu_a21_i cpu_a23_i=I15/cpu_a23_i cpu_nuds_i=I15/cpu_nuds_i \
+ cpu_nlds_i=I15/cpu_nlds_i rfsh_select_i_0__n=I15/rfsh_select_i_0__n rfsh_select_i_1__n=I15/rfsh_select_i_1__n \
+ rfsh_cas_i=I15/rfsh_cas_i cpu_clk_i=I15/cpu_clk_i cpu_a21_c=I15/cpu_a21_c cpu_a22_c=I15/cpu_a22_c \
+ cpu_a23_c=I15/cpu_a23_c cpu_a1_c=I15/cpu_a1_c cpu_a2_c=I15/cpu_a2_c cpu_a3_c=I15/cpu_a3_c \
+ cpu_a4_c=I15/cpu_a4_c cpu_a5_c=I15/cpu_a5_c cpu_a6_c=I15/cpu_a6_c cpu_a16_c=I15/cpu_a16_c \
+ cpu_a17_c=I15/cpu_a17_c cpu_a18_c=I15/cpu_a18_c cpu_a19_c=I15/cpu_a19_c cpu_a20_c=I15/cpu_a20_c \
+ cpu_nas_c=I15/cpu_nas_c cpu_nlds_c=I15/cpu_nlds_c cpu_nuds_c=I15/cpu_nuds_c cpu_clk_c=I15/cpu_clk_c \
+ cpu_nreset_c=I15/cpu_nreset_c enab_c=I15/enab_c mux_switchDFFRHreg.AR=I15/mux_switchDFFRHreg.AR \
+ mux_switchDFFRHreg.D=I15/mux_switchDFFRHreg.D mux_switchDFFRHreg.C=I15/mux_switchDFFRHreg.C \
+ read_cycle_0_sqmuxa_i=I15/read_cycle_0_sqmuxa_i un1_read_cycle11_i=I15/un1_read_cycle11_i \
+ read_cycle_i=I15/read_cycle_i N_3_0=I15/N_3_0 write_cycle_i=I15/write_cycle_i N_2_0=I15/N_2_0 \
+ datout_0_3__n=I15/datout_0_3__n cpu_a6_c_i=I15/cpu_a6_c_i cpu_a1_c_i=I15/cpu_a1_c_i \
+ N_24_0=I15/N_24_0 cpu_a2_c_i=I15/cpu_a2_c_i N_26_0=I15/N_26_0 cpu_a3_c_i=I15/cpu_a3_c_i \
+ datout_0_1__n=I15/datout_0_1__n N_28_i=I15/N_28_i datout_0_0__n=I15/datout_0_0__n \
+ mem_selected_0=I15/mem_selected_0 which_ras_3_4_i_0__n=I15/which_ras_3_4_i_0__n which_ras_3_5_i_0__n=I15/which_ras_3_5_i_0__n \
+ which_ras_3_2_i_0__n=I15/which_ras_3_2_i_0__n which_ras_3_3_i_0__n=I15/which_ras_3_3_i_0__n \
+ un2_dram_nucas_i=I15/un2_dram_nucas_i un1_dram_nucas_i=I15/un1_dram_nucas_i un2_dram_nlcas_i=I15/un2_dram_nlcas_i \
+ un1_dram_nlcas_i=I15/un1_dram_nlcas_i un2_dram_nras3_i=I15/un2_dram_nras3_i un6_dram_nras3_i=I15/un6_dram_nras3_i \
+ un1_dram_nras3_i=I15/un1_dram_nras3_i un2_dram_nras2_i=I15/un2_dram_nras2_i un6_dram_nras2_i=I15/un6_dram_nras2_i \
+ un1_dram_nras2_i=I15/un1_dram_nras2_i un2_dram_nras1_i=I15/un2_dram_nras1_i un6_dram_nras1_i=I15/un6_dram_nras1_i \
+ un1_dram_nras1_i=I15/un1_dram_nras1_i un2_dram_nras0_i=I15/un2_dram_nras0_i un6_dram_nras0_i=I15/un6_dram_nras0_i \
+ un1_dram_nras0_i=I15/un1_dram_nras0_i datout_0_1_0__n=I15/datout_0_1_0__n un6_dram_nras0_1=I15/un6_dram_nras0_1 \
+ un6_dram_nras2_1=I15/un6_dram_nras2_1 which_ras_3_2_1_0__n=I15/which_ras_3_2_1_0__n \
+ which_ras_3_3_1_0__n=I15/which_ras_3_3_1_0__n which_ras_3_4_1_0__n=I15/which_ras_3_4_1_0__n \
+ which_ras_3_5_1_0__n=I15/which_ras_3_5_1_0__n mem_selected_0_1=I15/mem_selected_0_1 \
+ mem_selected_0_2=I15/mem_selected_0_2 un1_cpu_a19_1=I15/un1_cpu_a19_1 un1_cpu_a19_2=I15/un1_cpu_a19_2 \
+ un1_cpu_a19_3=I15/un1_cpu_a19_3 un1_cpu_a19_4=I15/un1_cpu_a19_4 un1_cpu_a19_5=I15/un1_cpu_a19_5 \
+ un1_cpu_a19_6=I15/un1_cpu_a19_6 autoconf_on6_1=I15/autoconf_on6_1 autoconf_on6_2=I15/autoconf_on6_2 \
+ autoconf_on6_3=I15/autoconf_on6_3 cpu_d1215_1=I15/cpu_d1215_1 cpu_d1215_2=I15/cpu_d1215_2 \
+ datout_0_1_3__n=I15/datout_0_1_3__n
+.names N_11.BLIF N_10.BLIF N_24
+0- 1
+-0 1
+11 0
+.names N_5.BLIF N_6.BLIF N_7.BLIF N_8.BLIF N_11
+1111 1
+--0- 0
+-0-- 0
+0--- 0
+---0 0
+.names N_4.BLIF N_3.BLIF N_2.BLIF N_1.BLIF N_10
+0000 1
+--1- 0
+-1-- 0
+1--- 0
+---1 0
+.names A23.BLIF N_8
+1 1
+0 0
+.names enab.BLIF N_27
+1 1
+0 0
+.names cpu_reset.BLIF N_28
+1 1
+0 0
+.names cpu_clk.BLIF N_29
+1 1
+0 0
+.names cpu_nuds.BLIF N_20
+1 1
+0 0
+.names A22.BLIF N_7
+1 1
+0 0
+.names cpu_nlds.BLIF N_19
+1 1
+0 0
+.names cpu_nas.BLIF N_18
+1 1
+0 0
+.names A6.BLIF N_17
+1 1
+0 0
+.names A5.BLIF N_16
+1 1
+0 0
+.names A4.BLIF N_15
+1 1
+0 0
+.names A3.BLIF N_14
+1 1
+0 0
+.names A2.BLIF N_13
+1 1
+0 0
+.names A1.BLIF N_12
+1 1
+0 0
+.names A20.BLIF N_6
+1 1
+0 0
+.names A19.BLIF N_5
+1 1
+0 0
+.names A21.BLIF N_4
+1 1
+0 0
+.names A18.BLIF N_3
+1 1
+0 0
+.names A17.BLIF N_2
+1 1
+0 0
+.names A16.BLIF N_1
+1 1
+0 0
+.names N_24.BLIF C_CS
+1 1
+0 0
+.end
+.model set_2_dram
+.inputs cpu_a21.BLIF cpu_a22.BLIF cpu_a23.BLIF cpu_a1.BLIF cpu_a2.BLIF \
+cpu_a3.BLIF cpu_a4.BLIF cpu_a5.BLIF cpu_a6.BLIF cpu_a16.BLIF cpu_a17.BLIF \
+cpu_a18.BLIF cpu_a19.BLIF cpu_a20.BLIF cpu_nas.BLIF cpu_nlds.BLIF \
+cpu_nuds.BLIF cpu_clk.BLIF cpu_nreset.BLIF enab.BLIF inst_access_ras.BLIF \
+inst_rfsh_cas.BLIF rfsh_select_0_.BLIF rfsh_select_1_.BLIF inst_cpu_nas_z.BLIF \
+vcc_n_n.BLIF rfsh_select4.BLIF inst_access_cas.BLIF inst_read_cycle.BLIF \
+G_35.BLIF G_37.BLIF inst_write_cycle.BLIF cpu_d1215.BLIF inst_autoconf_on.BLIF \
+datout_0__n.BLIF datout_1__n.BLIF datout_3__n.BLIF N_33.BLIF rfsh_ras.BLIF \
+un1_cpu_nlds_0__n.BLIF un2_dram_nras0.BLIF which_ras_3_2_0__n.BLIF \
+un2_dram_nras1.BLIF which_ras_3_3_0__n.BLIF un2_dram_nras2.BLIF \
+which_ras_3_4_0__n.BLIF un2_dram_nras3.BLIF which_ras_3_5_0__n.BLIF \
+un6_dram_nras0.BLIF un6_dram_nras1.BLIF un6_dram_nras2.BLIF \
+un6_dram_nras3.BLIF un2_dram_nlcas.BLIF un2_dram_nucas.BLIF \
+un6_dram_nras3_1.BLIF un2_dram_nucas_1.BLIF mem_selected.BLIF \
+datout_0_x3_2_.BLIF N_24.BLIF un1_cpu_a19.BLIF autoconf_on6.BLIF N_28.BLIF \
+N_26.BLIF un1_read_cycle11.BLIF read_cycle_0_sqmuxa.BLIF cpu_a17_i.BLIF \
+cpu_a16_i.BLIF cpu_a20_i.BLIF cpu_a18_i.BLIF un1_cpu_nlds_i_0__n.BLIF \
+autoconf_on6_i.BLIF enab_i.BLIF cpu_a5_i.BLIF cpu_a4_i.BLIF cpu_a22_i.BLIF \
+cpu_a21_i.BLIF cpu_a23_i.BLIF cpu_nuds_i.BLIF cpu_nlds_i.BLIF \
+rfsh_select_i_0__n.BLIF rfsh_select_i_1__n.BLIF rfsh_cas_i.BLIF cpu_clk_i.BLIF \
+cpu_a21_c.BLIF cpu_a22_c.BLIF cpu_a23_c.BLIF cpu_a1_c.BLIF cpu_a2_c.BLIF \
+cpu_a3_c.BLIF cpu_a4_c.BLIF cpu_a5_c.BLIF cpu_a6_c.BLIF cpu_a16_c.BLIF \
+cpu_a17_c.BLIF cpu_a18_c.BLIF cpu_a19_c.BLIF cpu_a20_c.BLIF cpu_nas_c.BLIF \
+cpu_nlds_c.BLIF cpu_nuds_c.BLIF cpu_clk_c.BLIF cpu_nreset_c.BLIF enab_c.BLIF \
+mux_switchDFFRHreg.BLIF read_cycle_0_sqmuxa_i.BLIF un1_read_cycle11_i.BLIF \
+read_cycle_i.BLIF N_3_0.BLIF write_cycle_i.BLIF N_2_0.BLIF datout_0_3__n.BLIF \
+cpu_a6_c_i.BLIF cpu_a1_c_i.BLIF N_24_0.BLIF cpu_a2_c_i.BLIF N_26_0.BLIF \
+cpu_a3_c_i.BLIF datout_0_1__n.BLIF N_28_i.BLIF datout_0_0__n.BLIF \
+mem_selected_0.BLIF which_ras_3_4_i_0__n.BLIF which_ras_3_5_i_0__n.BLIF \
+which_ras_3_2_i_0__n.BLIF which_ras_3_3_i_0__n.BLIF un2_dram_nucas_i.BLIF \
+un1_dram_nucas_i.BLIF un2_dram_nlcas_i.BLIF un1_dram_nlcas_i.BLIF \
+un2_dram_nras3_i.BLIF un6_dram_nras3_i.BLIF un1_dram_nras3_i.BLIF \
+un2_dram_nras2_i.BLIF un6_dram_nras2_i.BLIF un1_dram_nras2_i.BLIF \
+un2_dram_nras1_i.BLIF un6_dram_nras1_i.BLIF un1_dram_nras1_i.BLIF \
+un2_dram_nras0_i.BLIF un6_dram_nras0_i.BLIF un1_dram_nras0_i.BLIF \
+datout_0_1_0__n.BLIF un6_dram_nras0_1.BLIF un6_dram_nras2_1.BLIF \
+which_ras_3_2_1_0__n.BLIF which_ras_3_3_1_0__n.BLIF which_ras_3_4_1_0__n.BLIF \
+which_ras_3_5_1_0__n.BLIF mem_selected_0_1.BLIF mem_selected_0_2.BLIF \
+un1_cpu_a19_1.BLIF un1_cpu_a19_2.BLIF un1_cpu_a19_3.BLIF un1_cpu_a19_4.BLIF \
+un1_cpu_a19_5.BLIF un1_cpu_a19_6.BLIF autoconf_on6_1.BLIF autoconf_on6_2.BLIF \
+autoconf_on6_3.BLIF cpu_d1215_1.BLIF cpu_d1215_2.BLIF datout_0_1_3__n.BLIF
+.outputs cpu_d12 cpu_d13 cpu_d14 cpu_d15 dram_nras0 dram_nras1 dram_nras2 \
+dram_nras3 dram_nlcas dram_nucas mux_switch inst_write_cycle.D \
+inst_write_cycle.C inst_write_cycle.AR inst_read_cycle.D inst_read_cycle.C \
+inst_read_cycle.AR rfsh_select_0_.D rfsh_select_0_.C rfsh_select_1_.D \
+rfsh_select_1_.C inst_autoconf_on.D inst_autoconf_on.C inst_autoconf_on.AP \
+inst_access_cas.D inst_access_cas.C inst_access_cas.AR inst_rfsh_cas.D \
+inst_rfsh_cas.C inst_cpu_nas_z.D inst_cpu_nas_z.C inst_access_ras.D \
+inst_access_ras.C inst_access_ras.AR mux_switchDFFRHreg.D mux_switchDFFRHreg.C \
+mux_switchDFFRHreg.AR vcc_n_n rfsh_select4 cpu_d1215 datout_0__n datout_1__n \
+datout_3__n N_33 rfsh_ras un1_cpu_nlds_0__n un2_dram_nras0 which_ras_3_2_0__n \
+un2_dram_nras1 which_ras_3_3_0__n un2_dram_nras2 which_ras_3_4_0__n \
+un2_dram_nras3 which_ras_3_5_0__n un6_dram_nras0 un6_dram_nras1 un6_dram_nras2 \
+un6_dram_nras3 un2_dram_nlcas un2_dram_nucas un6_dram_nras3_1 un2_dram_nucas_1 \
+mem_selected N_24 un1_cpu_a19 autoconf_on6 N_28 N_26 un1_read_cycle11 \
+read_cycle_0_sqmuxa cpu_a17_i cpu_a16_i cpu_a20_i cpu_a18_i \
+un1_cpu_nlds_i_0__n autoconf_on6_i enab_i cpu_a5_i cpu_a4_i cpu_a22_i \
+cpu_a21_i cpu_a23_i cpu_nuds_i cpu_nlds_i rfsh_select_i_0__n \
+rfsh_select_i_1__n rfsh_cas_i cpu_clk_i cpu_a21_c cpu_a22_c cpu_a23_c cpu_a1_c \
+cpu_a2_c cpu_a3_c cpu_a4_c cpu_a5_c cpu_a6_c cpu_a16_c cpu_a17_c cpu_a18_c \
+cpu_a19_c cpu_a20_c cpu_nas_c cpu_nlds_c cpu_nuds_c cpu_clk_c cpu_nreset_c \
+enab_c read_cycle_0_sqmuxa_i un1_read_cycle11_i read_cycle_i N_3_0 \
+write_cycle_i N_2_0 datout_0_3__n cpu_a6_c_i cpu_a1_c_i N_24_0 cpu_a2_c_i \
+N_26_0 cpu_a3_c_i datout_0_1__n N_28_i datout_0_0__n mem_selected_0 \
+which_ras_3_4_i_0__n which_ras_3_5_i_0__n which_ras_3_2_i_0__n \
+which_ras_3_3_i_0__n un2_dram_nucas_i un1_dram_nucas_i un2_dram_nlcas_i \
+un1_dram_nlcas_i un2_dram_nras3_i un6_dram_nras3_i un1_dram_nras3_i \
+un2_dram_nras2_i un6_dram_nras2_i un1_dram_nras2_i un2_dram_nras1_i \
+un6_dram_nras1_i un1_dram_nras1_i un2_dram_nras0_i un6_dram_nras0_i \
+un1_dram_nras0_i datout_0_1_0__n un6_dram_nras0_1 un6_dram_nras2_1 \
+which_ras_3_2_1_0__n which_ras_3_3_1_0__n which_ras_3_4_1_0__n \
+which_ras_3_5_1_0__n mem_selected_0_1 mem_selected_0_2 un1_cpu_a19_1 \
+un1_cpu_a19_2 un1_cpu_a19_3 un1_cpu_a19_4 un1_cpu_a19_5 un1_cpu_a19_6 \
+autoconf_on6_1 autoconf_on6_2 autoconf_on6_3 cpu_d1215_1 cpu_d1215_2 \
+datout_0_1_3__n cpu_d12.OE cpu_d13.OE cpu_d14.OE cpu_d15.OE G_35 G_37 \
+datout_0_x3_2_
+.names N_2_0.BLIF inst_write_cycle.D
+0 1
+.names N_3_0.BLIF inst_read_cycle.D
+0 1
+.names inst_autoconf_on.BLIF autoconf_on6_i.BLIF inst_autoconf_on.D
+11 1
+.names cpu_nreset_c.BLIF inst_autoconf_on.AP
+0 1
+.names inst_access_ras.BLIF mux_switchDFFRHreg.AR
+0 1
+.names vcc_n_n
+ 1
+.names cpu_nas_c.BLIF rfsh_cas_i.BLIF rfsh_select4
+11 1
+.names cpu_d1215_1.BLIF cpu_d1215_2.BLIF cpu_d1215
+11 1
+.names datout_0_0__n.BLIF datout_0__n
+0 1
+.names datout_0_1__n.BLIF datout_1__n
+0 1
+.names datout_0_3__n.BLIF datout_3__n
+0 1
+.names rfsh_select4.BLIF rfsh_select_0_.BLIF N_33
+11 1
+.names cpu_clk_c.BLIF inst_rfsh_cas.BLIF rfsh_ras
+11 1
+.names cpu_nlds_c.BLIF cpu_nuds_c.BLIF un1_cpu_nlds_0__n
+11 1
+.names inst_access_ras.BLIF which_ras_3_2_0__n.BLIF un2_dram_nras0
+11 1
+.names which_ras_3_2_1_0__n.BLIF cpu_a22_i.BLIF which_ras_3_2_0__n
+11 1
+.names inst_access_ras.BLIF which_ras_3_3_0__n.BLIF un2_dram_nras1
+11 1
+.names which_ras_3_3_1_0__n.BLIF cpu_a22_c.BLIF which_ras_3_3_0__n
+11 1
+.names inst_access_ras.BLIF which_ras_3_4_0__n.BLIF un2_dram_nras2
+11 1
+.names which_ras_3_4_1_0__n.BLIF cpu_a22_c.BLIF which_ras_3_4_0__n
+11 1
+.names inst_access_ras.BLIF which_ras_3_5_0__n.BLIF un2_dram_nras3
+11 1
+.names which_ras_3_5_1_0__n.BLIF cpu_a22_i.BLIF which_ras_3_5_0__n
+11 1
+.names un6_dram_nras0_1.BLIF rfsh_select_i_0__n.BLIF un6_dram_nras0
+11 1
+.names rfsh_select_i_1__n.BLIF un6_dram_nras3_1.BLIF un6_dram_nras1
+11 1
+.names un6_dram_nras2_1.BLIF rfsh_select_1_.BLIF un6_dram_nras2
+11 1
+.names rfsh_select_1_.BLIF un6_dram_nras3_1.BLIF un6_dram_nras3
+11 1
+.names cpu_nlds_i.BLIF un2_dram_nucas_1.BLIF un2_dram_nlcas
+11 1
+.names cpu_nuds_i.BLIF un2_dram_nucas_1.BLIF un2_dram_nucas
+11 1
+.names rfsh_ras.BLIF rfsh_select_0_.BLIF un6_dram_nras3_1
+11 1
+.names inst_access_cas.BLIF mem_selected.BLIF un2_dram_nucas_1
+11 1
+.names mem_selected_0.BLIF mem_selected
+0 1
+.names N_24_0.BLIF N_24
+0 1
+.names un1_cpu_a19_5.BLIF un1_cpu_a19_6.BLIF un1_cpu_a19
+11 1
+.names autoconf_on6_3.BLIF un1_cpu_a19.BLIF autoconf_on6
+11 1
+.names N_26.BLIF cpu_a6_c.BLIF N_28
+11 1
+.names N_26_0.BLIF N_26
+0 1
+.names un1_read_cycle11_i.BLIF un1_read_cycle11
+0 1
+.names inst_cpu_nas_z.BLIF un1_cpu_nlds_i_0__n.BLIF read_cycle_0_sqmuxa
+11 1
+.names cpu_a17_c.BLIF cpu_a17_i
+0 1
+.names cpu_a16_c.BLIF cpu_a16_i
+0 1
+.names cpu_a20_c.BLIF cpu_a20_i
+0 1
+.names cpu_a18_c.BLIF cpu_a18_i
+0 1
+.names un1_cpu_nlds_0__n.BLIF un1_cpu_nlds_i_0__n
+0 1
+.names autoconf_on6.BLIF autoconf_on6_i
+0 1
+.names enab_c.BLIF enab_i
+0 1
+.names cpu_a5_c.BLIF cpu_a5_i
+0 1
+.names cpu_a4_c.BLIF cpu_a4_i
+0 1
+.names cpu_a22_c.BLIF cpu_a22_i
+0 1
+.names cpu_a21_c.BLIF cpu_a21_i
+0 1
+.names cpu_a23_c.BLIF cpu_a23_i
+0 1
+.names cpu_nuds_c.BLIF cpu_nuds_i
+0 1
+.names cpu_nlds_c.BLIF cpu_nlds_i
+0 1
+.names rfsh_select_0_.BLIF rfsh_select_i_0__n
+0 1
+.names rfsh_select_1_.BLIF rfsh_select_i_1__n
+0 1
+.names inst_rfsh_cas.BLIF rfsh_cas_i
+0 1
+.names cpu_clk_c.BLIF cpu_clk_i
+0 1
+.names read_cycle_0_sqmuxa.BLIF read_cycle_0_sqmuxa_i
+0 1
+.names inst_cpu_nas_z.BLIF read_cycle_0_sqmuxa_i.BLIF un1_read_cycle11_i
+11 1
+.names inst_read_cycle.BLIF read_cycle_i
+0 1
+.names read_cycle_0_sqmuxa_i.BLIF read_cycle_i.BLIF N_3_0
+11 1
+.names inst_write_cycle.BLIF write_cycle_i
+0 1
+.names un1_read_cycle11.BLIF write_cycle_i.BLIF N_2_0
+11 1
+.names datout_0_1_3__n.BLIF N_26_0.BLIF datout_0_3__n
+11 1
+.names cpu_a6_c.BLIF cpu_a6_c_i
+0 1
+.names cpu_a1_c.BLIF cpu_a1_c_i
+0 1
+.names cpu_a1_c_i.BLIF cpu_a6_c_i.BLIF N_24_0
+11 1
+.names cpu_a2_c.BLIF cpu_a2_c_i
+0 1
+.names cpu_a2_c_i.BLIF cpu_a4_i.BLIF N_26_0
+11 1
+.names cpu_a3_c.BLIF cpu_a3_c_i
+0 1
+.names cpu_a3_c_i.BLIF datout_0_3__n.BLIF datout_0_1__n
+11 1
+.names N_28.BLIF N_28_i
+0 1
+.names datout_0_1_0__n.BLIF cpu_a3_c_i.BLIF datout_0_0__n
+11 1
+.names mem_selected_0_1.BLIF mem_selected_0_2.BLIF mem_selected_0
+11 1
+.names which_ras_3_4_0__n.BLIF which_ras_3_4_i_0__n
+0 1
+.names which_ras_3_5_0__n.BLIF which_ras_3_5_i_0__n
+0 1
+.names which_ras_3_2_0__n.BLIF which_ras_3_2_i_0__n
+0 1
+.names which_ras_3_3_0__n.BLIF which_ras_3_3_i_0__n
+0 1
+.names un2_dram_nucas.BLIF un2_dram_nucas_i
+0 1
+.names rfsh_cas_i.BLIF un2_dram_nucas_i.BLIF un1_dram_nucas_i
+11 1
+.names un2_dram_nlcas.BLIF un2_dram_nlcas_i
+0 1
+.names rfsh_cas_i.BLIF un2_dram_nlcas_i.BLIF un1_dram_nlcas_i
+11 1
+.names un2_dram_nras3.BLIF un2_dram_nras3_i
+0 1
+.names un6_dram_nras3.BLIF un6_dram_nras3_i
+0 1
+.names un2_dram_nras3_i.BLIF un6_dram_nras3_i.BLIF un1_dram_nras3_i
+11 1
+.names un2_dram_nras2.BLIF un2_dram_nras2_i
+0 1
+.names un6_dram_nras2.BLIF un6_dram_nras2_i
+0 1
+.names un2_dram_nras2_i.BLIF un6_dram_nras2_i.BLIF un1_dram_nras2_i
+11 1
+.names un2_dram_nras1.BLIF un2_dram_nras1_i
+0 1
+.names un6_dram_nras1.BLIF un6_dram_nras1_i
+0 1
+.names un2_dram_nras1_i.BLIF un6_dram_nras1_i.BLIF un1_dram_nras1_i
+11 1
+.names un2_dram_nras0.BLIF un2_dram_nras0_i
+0 1
+.names un6_dram_nras0.BLIF un6_dram_nras0_i
+0 1
+.names un2_dram_nras0_i.BLIF un6_dram_nras0_i.BLIF un1_dram_nras0_i
+11 1
+.names cpu_a5_i.BLIF N_28_i.BLIF datout_0_1_0__n
+11 1
+.names rfsh_select_i_1__n.BLIF rfsh_ras.BLIF un6_dram_nras0_1
+11 1
+.names rfsh_select_i_0__n.BLIF rfsh_ras.BLIF un6_dram_nras2_1
+11 1
+.names cpu_a23_i.BLIF cpu_a21_c.BLIF which_ras_3_2_1_0__n
+11 1
+.names cpu_a23_i.BLIF cpu_a21_i.BLIF which_ras_3_3_1_0__n
+11 1
+.names cpu_a23_i.BLIF cpu_a21_c.BLIF which_ras_3_4_1_0__n
+11 1
+.names cpu_a23_c.BLIF cpu_a21_i.BLIF which_ras_3_5_1_0__n
+11 1
+.names which_ras_3_2_i_0__n.BLIF which_ras_3_3_i_0__n.BLIF mem_selected_0_1
+11 1
+.names which_ras_3_4_i_0__n.BLIF which_ras_3_5_i_0__n.BLIF mem_selected_0_2
+11 1
+.names cpu_a16_i.BLIF cpu_a17_i.BLIF un1_cpu_a19_1
+11 1
+.names cpu_a18_i.BLIF cpu_a19_c.BLIF un1_cpu_a19_2
+11 1
+.names cpu_a20_i.BLIF cpu_a21_c.BLIF un1_cpu_a19_3
+11 1
+.names cpu_a22_c.BLIF cpu_a23_c.BLIF un1_cpu_a19_4
+11 1
+.names un1_cpu_a19_1.BLIF un1_cpu_a19_2.BLIF un1_cpu_a19_5
+11 1
+.names un1_cpu_a19_3.BLIF un1_cpu_a19_4.BLIF un1_cpu_a19_6
+11 1
+.names cpu_a3_c.BLIF cpu_a4_i.BLIF autoconf_on6_1
+11 1
+.names cpu_a5_i.BLIF cpu_a6_c.BLIF autoconf_on6_2
+11 1
+.names autoconf_on6_1.BLIF autoconf_on6_2.BLIF autoconf_on6_3
+11 1
+.names inst_autoconf_on.BLIF enab_i.BLIF cpu_d1215_1
+11 1
+.names inst_read_cycle.BLIF un1_cpu_a19.BLIF cpu_d1215_2
+11 1
+.names cpu_a5_i.BLIF datout_0_x3_2_.BLIF datout_0_1_3__n
+11 1
+.names rfsh_select_0_.BLIF rfsh_select4.BLIF G_35
+01 1
+10 1
+11 0
+00 0
+.names rfsh_select_1_.BLIF N_33.BLIF G_37
+01 1
+10 1
+11 0
+00 0
+.names N_24.BLIF cpu_a3_c.BLIF datout_0_x3_2_
+01 1
+10 1
+11 0
+00 0
+.names datout_0__n.BLIF cpu_d12
+1 1
+0 0
+.names datout_1__n.BLIF cpu_d13
+1 1
+0 0
+.names datout_3__n.BLIF cpu_d14
+1 1
+0 0
+.names datout_3__n.BLIF cpu_d15
+1 1
+0 0
+.names un1_dram_nras0_i.BLIF dram_nras0
+1 1
+0 0
+.names un1_dram_nras1_i.BLIF dram_nras1
+1 1
+0 0
+.names un1_dram_nras2_i.BLIF dram_nras2
+1 1
+0 0
+.names un1_dram_nras3_i.BLIF dram_nras3
+1 1
+0 0
+.names un1_dram_nlcas_i.BLIF dram_nlcas
+1 1
+0 0
+.names un1_dram_nucas_i.BLIF dram_nucas
+1 1
+0 0
+.names mux_switchDFFRHreg.BLIF mux_switch
+1 1
+0 0
+.names cpu_clk_c.BLIF inst_write_cycle.C
+1 1
+0 0
+.names cpu_nas_c.BLIF inst_write_cycle.AR
+1 1
+0 0
+.names cpu_clk_c.BLIF inst_read_cycle.C
+1 1
+0 0
+.names cpu_nas_c.BLIF inst_read_cycle.AR
+1 1
+0 0
+.names G_35.BLIF rfsh_select_0_.D
+1 1
+0 0
+.names cpu_clk_i.BLIF rfsh_select_0_.C
+1 1
+0 0
+.names G_37.BLIF rfsh_select_1_.D
+1 1
+0 0
+.names cpu_clk_i.BLIF rfsh_select_1_.C
+1 1
+0 0
+.names inst_write_cycle.BLIF inst_autoconf_on.C
+1 1
+0 0
+.names inst_access_ras.BLIF inst_access_cas.D
+1 1
+0 0
+.names cpu_clk_c.BLIF inst_access_cas.C
+1 1
+0 0
+.names cpu_nas_c.BLIF inst_access_cas.AR
+1 1
+0 0
+.names rfsh_select4.BLIF inst_rfsh_cas.D
+1 1
+0 0
+.names cpu_clk_i.BLIF inst_rfsh_cas.C
+1 1
+0 0
+.names cpu_nas_c.BLIF inst_cpu_nas_z.D
+1 1
+0 0
+.names cpu_clk_c.BLIF inst_cpu_nas_z.C
+1 1
+0 0
+.names vcc_n_n.BLIF inst_access_ras.D
+1 1
+0 0
+.names cpu_clk_c.BLIF inst_access_ras.C
+1 1
+0 0
+.names cpu_nas_c.BLIF inst_access_ras.AR
+1 1
+0 0
+.names vcc_n_n.BLIF mux_switchDFFRHreg.D
+1 1
+0 0
+.names cpu_clk_i.BLIF mux_switchDFFRHreg.C
+1 1
+0 0
+.names cpu_a21.BLIF cpu_a21_c
+1 1
+0 0
+.names cpu_a22.BLIF cpu_a22_c
+1 1
+0 0
+.names cpu_a23.BLIF cpu_a23_c
+1 1
+0 0
+.names cpu_a1.BLIF cpu_a1_c
+1 1
+0 0
+.names cpu_a2.BLIF cpu_a2_c
+1 1
+0 0
+.names cpu_a3.BLIF cpu_a3_c
+1 1
+0 0
+.names cpu_a4.BLIF cpu_a4_c
+1 1
+0 0
+.names cpu_a5.BLIF cpu_a5_c
+1 1
+0 0
+.names cpu_a6.BLIF cpu_a6_c
+1 1
+0 0
+.names cpu_a16.BLIF cpu_a16_c
+1 1
+0 0
+.names cpu_a17.BLIF cpu_a17_c
+1 1
+0 0
+.names cpu_a18.BLIF cpu_a18_c
+1 1
+0 0
+.names cpu_a19.BLIF cpu_a19_c
+1 1
+0 0
+.names cpu_a20.BLIF cpu_a20_c
+1 1
+0 0
+.names cpu_nas.BLIF cpu_nas_c
+1 1
+0 0
+.names cpu_nlds.BLIF cpu_nlds_c
+1 1
+0 0
+.names cpu_nuds.BLIF cpu_nuds_c
+1 1
+0 0
+.names cpu_clk.BLIF cpu_clk_c
+1 1
+0 0
+.names cpu_nreset.BLIF cpu_nreset_c
+1 1
+0 0
+.names enab.BLIF enab_c
+1 1
+0 0
+.names cpu_d1215.BLIF cpu_d12.OE
+1 1
+0 0
+.names cpu_d1215.BLIF cpu_d13.OE
+1 1
+0 0
+.names cpu_d1215.BLIF cpu_d14.OE
+1 1
+0 0
+.names cpu_d1215.BLIF cpu_d15.OE
+1 1
+0 0
+.end

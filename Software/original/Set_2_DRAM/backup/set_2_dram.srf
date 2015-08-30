@@ -1,0 +1,51 @@
+#Build: Synplify Pro for Lattice D-2009.12LC-1, Build 040R, Jan 20 2010
+#install: C:\ISPLEVER_CLASSIC1_4\synpbase
+#OS: Windows_NT
+
+#Hostname: HW-BANDELA
+
+$ Start of Compile
+#Thu Jun 16 15:55:45 2011
+
+Synopsys Verilog Compiler, version comp500rc, Build 070R, built Apr 20 2010
+Copyright (C) 1994-2010, Synopsys Inc.  All Rights Reserved
+
+@I::"C:\ISPLEVER_CLASSIC1_4\synpbase\lib\cpld\lattice.v"
+@I::"C:\ispLEVER_Classic1_4\ispcpld\generic\verilog\synplify\generic.v"
+@I::"D:\safe\protein i\set_2_dram\protein_1_set_2_dram.h"
+@I::"D:\safe\protein i\work_sources\Set_2_DRAM.v"
+Verilog syntax check successful!
+Selecting top level module Set_2_DRAM
+@N: CG364 :"D:\safe\protein i\work_sources\Set_2_DRAM.v":1:7:1:16|Synthesizing module Set_2_DRAM
+
+@END
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Thu Jun 16 15:55:45 2011
+
+###########################################################]
+Synopsys CPLD Technology Mapper, Version map500lat, Build 127R, Built Apr 21 2010
+Copyright (C) 1994-2010, Synopsys Inc.  All Rights Reserved
+Product Version D-2009.12LC-1
+@N: MO106 :"d:\safe\protein i\work_sources\set_2_dram.v":188:2:188:5|Found ROM, 'datout[3:0]', 12 words by 4 bits 
+---------------------------------------
+Resource Usage Report
+
+Simple gate primitives:
+DFFRH           5 uses
+DFF             4 uses
+DFFSH           1 use
+IBUF            19 uses
+BUFTH           4 uses
+OBUF            7 uses
+AND2            61 uses
+INV             50 uses
+XOR2            3 uses
+
+
+@N: FC100 |Timing Report not generated for this device, please use place and route tools for timing analysis.
+D-2009.12LC-1
+Mapper successful!
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Thu Jun 16 15:55:46 2011
+
+###########################################################]

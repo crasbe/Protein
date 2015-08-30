@@ -1,0 +1,11 @@
+JDF B
+// Created by Version 1.4 
+PROJECT Protein_1_IDE
+DESIGN protein_1_ide Normal
+DEVKIT M4A5-64/32-10JC
+ENTRY ABEL/Schematic
+MODULE ..\work_sources\Set_1_IDE.abl
+MODSTYLE autoboot_IDE Normal
+SYNTHESIS_TOOL Synplify
+SIMULATOR_TOOL ActiveHDL
+TOPMODULE autoboot_IDE

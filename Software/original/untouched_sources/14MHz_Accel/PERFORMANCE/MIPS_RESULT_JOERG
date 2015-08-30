@@ -1,0 +1,38 @@
+68000 7 MHz :
+
+time before:  434054159 seconds      622163 microseconds
+time after :  434054165 seconds      402164 microseconds
+time diff  :          5 seconds      780001 microseconds
+OR         : 5.780001 seconds
+performance: 0.865052 MIPS
+
+
+
+68010 7 MHz :
+
+time before:  434053581 seconds      362218 microseconds
+time after :  434053586 seconds      862219 microseconds
+time diff  :          5 seconds      500001 microseconds
+OR         : 5.500001 seconds
+performance: 0.909091 MIPS
+
+
+
+68000 14 MHz :
+
+time before:  434054091 seconds      201316 microseconds
+time after :  434054095 seconds      521317 microseconds
+time diff  :          4 seconds      320001 microseconds
+OR         : 4.320001 seconds
+performance: 1.157407 MIPS
+
+
+
+68010 14 MHz :
+
+time before:  441134466 seconds      540002 microseconds
+time after :  441134470 seconds      640001 microseconds
+time diff  :          4 seconds       99999 microseconds
+OR         : 4.099999 seconds
+performance: 1.219512 MIPS
+

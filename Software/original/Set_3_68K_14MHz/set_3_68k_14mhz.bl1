@@ -1,0 +1,154 @@
+#$ TOOL ispLEVER Classic 1.5.00.05.39.l1
+#$ DATE Sat Jun 15 13:53:11 2013
+#$ TITLE set_3_68k_14mhz.bls 
+#$ MODULE set_3_68k_14mhz
+#$ PINS 13 Turbo_Switch VMA_CPU VMA_'o'  VPA_Out'o'  E'o'  VPA_ E_14MHz DTACKin_ AS_ DTACKout_'o'  \
+#  Clock_7_MHz Clock_7_14_MHz'o'  CDAC
+#$ NODES 26 N_37'o'  N_35'o'  N_36'o'  N_30'o'  N_31'o'  N_32'o'  N_33'o'  N_34'o'  N_29'o'  N_26'o'  N_27'o'  N_28'o'  N_24'o'  \
+#  N_23'o'  N_22'o'  N_21'o'  N_1'o'  N_3'o'  N_4'o'  N_6'o'  N_7'o'  N_13'o'  N_15'o'  N_16'o'  N_17'o'  N_18'o' 
+.model set_3_68k_14mhz
+.inputs N_30.BLIF N_34.BLIF N_13.BLIF N_21.BLIF N_22.BLIF N_23.BLIF N_6.BLIF \
+AS_.BLIF E_14MHz.BLIF N_36.BLIF CDAC.BLIF Clock_7_MHz.BLIF VMA_CPU.BLIF \
+Turbo_Switch.BLIF DTACKin_.BLIF VPA_.BLIF N_16.BLIF N_7.BLIF N_17.BLIF \
+N_28.BLIF N_32.BLIF N_18.BLIF N_1.BLIF N_3.BLIF N_27.BLIF N_37.BLIF N_29.BLIF \
+N_15.BLIF N_35.BLIF N_26.BLIF N_33.BLIF N_31.BLIF N_4.BLIF N_24.BLIF
+.outputs N_1 N_6 N_7.REG N_7.AR N_7.C N_21.PR N_21.D N_21.C N_13 N_32 VMA_ \
+N_24 N_28 N_35 N_37 N_22 N_30 N_15 N_29 N_4 N_23 N_34.J N_34.K N_34.C N_16.RE \
+N_16.J N_16.K N_16.C N_26 N_17 N_31 N_33 N_36 Clock_7_14_MHz E VPA_Out \
+DTACKout_ DTACKout_.OE N_27 N_3 N_18
+.names N_30.BLIF N_34.BLIF N_1
+00 1
+1- 0
+-1 0
+.names N_22.BLIF N_21.BLIF N_13.BLIF N_6
+000 1
+-1- 0
+1-- 0
+--1 0
+.names N_16.BLIF N_15
+0 1
+1 0
+.names N_7.BLIF N_29
+0 1
+1 0
+.names N_17.BLIF N_4
+0 1
+1 0
+.names N_28.BLIF N_23
+0 1
+1 0
+.names N_37.BLIF N_27.BLIF N_28.BLIF N_26
+01- 1
+1-1 1
+00- 0
+1-0 0
+.names N_37.BLIF N_29.BLIF N_22.BLIF N_17
+01- 1
+1-1 1
+00- 0
+1-0 0
+.names N_37.BLIF N_15.BLIF N_30.BLIF N_31
+01- 1
+1-1 1
+00- 0
+1-0 0
+.names N_37.BLIF N_34.BLIF N_32.BLIF N_33
+01- 1
+1-1 1
+00- 0
+1-0 0
+.names N_37.BLIF N_15.BLIF N_35.BLIF N_36
+01- 1
+1-1 1
+00- 0
+1-0 0
+.names N_28.BLIF N_24.BLIF N_27
+10 1
+01 1
+00 0
+11 0
+.names N_3
+.names N_18
+ 1
+.names N_6.BLIF N_7.REG
+1 1
+0 0
+.names N_13.BLIF N_7.AR
+1 1
+0 0
+.names N_23.BLIF N_7.C
+1 1
+0 0
+.names N_13.BLIF N_21.PR
+1 1
+0 0
+.names N_13.BLIF N_21.D
+1 1
+0 0
+.names N_23.BLIF N_21.C
+1 1
+0 0
+.names AS_.BLIF N_13
+1 1
+0 0
+.names E_14MHz.BLIF N_32
+1 1
+0 0
+.names N_36.BLIF VMA_
+1 1
+0 0
+.names CDAC.BLIF N_24
+1 1
+0 0
+.names Clock_7_MHz.BLIF N_28
+1 1
+0 0
+.names VMA_CPU.BLIF N_35
+1 1
+0 0
+.names Turbo_Switch.BLIF N_37
+1 1
+0 0
+.names DTACKin_.BLIF N_22
+1 1
+0 0
+.names VPA_.BLIF N_30
+1 1
+0 0
+.names N_18.BLIF N_34.J
+1 1
+0 0
+.names N_18.BLIF N_34.K
+1 1
+0 0
+.names N_32.BLIF N_34.C
+1 1
+0 0
+.names N_13.BLIF N_16.RE
+1 1
+0 0
+.names N_1.BLIF N_16.J
+1 1
+0 0
+.names N_3.BLIF N_16.K
+1 1
+0 0
+.names N_32.BLIF N_16.C
+1 1
+0 0
+.names N_26.BLIF Clock_7_14_MHz
+1 1
+0 0
+.names N_33.BLIF E
+1 1
+0 0
+.names N_31.BLIF VPA_Out
+1 1
+0 0
+.names N_17.BLIF DTACKout_
+1 1
+0 0
+.names N_4.BLIF DTACKout_.OE
+1 1
+0 0
+.end

@@ -1,0 +1,254 @@
+AIBBLogFile
+
+***********************************************************************
+Processor Type: 68000      Approximate CPU ClockSpeed:  9.64 MHz
+CoProcessor Type: NONE    Approximate FPU ClockSpeed: N/A
+System MMU Type: NONE
+Instruction Cache: N/A    Data Cache: N/A
+I-Cache Burst: N/A        D-Cache Burst: N/A
+System Stack Memory Location: $C00D08--$C02508
+System Stack Memory Type: SLOW-FAST Memory
+System Vector Base Register Address: Not Set or NONE
+Host Machine State: Multitasking Disabled
+-----------------------------------------------------------------------
+Test: WritePixel         Base Machine = A2000:    
+Benchmark Result:   31.20 Seconds
+Performance Percentages:
+This Machine:   146.67%      (Normal Code Figures)
+A2000:          100.00%      (Normal Code Figures)
+A2500/20:       207.43%      (Normal Code Figures)
+A3000/25:       295.42%      (Normal Code Figures)
+***********************************************************************
+
+
+***********************************************************************
+Processor Type: 68000      Approximate CPU ClockSpeed:  9.64 MHz
+CoProcessor Type: NONE    Approximate FPU ClockSpeed: N/A
+System MMU Type: NONE
+Instruction Cache: N/A    Data Cache: N/A
+I-Cache Burst: N/A        D-Cache Burst: N/A
+System Stack Memory Location: $C00D08--$C02508
+System Stack Memory Type: SLOW-FAST Memory
+System Vector Base Register Address: Not Set or NONE
+Host Machine State: Multitasking Disabled
+-----------------------------------------------------------------------
+Test: Dhrystone         Base Machine = A2000:    
+Benchmark Result: 1388.00 Dhrystones/second
+Performance Percentages:
+This Machine:   137.70%      (Normal Code Figures)
+A2000:          100.00%      (Normal Code Figures)
+A2500/20:       276.98%      (Normal Code Figures)
+A3000/25:       581.75%      (Normal Code Figures)
+***********************************************************************
+
+
+***********************************************************************
+Processor Type: 68000      Approximate CPU ClockSpeed:  9.64 MHz
+CoProcessor Type: NONE    Approximate FPU ClockSpeed: N/A
+System MMU Type: NONE
+Instruction Cache: N/A    Data Cache: N/A
+I-Cache Burst: N/A        D-Cache Burst: N/A
+System Stack Memory Location: $C00D08--$C02508
+System Stack Memory Type: SLOW-FAST Memory
+System Vector Base Register Address: Not Set or NONE
+Host Machine State: Multitasking Disabled
+-----------------------------------------------------------------------
+Test: Matrix         Base Machine = A2000:    
+Benchmark Result:   76.38 Seconds
+Performance Percentages:
+This Machine:   150.85%      (Normal Code Figures)
+A2000:          100.00%      (Normal Code Figures)
+A2500/20:       333.58%      (Normal Code Figures)
+A3000/25:       622.47%      (Normal Code Figures)
+***********************************************************************
+
+
+***********************************************************************
+Processor Type: 68000      Approximate CPU ClockSpeed:  9.64 MHz
+CoProcessor Type: NONE    Approximate FPU ClockSpeed: N/A
+System MMU Type: NONE
+Instruction Cache: N/A    Data Cache: N/A
+I-Cache Burst: N/A        D-Cache Burst: N/A
+System Stack Memory Location: $C00D08--$C02508
+System Stack Memory Type: SLOW-FAST Memory
+System Vector Base Register Address: Not Set or NONE
+Host Machine State: Multitasking Disabled
+-----------------------------------------------------------------------
+Test: Fibonacci         Base Machine = A2000:    
+Benchmark Result:   73.96 Seconds
+Performance Percentages:
+This Machine:   133.13%      (Normal Code Figures)
+A2000:          100.00%      (Normal Code Figures)
+A2500/20:       403.69%      (Normal Code Figures)
+A3000/25:       874.42%      (Normal Code Figures)
+***********************************************************************
+
+
+***********************************************************************
+Processor Type: 68000      Approximate CPU ClockSpeed:  9.64 MHz
+CoProcessor Type: NONE    Approximate FPU ClockSpeed: N/A
+System MMU Type: NONE
+Instruction Cache: N/A    Data Cache: N/A
+I-Cache Burst: N/A        D-Cache Burst: N/A
+System Stack Memory Location: $C00D08--$C02508
+System Stack Memory Type: SLOW-FAST Memory
+System Vector Base Register Address: Not Set or NONE
+Host Machine State: Multitasking Disabled
+-----------------------------------------------------------------------
+Test: Sieve         Base Machine = A2000:    
+Benchmark Result:   25.10 Seconds
+Performance Percentages:
+This Machine:   137.85%      (Normal Code Figures)
+A2000:          100.00%      (Normal Code Figures)
+A2500/20:       433.58%      (Normal Code Figures)
+A3000/25:       779.28%      (Normal Code Figures)
+***********************************************************************
+
+
+***********************************************************************
+Processor Type: 68000      Approximate CPU ClockSpeed:  9.64 MHz
+CoProcessor Type: NONE    Approximate FPU ClockSpeed: N/A
+System MMU Type: NONE
+Instruction Cache: N/A    Data Cache: N/A
+I-Cache Burst: N/A        D-Cache Burst: N/A
+System Stack Memory Location: $C00D08--$C02508
+System Stack Memory Type: SLOW-FAST Memory
+System Vector Base Register Address: Not Set or NONE
+Host Machine State: Multitasking Disabled
+-----------------------------------------------------------------------
+Test: Sort         Base Machine = A2000:    
+Benchmark Result:   14.78 Seconds
+Performance Percentages:
+This Machine:   137.62%      (Normal Code Figures)
+A2000:          100.00%      (Normal Code Figures)
+A2500/20:       353.12%      (Normal Code Figures)
+A3000/25:       689.49%      (Normal Code Figures)
+***********************************************************************
+
+
+***********************************************************************
+Processor Type: 68000      Approximate CPU ClockSpeed:  9.64 MHz
+CoProcessor Type: NONE    Approximate FPU ClockSpeed: N/A
+System MMU Type: NONE
+Instruction Cache: N/A    Data Cache: N/A
+I-Cache Burst: N/A        D-Cache Burst: N/A
+System Stack Memory Location: $C00D08--$C02508
+System Stack Memory Type: SLOW-FAST Memory
+System Vector Base Register Address: Not Set or NONE
+Host Machine State: Multitasking Disabled
+-----------------------------------------------------------------------
+Test: LLines         Base Machine = A2000:    
+Benchmark Result:   18.40 Seconds
+Performance Percentages:
+This Machine:   119.67%      (Normal Code Figures)
+A2000:          100.00%      (Normal Code Figures)
+A2500/20:       105.92%      (Normal Code Figures)
+A3000/25:       106.58%      (Normal Code Figures)
+***********************************************************************
+
+
+***********************************************************************
+Processor Type: 68000      Approximate CPU ClockSpeed:  9.64 MHz
+CoProcessor Type: NONE    Approximate FPU ClockSpeed: N/A
+System MMU Type: NONE
+Instruction Cache: N/A    Data Cache: N/A
+I-Cache Burst: N/A        D-Cache Burst: N/A
+System Stack Memory Location: $C00D08--$C02508
+System Stack Memory Type: SLOW-FAST Memory
+System Vector Base Register Address: Not Set or NONE
+Host Machine State: Multitasking Disabled
+-----------------------------------------------------------------------
+Test: IMath         Base Machine = A2000:    
+Benchmark Result:   50.56 Seconds
+Performance Percentages:
+This Machine:   155.97%      (Normal Code Figures)
+A2000:          100.00%      (Normal Code Figures)
+A2500/20:       351.90%      (Normal Code Figures)
+A3000/25:       657.17%      (Normal Code Figures)
+***********************************************************************
+
+
+***********************************************************************
+Processor Type: 68000      Approximate CPU ClockSpeed:  9.64 MHz
+CoProcessor Type: NONE    Approximate FPU ClockSpeed: N/A
+System MMU Type: NONE
+Instruction Cache: N/A    Data Cache: N/A
+I-Cache Burst: N/A        D-Cache Burst: N/A
+System Stack Memory Location: $C00D08--$C02508
+System Stack Memory Type: SLOW-FAST Memory
+System Vector Base Register Address: Not Set or NONE
+Host Machine State: Multitasking Disabled
+-----------------------------------------------------------------------
+Test: FMath         Base Machine = A2000:    
+Benchmark Result:   67.38 Seconds
+Performance Percentages:
+This Machine:   134.67%      (Standard Floating Point Figures)
+A2000:          100.00%      (Standard Floating Point Figures)
+A2500/20:       250.52%      (Standard Floating Point Figures)
+A3000/25:       480.11%      (Standard Floating Point Figures)
+***********************************************************************
+
+
+***********************************************************************
+Processor Type: 68000      Approximate CPU ClockSpeed:  9.64 MHz
+CoProcessor Type: NONE    Approximate FPU ClockSpeed: N/A
+System MMU Type: NONE
+Instruction Cache: N/A    Data Cache: N/A
+I-Cache Burst: N/A        D-Cache Burst: N/A
+System Stack Memory Location: $C00D08--$C02508
+System Stack Memory Type: SLOW-FAST Memory
+System Vector Base Register Address: Not Set or NONE
+Host Machine State: Multitasking Disabled
+-----------------------------------------------------------------------
+Test: Savage         Base Machine = A2000:    
+Benchmark Result:  287.58 Seconds
+Performance Percentages:
+This Machine:   149.09%      (Standard Floating Point Figures)
+A2000:          100.00%      (Standard Floating Point Figures)
+A2500/20:       288.81%      (Standard Floating Point Figures)
+A3000/25:       536.49%      (Standard Floating Point Figures)
+***********************************************************************
+
+
+***********************************************************************
+Processor Type: 68000      Approximate CPU ClockSpeed:  9.64 MHz
+CoProcessor Type: NONE    Approximate FPU ClockSpeed: N/A
+System MMU Type: NONE
+Instruction Cache: N/A    Data Cache: N/A
+I-Cache Burst: N/A        D-Cache Burst: N/A
+System Stack Memory Location: $C00D08--$C02508
+System Stack Memory Type: SLOW-FAST Memory
+System Vector Base Register Address: Not Set or NONE
+Host Machine State: Multitasking Disabled
+-----------------------------------------------------------------------
+Test: FMatrix         Base Machine = A2000:    
+Benchmark Result:   66.82 Seconds
+Performance Percentages:
+This Machine:   146.84%      (Standard Floating Point Figures)
+A2000:          100.00%      (Standard Floating Point Figures)
+A2500/20:       309.14%      (Standard Floating Point Figures)
+A3000/25:       569.47%      (Standard Floating Point Figures)
+***********************************************************************
+
+
+***********************************************************************
+Processor Type: 68000      Approximate CPU ClockSpeed:  9.64 MHz
+CoProcessor Type: NONE    Approximate FPU ClockSpeed: N/A
+System MMU Type: NONE
+Instruction Cache: N/A    Data Cache: N/A
+I-Cache Burst: N/A        D-Cache Burst: N/A
+System Stack Memory Location: $C00D08--$C02508
+System Stack Memory Type: SLOW-FAST Memory
+System Vector Base Register Address: Not Set or NONE
+Host Machine State: Multitasking Disabled
+-----------------------------------------------------------------------
+Test: BeachBall Test         Base Machine = A2000:    
+Benchmark Result:  723.12 Seconds
+Performance Percentages:
+This Machine:   148.66%      (Standard Floating Point Figures)
+A2000:          100.00%      (Standard Floating Point Figures)
+A2500/20:       285.68%      (Standard Floating Point Figures)
+A3000/25:       530.29%      (Standard Floating Point Figures)
+***********************************************************************
+
+

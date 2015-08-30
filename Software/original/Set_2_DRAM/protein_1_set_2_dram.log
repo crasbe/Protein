@@ -1,0 +1,52 @@
+|--------------------------------------------|
+|- ispLEVER Fitter Report File              -|
+|- Version 1.5.00.05.39.l1                       -|
+|- (c)Copyright, Lattice Semiconductor 2002 -|
+|--------------------------------------------|
+
+
+
+*** Source file is protein_1_set_2_dram.tt4 . Device is M4A5-64/32-10JC .
+
+<Note>  F40016:  0 pins have been reserved out of 34 .
+<Note>  F40021:  34 pins are available after reservation, 32 are required
+                 by the design.
+<Note> Node M0_inst_cpu_nas_z := cpu_nas as Input Register.
+<Note>  F35065:  For outputs, implicit output enables will be set to VCC.
+<Note>  F35068:  Since SET/RESET DON'T CARE is turned off, any unspecified
+                 SET/RESET will be defaulted to GND.
+
+*** End of Pla2db. 
+Check preplaced pins/nodes
+Check preplaced blocks
+Check unreferenced pins/nodes
+Check clock rules
+
+List of global clocks:
+   cpu_clk:
+...... Controls a preplaced input register/latch.
+...... Is preplaced at a global clock pin.
+
+List of non-global clocks:
+   M0_inst_write_cycle:
+...... is a Node.
+
+*** End of Normalization.
+
+*** End of DRC. 
+
+*** Start Partitioning
+ 
+*** Partitioning successful.
+
+
+*** Starting Place&Route
+
+*** Place&Route Successful
+...... Zero Hold Time For Input Registers? N
+*** The JEDEC file generated is protein_1_set_2_dram.jed .
+*** Report Generator invoked.
+*** Report Generator end.
+
+// Fitting successful.
+// ERROR count 0 WARNING count 0 .

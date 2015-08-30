@@ -1,0 +1,40 @@
+#-- Lattice Semiconductor Corporation Ltd.
+#-- Synplify OEM project file c:/users/bot2/documents/protein i_new_set/set_2_dram\Set_2_DRAM.prj
+#-- Written on Sun Jun 16 17:07:32 2013
+
+
+#device options
+set_option -technology mach
+set_option -part M4A5-64
+
+#compilation/mapping options
+
+#use verilog 2001 standard option
+set_option -vlog_std v2001
+
+#map options
+
+#simulation options
+set_option -write_verilog false
+set_option -write_vhdl false
+
+#timing analysis options
+set_option -synthesis_onoff_pragma false
+
+#-- add_file options
+add_file -verilog "C:/ISPLEVER_CLASSIC1_5/synpbase/lib/cpld/lattice.v"
+add_file -verilog "C:/ispLEVER_Classic1_5/ispcpld/generic/verilog/synplify/generic.v"
+add_file -verilog -lib work "protein_1_set_2_dram.h"
+add_file -verilog -lib work "../work_sources/Set_2_DRAM.v"
+
+#-- top module name
+set_option -top_module Set_2_DRAM
+
+#-- set result format/file last
+project -result_file "Set_2_DRAM.edi"
+
+#-- error message log file
+project -log_file set_2_dram.srf
+
+#-- run Synplify with 'arrange VHDL file'
+project -run

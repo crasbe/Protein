@@ -1,0 +1,84 @@
+ ispLEVER Classic 1.5.00.05.39.l1 Linked Equations File
+Copyright(C), 1992-2011, Lattice Semiconductor Corp.
+All Rights Reserved.
+
+Design set_3_68k_14mhz created  Sat Jun 15 13:53:11 2013
+
+Title:  set_3_68k_14mhz.bls 
+
+ P-Terms   Fan-in  Fan-out  Type  Name (attributes)
+---------  ------  -------  ----  -----------------
+   2          3        1    Pin   VMA_ 
+   2          3        1    Pin   VPA_Out 
+   2          3        1    Pin   E 
+   2          3        1    Pin   DTACKout_ 
+   1          1        1    Pin   DTACKout_.OE 
+   3          3        1    Pin   Clock_7_14_MHz 
+   1          1        1    Node  N_34.D 
+   1          1        1    Node  N_34.C 
+   1          1        1    Node  N_21.D 
+   1          1        1    Node  N_21.AP 
+   1          1        1    Node  N_21.C 
+   1          1        1    Node  N_7.AR 
+   1          3        1    Node  N_7.D 
+   1          1        1    Node  N_7.C 
+   1          1        1    Node  N_16.AR 
+   2          3        1    Node  N_16.D 
+   1          1        1    Node  N_16.C 
+   2          3        1    Node  N_17 
+=========
+  26                 P-Term Total: 26
+                       Total Pins: 13
+                      Total Nodes: 5
+            Average P-Term/Output: 1
+
+
+Equations:
+
+VMA_ = (VMA_CPU & Turbo_Switch
+     # !Turbo_Switch & !N_16.Q);
+
+VPA_Out = (Turbo_Switch & VPA_
+     # !Turbo_Switch & !N_16.Q);
+
+E = (E_14MHz & Turbo_Switch
+     # N_34.Q & !Turbo_Switch);
+
+DTACKout_ = (Turbo_Switch & DTACKin_
+     # !Turbo_Switch & !N_7.Q);
+
+DTACKout_.OE = (!N_17);
+
+Clock_7_14_MHz = (!CDAC & Clock_7_MHz
+     # Clock_7_MHz & Turbo_Switch
+     # CDAC & !Clock_7_MHz & !Turbo_Switch);
+
+N_34.D = (!N_34.Q);
+
+N_34.C = (E_14MHz);
+
+N_21.D = (AS_);
+
+N_21.AP = (AS_);
+
+N_21.C = (!Clock_7_MHz);
+
+N_7.AR = (AS_);
+
+N_7.D = (!N_21.Q & !AS_ & !DTACKin_);
+
+N_7.C = (!Clock_7_MHz);
+
+N_16.AR = (AS_);
+
+N_16.D = (N_16.Q
+     # !N_34.Q & !VPA_);
+
+N_16.C = (E_14MHz);
+
+N_17 = (Turbo_Switch & DTACKin_
+     # !Turbo_Switch & !N_7.Q);
+
+
+Reverse-Polarity Equations:
+

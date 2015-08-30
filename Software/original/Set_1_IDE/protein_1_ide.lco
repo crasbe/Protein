@@ -1,0 +1,174 @@
+[DEVICE]
+Family = M4A5;
+PartType = M4A5-64/32;
+Package = 44PLCC;
+PartNumber = M4A5-64/32-10JC;
+Speed = -10;
+Operating_condition = COM;
+EN_Segment = No;
+Pin_MC_1to1 = No;
+EN_PinReserve_IO = Yes;
+EN_PinReserve_BIDIR = Yes;
+Voltage = 5.0;
+
+[REVISION]
+RCS = "$Revision: 1.2 $";
+Parent = m4a5.lci;
+SDS_File = m4a5.sds;
+Design = protein_1_ide.tt4;
+DATE = 6/15/13;
+TIME = 14:40:27;
+Source_Format = ABEL_Schematic;
+Type = TT2;
+Pre_Fit_Time = 1;
+
+[IGNORE ASSIGNMENTS]
+Pin_Assignments = No;
+Pin_Keep_Block = No;
+Pin_Keep_Segment = No;
+Group_Assignments = No;
+Macrocell_Assignments = No;
+Macrocell_Keep_Block = No;
+Macrocell_Keep_Segment = No;
+Pin_Reservation = No;
+Block_Reservation = No;
+Segment_Reservation = No;
+Timing_Constraints = No;
+
+[CLEAR ASSIGNMENTS]
+Pin_Assignments = No;
+Pin_Keep_Block = No;
+Pin_Keep_Segment = No;
+Group_Assignments = No;
+Macrocell_Assignments = No;
+Macrocell_Keep_Block = No;
+Macrocell_Keep_Segment = No;
+Pin_Reservation = No;
+Block_Reservation = No;
+Segment_Reservation = No;
+Timing_Constraints = No;
+
+[BACKANNOTATE ASSIGNMENTS]
+Pin_Block = No;
+Pin_Macrocell_Block = No;
+Routing = No;
+
+[GLOBAL CONSTRAINTS]
+Max_PTerm_Split = 16;
+Max_PTerm_Collapse = 16;
+Max_Pin_Percent = 100;
+Max_Macrocell_Percent = 100;
+Max_GLB_Input_Percent = 100;
+Max_Seg_In_Percent = 100;
+Logic_Reduction = Yes;
+XOR_Synthesis = Yes;
+DT_Synthesis = Yes;
+Node_Collapse = Yes;
+Run_Time = 0;
+Set_Reset_Dont_Care = No;
+Clock_Optimize = No;
+In_Reg_Optimize = Yes;
+Balanced_Partitioning = Yes;
+Device_max_fanin = 33;
+Device_max_pterms = 20;
+Usercode = 0;
+Usercode_Format = Hex;
+
+[LOCATION ASSIGNMENTS]
+Layer = OFF;
+a23 = pin,18,-,B,-;
+a22 = pin,17,-,B,-;
+a21 = pin,16,-,B,-;
+a20 = pin,15,-,B,-;
+a19 = pin,14,-,B,-;
+a18 = pin,9,-,A,-;
+a17 = pin,8,-,A,-;
+a16 = pin,7,-,A,-;
+a15 = pin,6,-,A,-;
+a14 = pin,5,-,A,-;
+a13 = pin,4,-,A,-;
+a12 = pin,3,-,A,-;
+a3 = pin,2,-,A,-;
+nas = pin,26,-,C,-;
+nuds = pin,25,-,C,-;
+r_w = pin,24,-,C,-;
+cdac = pin,33,-,-,-;
+ide_irq = pin,30,-,C,-;
+override = pin,43,-,D,-;
+dtack = pin,19,-,B,-;
+irq_synched_last = pin,21,-,B,-;
+greenledout = pin,20,-,B,-;
+nidereset = pin,40,-,D,-;
+nls245ena = pin,42,-,D,-;
+ls245datadirwrite = pin,41,-,D,-;
+ncs0 = pin,39,-,D,-;
+ncs1 = pin,38,-,D,-;
+nior = pin,37,-,D,-;
+niow = pin,36,-,D,-;
+nint2 = pin,31,-,C,-;
+d15 = pin,28,-,C,-;
+d14 = pin,27,-,C,-;
+irq_passing_enabled = node,-,-,C,13;
+interrupt_flag = node,-,-,C,9;
+jeejee = node,-,-,A,1;
+irq_synched = node,-,-,B,5;
+irq_synched_last_last = node,-,-,B,13;
+irq_rose = node,-,-,B,9;
+its_me_cnt3 = node,-,-,A,0;
+its_me_cnt2 = node,-,-,C,1;
+its_me_cnt1 = node,-,-,C,4;
+its_me_cnt0 = node,-,-,C,5;
+d15_id_output = node,-,-,A,12;
+DE0000_DONE_R = node,-,-,A,8;
+stidreg2 = node,-,-,B,8;
+stidreg1 = node,-,-,A,4;
+stidreg0 = node,-,-,B,4;
+override_0 = node,-,-,A,9;
+dtack_0 = node,-,-,A,5;
+d15_0 = node,-,-,A,13;
+
+[GROUP ASSIGNMENTS]
+Layer = OFF;
+
+[RESOURCE RESERVATIONS]
+Layer = OFF;
+
+[SLEWRATE]
+Default = FAST;
+SLOW =  d14,dtack,ls245datadirwrite,ncs0,ncs1,nidereset,nint2,nior,niow,nls245ena,override,d15,greenledout,irq_synched_last;
+
+[PULLUP]
+Default = Up;
+
+[NETLIST/DELAY FORMAT]
+Delay_File = SDF;
+Netlist = VHDL;
+
+[OSM BYPASS]
+
+[FITTER REPORT FORMAT]
+Fitter_Options = Yes;
+Pinout_Diagram = No;
+Pinout_Listing = Yes;
+Detailed_Block_Segment_Summary = Yes;
+Input_Signal_List = Yes;
+Output_Signal_List = Yes;
+Bidir_Signal_List = Yes;
+Node_Signal_List = Yes;
+Signal_Fanout_List = Yes;
+Block_Segment_Fanin_List = Yes;
+Postfit_Eqn = Yes;
+Prefit_Eqn = Yes;
+Page_Break = Yes;
+
+[POWER]
+Powerlevel =  Low,High;
+Default = High;
+Type = GLB;
+
+[SOURCE CONSTRAINT OPTION]
+
+[TIMING ANALYZER]
+Last_source=;
+Last_source_type=Fmax;
+

@@ -1,0 +1,24 @@
+Signal Name Cross Reference File
+
+ispLEVER Classic 1.5.00.05.39.l1
+
+Design 'protein_1_set_2_dram' created Sun Jun 16 20:51:04 2013
+
+Title:  clockport_decode.bls 
+
+ LEGEND:  '>'  Functional Block Port Separator
+          '/'  Hierarchy Path Separator
+          '@'  Automatically Generated Node
+
+
+Short Name                              Hierarchical Name
+----------                              -----------------
+M0_inst_access_cas                   	I15/inst_access_cas
+M0_inst_access_ras                   	I15/inst_access_ras
+M0_inst_autoconf_on                  	I15/inst_autoconf_on
+M0_inst_cpu_nas_z                    	I15/inst_cpu_nas_z
+M0_inst_read_cycle                   	I15/inst_read_cycle
+M0_inst_rfsh_cas                     	I15/inst_rfsh_cas
+M0_inst_write_cycle                  	I15/inst_write_cycle
+M0_rfsh_select_0_                    	I15/rfsh_select_0_
+M0_rfsh_select_1_                    	I15/rfsh_select_1_

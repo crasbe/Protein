@@ -1,0 +1,225 @@
+"Warning: this code is a mess, that may be difficult to explain..
+"Can be buggy, input setup/hold with used clock not checked...
+"The ABEL source below was last edited in November 2005
+
+MODULE autoboot_IDE
+
+"inputs
+a23..a16 pin ;
+a15..a12 pin ;
+a3 pin ;
+nas pin ; "_address strobe
+nuds pin ;
+r_w pin ;
+cdac pin ; "cdac
+
+
+ide_irq pin ;
+
+"outputs
+
+override pin istype 'com';
+irq_synched_last pin istype 'reg';"output red led
+greenledout pin istype 'reg';
+
+nidereset pin istype 'reg';
+nls245ena pin istype 'com';
+ls245datadirwrite pin 11 istype 'com';
+
+ncs0 pin istype 'com';
+ncs1 pin istype 'com';
+nior pin istype 'com';
+niow pin istype 'com';
+nint2 pin istype 'com'; "open drain
+
+"io
+d15..d14 pin istype 'com'; "Amiga lines
+
+"nodes
+irq_passing_enabled node istype 'reg';
+interrupt_flag node istype 'reg';
+jeejee node istype 'reg';
+d15_from_sm node istype 'com';
+irq_synch0 node istype 'reg';
+irq_synched node istype 'reg';
+
+irq_synched_last_last node istype 'reg';
+irq_rose node istype 'reg';
+its_me_cnt3..its_me_cnt0 node istype 'reg';
+its_me_lasted = [its_me_cnt3..its_me_cnt0];
+its_me node istype 'com';
+d15_id_output node istype 'reg';
+DE0000_DONE_R node istype 'reg';
+"sets
+x = .x.;
+A = [a23..a12];
+DA = [1,1,0,1, 1,0,1,0, x,x,x,x]; "DA0000-DAFFFF
+DAIDE =[1,1,0,1, 1,0,1,0, 0,0,x,x]; "DA0000-DA3FFF
+DA2 = [1,1,0,1, 1,0,1,0, 0,0,1,0]; "DA2000-DA2FFF
+DA3 = [1,1,0,1, 1,0,1,0, 0,0,1,1]; "DA3000-DA3FFF
+DA8 = [1,1,0,1, 1,0,1,0, 1,0,0,0]; "DA8000-DA8FFF
+DA9 = [1,1,0,1, 1,0,1,0, 1,0,0,1]; "DA9000-DA9FFF
+DAA = [1,1,0,1, 1,0,1,0, 1,0,1,0]; "DAA000-DAAFFF
+DE = [1,1,0,1, 1,1,1,0, x,x,x,x]; "DE0000-DEFFFF
+
+
+"States for hw identification state machine
+stidreg2..stidreg0 node istype 'reg';
+identifymachine = [stidreg2..stidreg0];
+st0 = [0,0,0]; "all zero from reset
+st1 = [0,0,1];
+st2 = [0,1,0];
+st3 = [0,1,1];
+st4 = [1,0,0]; "<-- d15 outputs 0 in this state.
+st5 = [1,0,1];
+st6invalid = [1,1,0];
+st7invalid = [1,1,1];
+
+DEstateadvance = ((its_me_lasted.fb==2)&(A==DE));
+
+equations
+identifymachine.clk=cdac;
+state_diagram identifymachine;
+state st6invalid:
+d15_from_sm = '1';
+goto st0;
+state st7invalid:
+d15_from_sm = '1';
+goto st0;
+
+"; state after reset
+state st0:
+d15_from_sm = '1';
+if (DEstateadvance & (a3=='0')) then st1
+else st0;
+
+"; state after first r/w $dexxxx with a3=0
+state st1:
+d15_from_sm = '1';
+if (DEstateadvance & (r_w=='0')) then st2
+else st1;
+
+"; state after two write to $dexxxx
+"; output d15 = 1
+State st2:
+d15_from_sm = '1';
+if (DEstateadvance & (r_w=='1')) then st3
+else st2;
+
+"; state after first read $dexxxx
+"; output d15 = 1
+State st3:
+d15_from_sm = '1';
+if (DEstateadvance & (r_w=='0')) then st2"if write
+else if (DEstateadvance & (r_w=='1')) then st4"if read
+else st3;
+
+"; state after two read $dexxxx
+"; output d15_from_sm = 0
+State st4:
+d15_from_sm = '0';
+if (DEstateadvance & (r_w=='0')) then st2 "if write
+else if (DEstateadvance & (r_w=='1')) then st5"if read
+else st4;
+
+"; state after three read $dexxxx
+"; output d15 = 1
+State st5:
+d15_from_sm = '1';
+if (DEstateadvance & (r_w=='0')) then st2 "if write
+else st5;
+
+equations
+greenledout.clk=cdac;
+
+greenledout:=!DE0000_DONE_R.fb;
+
+
+its_me = !nas & ((A==DE)#(A==DAIDE)#(A==DA8)#(A==DA9)#(A==DAA));
+
+
+!override = its_me;
+"XXXXAFDSDGJB SPDJGSDG
+
+its_me_lasted.clk=cdac;
+when (its_me=='0')
+then its_me_lasted:=0;
+else its_me_lasted:=its_me_lasted.fb+1;
+
+nidereset.clk=cdac;
+nidereset:='1'; "reset de-asserted from the first clk
+
+!ncs0=!a12 & (A==DAIDE) & (!nas);
+!ncs1= a12 & (A==DAIDE) & (!nas);
+
+
+ls245datadirwrite=!r_w;
+!nls245ena = ((A==DAIDE) & !nas);
+
+!nior = ((r_w=='1') & (A==DAIDE) & (!nas));
+!niow = ((r_w=='0') & (A==DAIDE) & (!nuds) & (!nas));
+
+
+[d15..d14].oe = ((r_w=='1') & !nas & ((A==DE)#(A==DA8)#(A==DA9)#(A==DAA)));
+
+
+irq_synch0.clk=cdac;
+irq_synched.clk=cdac;
+irq_synched_last.clk=cdac;
+irq_synched_last_last.clk=cdac;
+irq_rose.clk=cdac;
+irq_synch0:=ide_irq;
+irq_synched:=irq_synch0.fb;
+irq_synched_last:=irq_synched.fb;
+irq_synched_last_last:=irq_synched_last.fb;
+irq_rose:=(irq_synched.fb=='1')&(irq_synched_last.fb=='1')&(irq_synched_last_last.fb=='0')&(DE0000_DONE_R.fb=='1');
+
+DE0000_DONE_R.clk=cdac;
+when (d15_from_sm=='0')
+then DE0000_DONE_R:='1';
+else DE0000_DONE_R:=DE0000_DONE_R.fb;
+
+irq_passing_enabled.clk = cdac;
+when ((its_me_lasted.fb==2) & (A==DA8) & (r_w=='0')) then
+irq_passing_enabled := d15;
+else irq_passing_enabled := irq_passing_enabled.fb;
+
+interrupt_flag.clk = cdac;
+when ((its_me_lasted.fb==2) & (A==DA9) & (r_w=='0') & (d15=='0')) then
+interrupt_flag := '0';
+else when (irq_rose) then
+interrupt_flag := !irq_passing_enabled.fb;
+else interrupt_flag := interrupt_flag.fb;
+
+jeejee.clk = cdac;
+when ((its_me_lasted.fb==2) & (A==DAA) & (r_w=='0')) then
+jeejee := d15;
+else jeejee := jeejee.fb;
+
+nint2='0'; "_int2 active low
+nint2.oe = interrupt_flag.fb;
+
+
+"copy output from id state machine just before advancing in id state machine
+d15_id_output.clk=cdac;
+when (its_me_lasted.fb==1)
+then d15_id_output:=d15_from_sm;
+else d15_id_output:=d15_id_output.fb;
+
+"read, output to d14
+when (A==DA9) then
+d14='0';
+
+"read from chip, output to d15
+when (A==DA8) then
+d15=irq_passing_enabled.fb # irq_synched.fb;
+else when (A==DA9) then
+d15=interrupt_flag.fb; "Access interrupt flaggie
+else when (A==DAA) then
+d15=jeejee.fb;
+else when (A==DE) then
+d15=d15_id_output.fb; "Access hardware identification
+
+
+
+END

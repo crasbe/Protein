@@ -1,0 +1,60 @@
+Running in Lattice mode
+
+
+Starting:    C:\ISPLEVER_CLASSIC1_5\synpbase\bin\mbin\synbatch.exe
+Install:     C:\ISPLEVER_CLASSIC1_5\synpbase
+Date:        Sun Jun 16 17:07:39 2013
+Version:     E-2011.03LC
+
+Arguments:   -product synplify_pro  -batch c:/users/bot2/documents/protein i_new_set/set_2_dram\Set_2_DRAM.prj
+ProductType: synplify_pro
+
+
+
+
+
+
+log file: "C:\users\bot2\documents\protein i_new_set\set_2_dram\set_2_dram.srf"
+
+
+Running Set_2_DRAM|set_2_dram
+
+Running Premap Flow on Set_2_DRAM|set_2_dram
+
+Running Compile Flow on Set_2_DRAM|set_2_dram
+
+Running HDL Compile on Set_2_DRAM|set_2_dram
+
+compiler Completed
+Return Code: 0
+
+Run Time:00:00:00
+
+Copied C:\users\bot2\documents\protein i_new_set\set_2_dram\synwork\Set_2_DRAM_compiler.srs to C:\users\bot2\documents\protein i_new_set\set_2_dram\Set_2_DRAM.srl
+
+Copied C:\users\bot2\documents\protein i_new_set\set_2_dram\synwork\Set_2_DRAM_compiler.srs to C:\users\bot2\documents\protein i_new_set\set_2_dram\Set_2_DRAM.srs
+
+Job flow Compile Flow completed on Set_2_DRAM|set_2_dram
+
+
+Job flow Premap Flow completed on Set_2_DRAM|set_2_dram
+
+
+Running Mapping Flow on Set_2_DRAM|set_2_dram
+
+Running Mapping on Set_2_DRAM|set_2_dram
+
+mach Mapper Completed
+Return Code: 0
+
+Run Time:00:00:01
+
+Job flow Mapping Flow completed on Set_2_DRAM|set_2_dram
+
+
+Job flow Synthesis completed on Set_2_DRAM|set_2_dram
+
+
+exit status=0
+
+

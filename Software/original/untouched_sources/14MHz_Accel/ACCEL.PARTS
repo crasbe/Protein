@@ -1,0 +1,12 @@
+Parts  List:
+
+U1         68000/16 (MC68000/12F or MC68HC000/16 or TS68000CP16 from
+                      SGS-Thomson and so on))
+U2         74LS74
+U3         74LS27
+U4         74LS86
+U5         74LS112A
+U6         old 68000 socket (see text)
+U7         74LS04
+
+(See Layout.doc before buying parts)

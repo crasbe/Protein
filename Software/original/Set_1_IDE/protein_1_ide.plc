@@ -1,0 +1,67 @@
+|--------------------------------------------|
+|- ispLEVER Fitter Report File              -|
+|- Version 1.5.00.05.39.l1                       -|
+|- (c)Copyright, Lattice Semiconductor 2002 -|
+|--------------------------------------------|
+
+
+; Source file protein_1_ide.tt4
+; FITTER-generated Placements.
+; DEVICE   mach463a
+; DATE     Sat Jun 15 14:40:27 2013
+
+
+Pin   18  a23
+Pin   17  a22
+Pin   16  a21
+Pin   15  a20
+Pin   14  a19
+Pin   9  a18
+Pin   8  a17
+Pin   7  a16
+Pin   6  a15
+Pin   5  a14
+Pin   4  a13
+Pin   3  a12
+Pin   2  a3
+Pin   26  nas
+Pin   25  nuds
+Pin   24  r_w
+Pin   33  cdac
+Pin   30  ide_irq ;  IPair 97
+Pin   43  override Comb ; S6=1  S9=1  Pair 117
+Pin   19  dtack Comb ; S6=1  S9=1  Pair 71
+Pin   21  irq_synched_last Reg  ; S6=1  S9=1  Pair 69
+Pin   20  greenledout Reg  ; S6=1  S9=1  Pair 87
+Pin   40  nidereset Reg  ; S6=1  S9=1  Pair 129
+Pin   42  nls245ena Comb ; S6=1  S9=1  Pair 135
+Pin   41  ls245datadirwrite Comb ; S6=1  S9=1  Pair 119
+Pin   39  ncs0 Comb ; S6=1  S9=1  Pair 131
+Pin   38  ncs1 Comb ; S6=1  S9=1  Pair 123
+Pin   37  nior Comb ; S6=1  S9=1  Pair 125
+Pin   36  niow Comb ; S6=1  S9=1  Pair 120
+Pin   31  nint2 Comb ; S6=1  S9=1  Pair 93
+Pin   28  d15 Comb ; S6=1  S9=1  Pair 105
+Pin   27  d14 Comb ; S6=1  S9=1  Pair 111
+Node  97  irq_synch0 Reg ;
+Node  69  RN_irq_synched_last Reg  ; S6=1  S9=1 
+Node  113  irq_passing_enabled Reg  ; S6=1  S9=1 
+Node  107  interrupt_flag Reg  ; S6=1  S9=1 
+Node  47  jeejee Reg  ; S6=1  S9=1 
+Node  77  irq_synched Reg  ; S6=1  S9=1 
+Node  89  irq_synched_last_last Reg  ; S6=1  S9=1 
+Node  83  irq_rose Reg  ; S6=1  S9=1 
+Node  45  its_me_cnt3 Reg  ; S6=1  S9=1 
+Node  95  its_me_cnt2 Reg  ; S6=1  S9=1 
+Node  99  its_me_cnt1 Reg  ; S6=1  S9=1 
+Node  101  its_me_cnt0 Reg  ; S6=1  S9=1 
+Node  63  d15_id_output Reg  ; S6=1  S9=1 
+Node  57  DE0000_DONE_R Reg  ; S6=1  S9=1 
+Node  81  stidreg2 Reg  ; S6=1  S9=1 
+Node  51  stidreg1 Reg  ; S6=1  S9=1 
+Node  75  stidreg0 Reg  ; S6=1  S9=1 
+Node  59  override_0 Comb ; S6=1  S9=1 
+Node  53  dtack_0 Comb ; S6=1  S9=1 
+Node  65  d15_0 Comb ; S6=1  S9=1 
+; Unused Pins & Nodes
+; -> None Found.

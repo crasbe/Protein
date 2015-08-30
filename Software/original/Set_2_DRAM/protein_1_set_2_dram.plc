@@ -1,0 +1,56 @@
+|--------------------------------------------|
+|- ispLEVER Fitter Report File              -|
+|- Version 1.5.00.05.39.l1                       -|
+|- (c)Copyright, Lattice Semiconductor 2002 -|
+|--------------------------------------------|
+
+
+; Source file protein_1_set_2_dram.tt4
+; FITTER-generated Placements.
+; DEVICE   mach463a
+; DATE     Sun Jun 16 20:51:32 2013
+
+
+Pin   30  dram_nlcas Comb ; S6=1  S9=1  Pair 99
+Pin   29  dram_nucas Comb ; S6=1  S9=1  Pair 105
+Pin   19  dram_ras3 Comb ; S6=1  S9=1  Pair 69
+Pin   2  A1
+Pin   4  A2
+Pin   6  A3
+Pin   8  A4
+Pin   14  A5
+Pin   16  A6
+Pin   40  cpu_nas ;  IPair 130
+Pin   37  cpu_nlds
+Pin   38  cpu_nuds
+Pin   11  cpu_clk
+Pin   39  cpu_reset
+Pin   20  enab
+Pin   18  dram_ras2 Comb ; S6=1  S9=1  Pair 81
+Pin   36  dram_ras1 Comb ; S6=1  S9=1  Pair 117
+Pin   31  dram_nras0 Comb ; S6=1  S9=1  Pair 95
+Pin   25  cpu_d15 Comb ; S6=1  S9=1  Pair 111
+Pin   26  cpu_d14 Comb ; S6=1  S9=1  Pair 93
+Pin   27  cpu_d13 Comb ; S6=1  S9=1  Pair 113
+Pin   28  cpu_d12 Comb ; S6=1  S9=1  Pair 107
+Pin   21  C_CS Comb ; S6=1  S9=1  Pair 75
+Pin   15  A16
+Pin   9  A17
+Pin   7  A18
+Pin   43  A21
+Pin   5  A19
+Pin   3  A20
+Pin   42  A22
+Pin   41  A23
+Pin   17  mux_switch Reg  ; S6=1  S9=1  Pair 87
+Node  130  M0_inst_cpu_nas_z Reg ;
+Node  45  M0_inst_access_ras Reg  ; S6=1  S9=1 
+Node  102  M0_inst_rfsh_cas Reg  ; S6=1  S9=1 
+Node  96  M0_rfsh_select_0_ Reg  ; S6=1  S9=1 
+Node  101  M0_rfsh_select_1_ Reg  ; S6=1  S9=1 
+Node  57  M0_inst_access_cas Reg  ; S6=1  S9=1 
+Node  129  M0_inst_read_cycle Reg  ; S6=1  S9=1 
+Node  123  M0_inst_write_cycle Reg  ; S6=1  S9=1 
+Node  51  M0_inst_autoconf_on Reg  ; S6=0  S9=0 
+; Unused Pins & Nodes
+; -> None Found.

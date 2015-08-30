@@ -1,0 +1,91 @@
+#$ TOOL ispLEVER Classic 1.5.00.05.39.l1
+#$ DATE Fri Apr 05 17:04:15 2013
+#$ TITLE clockport_decod.bls 
+#$ PROPERTY Lattice LOCK C_CS 21
+#$ PROPERTY Lattice LOCK A23 41
+#$ PROPERTY Lattice LOCK A22 42
+#$ PROPERTY Lattice LOCK A20 3
+#$ PROPERTY Lattice LOCK A19 5
+#$ PROPERTY Lattice LOCK A21 43
+#$ PROPERTY Lattice LOCK A18 7
+#$ PROPERTY Lattice LOCK A17 9
+#$ PROPERTY Lattice LOCK A16 15
+#$ MODULE clockport_decod
+#$ PINS 9 C_CS:21'o'  A21:43 A19:5 A20:3 A23:41 A22:42 A18:7 A17:9 A16:15
+#$ NODES 11 N_15'o'  N_8'o'  N_9'o'  N_10'o'  N_11'o'  N_12'o'  N_13'o'  N_14'o'  N_5'o'  N_6'o'  N_7'o' 
+.model clockport_decod
+.inputs N_8.BLIF N_9.BLIF N_10.BLIF N_11.BLIF N_12.BLIF N_13.BLIF N_14.BLIF \
+N_5.BLIF N_6.BLIF N_7.BLIF A23.BLIF A22.BLIF A20.BLIF A19.BLIF A21.BLIF \
+A18.BLIF A17.BLIF A16.BLIF N_15.BLIF
+.outputs N_15 N_8 N_9 N_10 N_11 N_12 N_13 N_14 N_5 N_6 N_7 C_CS
+
+.subckt g_2nand A.BLIF=N_8.BLIF B.BLIF=N_9.BLIF YN=N_15
+\
+
+.subckt g_4and A.BLIF=N_10.BLIF B.BLIF=N_11.BLIF C.BLIF=N_12.BLIF D.BLIF=N_13.BLIF \
+ Y=N_8
+\
+
+.subckt g_4and4 AN.BLIF=N_14.BLIF BN.BLIF=N_5.BLIF CN.BLIF=N_6.BLIF DN.BLIF=N_7.BLIF \
+ Y=N_9
+
+.subckt g_input I.BLIF=A23.BLIF O=N_10
+
+.subckt g_input I.BLIF=A22.BLIF O=N_11
+
+.subckt g_input I.BLIF=A20.BLIF O=N_12
+
+.subckt g_input I.BLIF=A19.BLIF O=N_13
+
+.subckt g_input I.BLIF=A21.BLIF O=N_14
+
+.subckt g_input I.BLIF=A18.BLIF O=N_5
+
+.subckt g_input I.BLIF=A17.BLIF O=N_6
+
+.subckt g_input I.BLIF=A16.BLIF O=N_7
+
+.subckt g_output I.BLIF=N_15.BLIF O=C_CS
+.end
+.model g_2nand
+.inputs A.BLIF B.BLIF
+.outputs YN
+.names A.BLIF B.BLIF YN
+0- 1
+-0 1
+11 0
+.end
+.model g_4and
+.inputs A.BLIF B.BLIF C.BLIF D.BLIF
+.outputs Y
+.names D.BLIF C.BLIF B.BLIF A.BLIF Y
+1111 1
+--0- 0
+-0-- 0
+0--- 0
+---0 0
+.end
+.model g_4and4
+.inputs AN.BLIF BN.BLIF CN.BLIF DN.BLIF
+.outputs Y
+.names AN.BLIF BN.BLIF CN.BLIF DN.BLIF Y
+0000 1
+--1- 0
+-1-- 0
+1--- 0
+---1 0
+.end
+.model g_input
+.inputs I.BLIF
+.outputs O
+.names I.BLIF O
+1 1
+0 0
+.end
+.model g_output
+.inputs I.BLIF
+.outputs O
+.names I.BLIF O
+1 1
+0 0
+.end

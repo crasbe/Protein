@@ -1,0 +1,62 @@
+
+
+Design Name = protein_1_ide.tt4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+*******************
+* TIMING ANALYSIS *
+*******************
+
+Timing Analysis KEY:
+One unit of delay time is equivalent to one pass 
+     through the Central Switch Matrix.
+..   Delay ( in this column ) not applicable to the indicated signal.
+TSU, Set-Up Time ( 0 for input-paired signals ),
+     represents the number of switch matrix passes between
+     an input pin and a register setup before clock.
+     TSU is reported on the register.
+TCO, Clocked Output-to-Pin Time ( 0 for output-paired signals ),
+     represents the number of switch matrix passes between
+     a clocked register and an output pin.
+     TCO is reported on the register.
+TPD, Propagation Delay Time ( calculated only for combinatorial eqns.),
+     represents the number of switch matrix passes between
+     an input pin and an output pin.
+     TPD is reported on the output pin.
+TCR, Clocked Output-to-Register Time,
+     represents the number of switch matrix passes between
+     a clocked register and the register it drives ( before clock ).
+     TCR is reported on the driving register.
+
+                    TSU       TCO       TPD       TCR
+                  #passes   #passes   #passes   #passes
+SIGNAL NAME       min  max  min  max  min  max  min  max
+irq_passing_enabled   1    2    1    1   ..   ..    1    2   
+  interrupt_flag   1    2    1    1   ..   ..    2    2   
+          jeejee   1    2    1    1   ..   ..    2    2   
+     irq_synched  ..   ..    1    1   ..   ..    1    2   
+   d15_id_output  ..   ..    1    1   ..   ..    2    2   
+      irq_synch0   0    0   ..   ..   ..   ..    1    1   
+irq_synched_last  ..   ..    0    0   ..   ..    1    1   
+RN_irq_synched_last  ..   ..    0    0   ..   ..    1    1   
+       nls245ena  ..   ..   ..   ..    1    1   ..   ..   
+ls245datadirwrite  ..   ..   ..   ..    1    1   ..   ..   
+            ncs0  ..   ..   ..   ..    1    1   ..   ..   
+            ncs1  ..   ..   ..   ..    1    1   ..   ..   
+            nior  ..   ..   ..   ..    1    1   ..   ..   
+            niow  ..   ..   ..   ..    1    1   ..   ..   
+             d15  ..   ..   ..   ..    1    1   ..   ..   
+irq_synched_last_last  ..   ..   ..   ..   ..   ..    1    1   
+        irq_rose  ..   ..   ..   ..   ..   ..    1    1   
+     its_me_cnt3   1    1   ..   ..   ..   ..    1    1   
+     its_me_cnt2   1    1   ..   ..   ..   ..    1    1   
+     its_me_cnt1   1    1   ..   ..   ..   ..    1    1   
+     its_me_cnt0   1    1   ..   ..   ..   ..    1    1   
+   DE0000_DONE_R  ..   ..   ..   ..   ..   ..    1    1   
+        stidreg2   1    1   ..   ..   ..   ..    1    1   
+        stidreg1   1    1   ..   ..   ..   ..    1    1   
+        stidreg0   1    1   ..   ..   ..   ..    1    1   
+      override_0  ..   ..   ..   ..    1    1   ..   ..   
+         dtack_0  ..   ..   ..   ..    1    1   ..   ..   
+           d15_0  ..   ..   ..   ..    1    1   ..   ..   

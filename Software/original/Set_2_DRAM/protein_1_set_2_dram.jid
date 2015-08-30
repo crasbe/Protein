@@ -1,0 +1,2 @@
+. clockport_decode clockport_decode.sch "c:\users\ep\downloads\protein event dvd\protein_sources\set_2_dram\clockport_decode.sch"
+I15 Set_2_DRAM ..\work_sources\Set_2_DRAM.v "c:\users\ep\downloads\protein event dvd\protein_sources\work_sources\Set_2_DRAM.v"

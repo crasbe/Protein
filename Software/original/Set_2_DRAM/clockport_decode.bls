@@ -1,0 +1,52 @@
+#$ TOOL SCH2BLF 1.5.00.01 
+#$ TITLE clockport_decode.bls 
+#$ MODULE clockport_decode 
+#$ PINS 32  dram_nlcas dram_nucas mux_switch dram_ras3 A1 A2 A3 A4 A5 \
+#   A6 cpu_nas cpu_nlds cpu_nuds cpu_clk cpu_reset enab dram_ras2 \
+#   dram_ras1 dram_nras0 cpu_d15 cpu_d14 cpu_d13 cpu_d12 C_CS A16 \
+#   A17 A18 A21 A19 A20 A22 A23
+#$ NODES 23 N_27 N_28 N_29 N_24 N_12 N_13 N_14 N_15 N_16 N_17 N_18  \
+#  N_19 N_20 N_1 N_2 N_3 N_4 N_5 N_6 N_7 N_8 N_10 N_11 
+#$ INTERFACE g_2nand 3 A'i' B'i' YN'o'
+#$ INTERFACE g_4and 5 A'i' B'i' C'i' D'i' Y'o'
+#$ INTERFACE g_4and4 5 AN'i' BN'i' CN'i' DN'i' Y'o'
+#$ INTERFACE g_input 2 I'i' O'o'
+#$ INTERFACE g_output 2 I'i' O'o'
+#$ INTERFACE set_2_dram 31 cpu_a1'i' cpu_a16'i' cpu_a17'i' cpu_a18'i' \
+#   cpu_a19'i' cpu_a2'i' cpu_a20'i' cpu_a21'i' cpu_a22'i' cpu_a23'i' \
+#   cpu_a3'i' cpu_a4'i' cpu_a5'i' cpu_a6'i' cpu_clk'i' cpu_nas'i' \
+#   cpu_nlds'i' cpu_nreset'i' cpu_nuds'i' enab'i' cpu_d12'o' \
+#   cpu_d13'o' cpu_d14'o' cpu_d15'o' dram_nlcas'o' dram_nras0'o' \
+#   dram_nras1'o' dram_nras2'o' dram_nras3'o' dram_nucas'o' \
+#   mux_switch'o'
+#$ PRIMITIVE I11 g_2nand 3 N_11 N_10 N_24
+#$ PRIMITIVE I12 g_4and 5 N_8 N_7 N_6 N_5 N_11
+#$ PRIMITIVE I13 g_4and4 5 N_4 N_3 N_2 N_1 N_10
+#$ PRIMITIVE I1 g_input 2 A23 N_8
+#$ PRIMITIVE I16 g_input 2 enab N_27
+#$ PRIMITIVE I17 g_input 2 cpu_reset N_28
+#$ PRIMITIVE I18 g_input 2 cpu_clk N_29
+#$ PRIMITIVE I19 g_input 2 cpu_nuds N_20
+#$ PRIMITIVE I2 g_input 2 A22 N_7
+#$ PRIMITIVE I20 g_input 2 cpu_nlds N_19
+#$ PRIMITIVE I21 g_input 2 cpu_nas N_18
+#$ PRIMITIVE I22 g_input 2 A6 N_17
+#$ PRIMITIVE I23 g_input 2 A5 N_16
+#$ PRIMITIVE I24 g_input 2 A4 N_15
+#$ PRIMITIVE I25 g_input 2 A3 N_14
+#$ PRIMITIVE I26 g_input 2 A2 N_13
+#$ PRIMITIVE I27 g_input 2 A1 N_12
+#$ PRIMITIVE I3 g_input 2 A20 N_6
+#$ PRIMITIVE I4 g_input 2 A19 N_5
+#$ PRIMITIVE I5 g_input 2 A21 N_4
+#$ PRIMITIVE I6 g_input 2 A18 N_3
+#$ PRIMITIVE I7 g_input 2 A17 N_2
+#$ PRIMITIVE I8 g_input 2 A16 N_1
+#$ PRIMITIVE I14 g_output 2 N_24 C_CS
+#$ INSTANCE I15 set_2_dram 31 N_12 N_1 N_2 N_3 N_5 N_13 N_6 N_4 N_7 \
+#   N_8 N_14 N_15 N_16 N_17 N_29 N_18 N_19 N_28 N_20 N_27 cpu_d12 \
+#   cpu_d13 cpu_d14 cpu_d15 dram_nlcas dram_nras0 dram_ras1 \
+#   dram_ras2 dram_ras3 dram_nucas mux_switch
+.model clockport_decode
+
+.end

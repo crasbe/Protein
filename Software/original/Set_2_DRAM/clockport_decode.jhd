@@ -1,0 +1,3 @@
+MODULE clockport_decode
+	SUBMODULE Set_2_DRAM
+		INSTANCE I15

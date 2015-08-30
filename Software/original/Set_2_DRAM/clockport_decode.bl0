@@ -1,0 +1,119 @@
+#$ TOOL ispLEVER Classic 1.5.00.05.39.l1
+#$ DATE Sun Jun 16 20:51:04 2013
+#$ TITLE clockport_decode.bls 
+#$ MODULE clockport_decode
+#$ PINS 32 dram_nlcas dram_nucas mux_switch dram_ras3 A1 A2 A3 A4 A5 A6 cpu_nas cpu_nlds \
+#  cpu_nuds cpu_clk cpu_reset enab dram_ras2 dram_ras1 dram_nras0 cpu_d15 cpu_d14 cpu_d13 \
+#  cpu_d12 C_CS'o'  A16 A17 A18 A21 A19 A20 A22 A23
+#$ NODES 23 N_27'o'  N_28'o'  N_29'o'  N_24'o'  N_12'o'  N_13'o'  N_14'o'  N_15'o'  N_16'o'  N_17'o'  N_18'o'  N_19'o'  N_20'o'  \
+#  N_1'o'  N_2'o'  N_3'o'  N_4'o'  N_5'o'  N_6'o'  N_7'o'  N_8'o'  N_10'o'  N_11'o' 
+#$ INTERFACE set_2_dram  31 cpu_a1'i'  cpu_a16'i'  cpu_a17'i'  cpu_a18'i'  cpu_a19'i'  cpu_a2'i'  cpu_a20'i'  \
+#  cpu_a21'i'  cpu_a22'i'  cpu_a23'i'  cpu_a3'i'  cpu_a4'i'  cpu_a5'i'  cpu_a6'i'  cpu_clk'i'  cpu_nas'i'  cpu_nlds'i'  cpu_nreset'i'  \
+#  cpu_nuds'i'  enab'i'  cpu_d12'o'  cpu_d13'o'  cpu_d14'o'  cpu_d15'o'  dram_nlcas'o'  dram_nras0'o'  dram_nras1'o'  \
+#  dram_nras2'o'  dram_nras3'o'  dram_nucas'o'  mux_switch'o' 
+#$ INSTANCE I15 set_2_dram 31 N_12 N_1 N_2 N_3 N_5 N_13 N_6 N_4 N_7 N_8 N_14 N_15 N_16 N_17 \
+#  N_29 N_18 N_19 N_28 N_20 N_27 cpu_d12 cpu_d13 cpu_d14 cpu_d15 dram_nlcas dram_nras0 \
+#  dram_ras1 dram_ras2 dram_ras3 dram_nucas mux_switch
+.model clockport_decode
+.inputs N_11.BLIF N_10.BLIF N_8.BLIF N_7.BLIF N_6.BLIF N_5.BLIF N_4.BLIF \
+N_3.BLIF N_2.BLIF N_1.BLIF A23.BLIF enab.BLIF cpu_reset.BLIF cpu_clk.BLIF \
+cpu_nuds.BLIF A22.BLIF cpu_nlds.BLIF cpu_nas.BLIF A6.BLIF A5.BLIF A4.BLIF \
+A3.BLIF A2.BLIF A1.BLIF A20.BLIF A19.BLIF A21.BLIF A18.BLIF A17.BLIF A16.BLIF \
+N_24.BLIF
+.outputs N_24 N_11 N_10 N_8 N_27 N_28 N_29 N_20 N_7 N_19 N_18 N_17 N_16 N_15 \
+N_14 N_13 N_12 N_6 N_5 N_4 N_3 N_2 N_1 C_CS
+
+.subckt g_2nand A.BLIF=N_11.BLIF B.BLIF=N_10.BLIF YN=N_24
+\
+
+.subckt g_4and A.BLIF=N_8.BLIF B.BLIF=N_7.BLIF C.BLIF=N_6.BLIF D.BLIF=N_5.BLIF Y=N_11 \
+
+\
+
+.subckt g_4and4 AN.BLIF=N_4.BLIF BN.BLIF=N_3.BLIF CN.BLIF=N_2.BLIF DN.BLIF=N_1.BLIF \
+ Y=N_10
+
+.subckt g_input I.BLIF=A23.BLIF O=N_8
+
+.subckt g_input I.BLIF=enab.BLIF O=N_27
+
+.subckt g_input I.BLIF=cpu_reset.BLIF O=N_28
+
+.subckt g_input I.BLIF=cpu_clk.BLIF O=N_29
+
+.subckt g_input I.BLIF=cpu_nuds.BLIF O=N_20
+
+.subckt g_input I.BLIF=A22.BLIF O=N_7
+
+.subckt g_input I.BLIF=cpu_nlds.BLIF O=N_19
+
+.subckt g_input I.BLIF=cpu_nas.BLIF O=N_18
+
+.subckt g_input I.BLIF=A6.BLIF O=N_17
+
+.subckt g_input I.BLIF=A5.BLIF O=N_16
+
+.subckt g_input I.BLIF=A4.BLIF O=N_15
+
+.subckt g_input I.BLIF=A3.BLIF O=N_14
+
+.subckt g_input I.BLIF=A2.BLIF O=N_13
+
+.subckt g_input I.BLIF=A1.BLIF O=N_12
+
+.subckt g_input I.BLIF=A20.BLIF O=N_6
+
+.subckt g_input I.BLIF=A19.BLIF O=N_5
+
+.subckt g_input I.BLIF=A21.BLIF O=N_4
+
+.subckt g_input I.BLIF=A18.BLIF O=N_3
+
+.subckt g_input I.BLIF=A17.BLIF O=N_2
+
+.subckt g_input I.BLIF=A16.BLIF O=N_1
+
+.subckt g_output I.BLIF=N_24.BLIF O=C_CS
+.end
+.model g_2nand
+.inputs A.BLIF B.BLIF
+.outputs YN
+.names A.BLIF B.BLIF YN
+0- 1
+-0 1
+11 0
+.end
+.model g_4and
+.inputs A.BLIF B.BLIF C.BLIF D.BLIF
+.outputs Y
+.names D.BLIF C.BLIF B.BLIF A.BLIF Y
+1111 1
+--0- 0
+-0-- 0
+0--- 0
+---0 0
+.end
+.model g_4and4
+.inputs AN.BLIF BN.BLIF CN.BLIF DN.BLIF
+.outputs Y
+.names AN.BLIF BN.BLIF CN.BLIF DN.BLIF Y
+0000 1
+--1- 0
+-1-- 0
+1--- 0
+---1 0
+.end
+.model g_input
+.inputs I.BLIF
+.outputs O
+.names I.BLIF O
+1 1
+0 0
+.end
+.model g_output
+.inputs I.BLIF
+.outputs O
+.names I.BLIF O
+1 1
+0 0
+.end

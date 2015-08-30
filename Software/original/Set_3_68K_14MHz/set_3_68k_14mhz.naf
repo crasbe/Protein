@@ -1,0 +1,13 @@
+Turbo_Switch  i
+VMA_CPU  i
+VPA_  i
+E_14MHz  i
+DTACKin_  i
+AS_  i
+Clock_7_MHz  i
+CDAC  i
+VMA_  o
+VPA_Out  o
+E  o
+DTACKout_  o
+Clock_7_14_MHz  o

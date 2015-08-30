@@ -1,0 +1,137 @@
+
+ I. Schematics and PCB
+
+ Schematics file is made in P-CAD 2001 and can be found in "sch_pcb" drawer.
+Also there are #?.pdf and #?.png pictures of the schematics.
+
+ PCB file is also in P-CAD 2001 format.
+
+ You can use free P-CAD 2006 viewer (schematics and PCB) available at
+www.pcad.com.
+
+
+ II. Bill Of Materials
+
+1.  EPM7032SLC44-10 or ATF1502AS10JC44 device in PLCC-44 package.  Either of
+    them can be used.
+
+2.  Through-hole PLCC-44 socket.
+
+3.  Two 74157 or 74257 logic ICs in SOIC-16 package.  Preferable are 74LS,
+    74ALS or 74HCT series (thus giving you a choice like 74LS157, 74LS257,
+    etc.), though you can try even 74F or 74ACT.  DO NOT use 74HC or 74AC
+    devices, as they are not TTL-levels compatible and therefore may not
+    work.
+
+4.  Not less than 18 SMD 0805- or 1206-sized 0.1uF capacitors.  They are
+    easy to lose so have some extra of them.
+
+5.  3 SMD 0805- or 1206-sized 10k resistors.  Of course, you can take 11k or
+    so.
+
+6.  SMD PLCC-68 socket. Have 2 or 3 of them. Why? See below.
+
+7.  Four DRAM chips. See below which ones.
+
+8.  IDC10M connector.  This is only needed if you are going to program CPLD
+    within board using ByteBlasterMV hardware (see FIRMWARE.txt).
+
+9.  three or four through-hole 10uF (16V or more) electrolytic capacitors as
+    shown on the photos for the additional stability of the board.
+
+
+ III. DRAM chips.
+
+ Asynchronous DRAM chips are generally outdated and hard to find now.
+Synchronous SDRAM chips are much easier to find, though they require
+over-complicated hardware to use with old-fashioned hardware like Amigas.
+This is why older asynchronous DRAM is used in this design.
+
+ The DRAMs needed are 1-megaword 16bit DRAMs, 70 or 60 ns (slower may not
+work), which are commonly found in old 4 or 8 Mb SIMMs.  They must be in SOJ
+package with 42 pins.  Note that 4 or 8 Mb SIMMs can have other packages of
+DRAM chips, which are not applicable for this design.
+
+ Sometimes the chips required have names like NN5118160AJ-60,
+GM71C18160AJ7, TMS418160***-60 or so. where key numbers are 8160, which
+denotes required organisation and pinout and 6,60, 7 or 70, which denotes
+speed of 60 or 70 ns.
+
+ If no such digits found, the 42-pin SOJes can be still applicaple, as there
+are standard JEDEC pinout for the given chips as well as functional
+specifications.
+
+ Anyway, try to find datasheet for the chip before soldering it on the board.
+
+ Typically you should take usual 4 or 8 Mb SIMM not slower than 70 ns with
+required chips soldered on it.  Then you should desolder them and solder
+onto the board.  The 4 Mb SIMMs are preferable because they are easier to
+desolder.
+
+
+ IV. PLCC socket over 68000 CPU.
+
+ First, remember that such way of connecting the board to the Amiga600 is a
+PURE HACK.  There is always a possibility that such a connection will fail
+the other day.
+
+ The socked used is SMD and therefore low-profile.  Thus you should solder
+it raised over PCB and with some angle to it, as it can be seen on the
+photos.  The idea is to allow for the socket to fit firmly over the CPU
+while not permitting physical contact with the Amiga motherboard by far
+board edges.
+
+ To achieve this, bend pins of the socket before soldering so that it lies
+over and within the required angle on the PCB.  You can make two or more
+iterations with soldering-desoldering sockets before you get a success and a
+good contact.
+
+ It is also desirable to break the bottom of PLCC SMD socket before
+soldering also to get good contact (lay it upside down and press on the
+bottom firmly).
+
+ To ensure best fit over the 68000 CPU, file the soldered socket a little as
+shown, to ensure that some SMD components near the CPU won't prevent it to
+fit.
+
+ Additionally you improve connectibility by bending up contacts of socket
+with some type of little hook (made of paper-clip for example) to the angle
+of 20-30 degrees from initial position.
+
+WARNING!  Put a layer or two of the insulating tape over the metal surface
+of some of Amiga600 components under the RAM board to prevent electrical
+short-circuit, which will lead to Amiga damage.
+
+
+ V. Soldering everything together.
+
+ Use photos provided as the mount layout.  First solder all the capacitors
+and resistors, then solder DRAM chips.  They have their first pin towards
+upper-left edge of the board.  The logic '157 or '257 ICs have their first
+pin towards bottom-left edge.
+
+
+ VI. Turning the power on.
+
+ If made from functioning and correctly programmed parts, the board will
+start and autoconfigure immediately at startup.  When the boot-up process
+ends or with "avail" CLI command, you should then see 8 Mb of fast ram
+available.  The board should identify itself as shown on the photos.
+
+ If no fast memory appears, the Amiga hangs, works unstable, or shows Yellow
+Screen instead of booting, the most probable cause is the bad contact in the
+CPU socket.  See section IV and correct.
+
+ A simple fast memory test is provided in "test" drawer.  It is an amiga
+executable file with an assembler source.  It is not a complete memory
+tester, but if it runs smoothly for ten hours or so, you can assume you have
+won ;)
+
+
+ VII. Errata
+
+ There is small deficiency on the PCB, which can affect in-system CPLD
+programming.  The TCK pin of CPLD is pulled up instead of being pulled low
+to the ground.  If you are not going to program CPLD in-system, leave it so
+and don't bother, otherwise the fix as shown may be required (solder
+resistor vertically to the pad and connect other end with the ground).

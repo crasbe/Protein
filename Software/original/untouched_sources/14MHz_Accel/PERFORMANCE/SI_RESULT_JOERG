@@ -1,0 +1,121 @@
+68000 7 MHz :
+
+System Information v2.0b
+Kramden Utilities (c) 1988,1989 Pregnant Badger Software
+
+            Computer Name:  Amiga
+         Operating System:  Kickstart v34.5, Workbench v34.32
+           Main Processor:  Motorola 68000
+  Verical Blank Frequency:  50Hz
+   Power Supply Frequency:  50Hz
+             Custom Chips:  Normal Agnus, Normal Denise
+               Video Mode:  PAL
+      Normal Display Size:  640 x 256
+     Maximum Display Size:  466 x 312
+       Pixel Aspect Ratio:  1:0.944
+
+Memory List:
+
+     Address Range     Pri   Attr  Size  Description
+  $00200020-$003FFFFF   +0  $0005  2.0M  expansion ram
+  $00C004E8-$00C7E7FF   +0  $0005  0.5M  Fast Memory
+  $00000420-$0007FFFF  -10  $0003  0.5M  Chip Memory
+
+Computing Performance relative to:
+
+                   A1000  IBM/XT
+         Integer:   1.0     3.3
+  Floating Point:   1.0     7.7
+
+
+
+68010 7 MHz :
+
+System Information v2.0b
+Kramden Utilities (c) 1988,1989 Pregnant Badger Software
+
+            Computer Name:  Amiga
+         Operating System:  Kickstart v34.5, Workbench v34.32
+           Main Processor:  Motorola 68010
+  Verical Blank Frequency:  50Hz
+   Power Supply Frequency:  50Hz
+             Custom Chips:  Normal Agnus, Normal Denise
+               Video Mode:  PAL
+      Normal Display Size:  640 x 256
+     Maximum Display Size:  466 x 312
+       Pixel Aspect Ratio:  1:0.944
+
+Memory List:
+
+     Address Range     Pri   Attr  Size  Description
+  $00200020-$003FFFFF   +0  $0005  2.0M  expansion ram
+  $00C004E8-$00C7E7FF   +0  $0005  0.5M  Fast Memory
+  $00000420-$0007FFFF  -10  $0003  0.5M  Chip Memory
+
+Computing Performance relative to:
+
+                   A1000  IBM/XT
+         Integer:   1.3     4.1
+  Floating Point:   1.2     8.6
+
+
+
+68000 14 MHz :
+
+System Information v2.0b
+Kramden Utilities (c) 1988,1989 Pregnant Badger Software
+
+            Computer Name:  Amiga
+         Operating System:  Kickstart v34.5, Workbench v34.32
+           Main Processor:  Motorola 68000
+  Verical Blank Frequency:  50Hz
+   Power Supply Frequency:  50Hz
+             Custom Chips:  Normal Agnus, Normal Denise
+               Video Mode:  PAL
+      Normal Display Size:  640 x 256
+     Maximum Display Size:  466 x 312
+       Pixel Aspect Ratio:  1:0.944
+
+Memory List:
+
+     Address Range     Pri   Attr  Size  Description
+  $00200020-$003FFFFF   +0  $0005  2.0M  expansion ram
+  $00C004E8-$00C7E7FF   +0  $0005  0.5M  Fast Memory
+  $00000420-$0007FFFF  -10  $0003  0.5M  Chip Memory
+
+Computing Performance relative to:
+
+                   A1000  IBM/XT
+         Integer:   1.8     5.9
+  Floating Point:   1.4    10.5
+
+
+
+68010 14 MHz :
+
+System Information v2.0b
+Kramden Utilities (c) 1988,1989 Pregnant Badger Software
+
+            Computer Name:  Amiga
+         Operating System:  Kickstart v34.5, Workbench v37.66
+           Main Processor:  Motorola 68010
+  Verical Blank Frequency:  50Hz
+   Power Supply Frequency:  50Hz
+             Custom Chips:  Super Agnus, Normal Denise
+               Video Mode:  PAL
+      Normal Display Size:  640 x 256
+     Maximum Display Size:  456 x 312
+       Pixel Aspect Ratio:  1:0.944
+
+Memory List:
+
+     Address Range     Pri   Attr  Size  Description
+  $00280020-$003FFFFF   +0  $0005  1.5M  zkick memory
+  $00000420-$000FFFFF  -10  $0303  1.0M  chip memory
+
+Computing Performance relative to:
+
+                   A1000  IBM/XT
+         Integer:   2.2     7.2
+  Floating Point:   1.5    11.1
+

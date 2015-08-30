@@ -1,0 +1,59 @@
+#Build: Synplify Pro E-2011.03LC, Build 066R, Feb 23 2011
+#install: C:\ISPLEVER_CLASSIC1_5\synpbase
+#OS:  6.1
+#Hostname: BOT2-PC
+
+#Implementation: set_2_dram
+
+#Sun Jun 16 17:07:39 2013
+
+$ Start of Compile
+#Sun Jun 16 17:07:39 2013
+
+Synopsys Verilog Compiler, version comp550rc, Build 030R, built Feb 22 2011
+@N|Running in 32-bit mode
+Copyright (C) 1994-2011 Synopsys, Inc. This software the associated documentation are confidential and proprietary to Synopsys, Inc. Your use or disclosure of this software subject to the terms and conditions of a written license agreement between you, or your company, and Synopsys, Inc.
+
+@I::"C:\ISPLEVER_CLASSIC1_5\synpbase\lib\vlog\hypermods.v"
+@I::"C:\ISPLEVER_CLASSIC1_5\synpbase\lib\cpld\lattice.v"
+@I::"C:\ispLEVER_Classic1_5\ispcpld\generic\verilog\synplify\generic.v"
+@I::"C:\users\bot2\documents\protein i_new_set\set_2_dram\protein_1_set_2_dram.h"
+@I::"C:\users\bot2\documents\protein i_new_set\work_sources\Set_2_DRAM.v"
+Verilog syntax check successful!
+File C:\users\bot2\documents\protein i_new_set\work_sources\Set_2_DRAM.v changed - recompiling
+Selecting top level module Set_2_DRAM
+@N: CG364 :"C:\users\bot2\documents\protein i_new_set\work_sources\Set_2_DRAM.v":1:7:1:16|Synthesizing module Set_2_DRAM
+
+@END
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Sun Jun 16 17:07:39 2013
+
+###########################################################]
+Mapping Report (contents appended below)
+@N:"C:\users\bot2\documents\protein i_new_set\set_2_dram\synlog\set_2_dram_mach_Mapper.srr"
+Synopsys CPLD Technology Mapper, Version maprc, Build 388R, Built Mar  1 2011
+Copyright (C) 1994-2011, Synopsys, Inc. This software the associated documentation are confidential and proprietary to Synopsys, Inc. Your use or disclosure of this software subject to the terms and conditions of a written license agreement between you, or your company, and Synopsys, Inc.
+Product Version E-2011.03LC
+@N: MO106 :"c:\users\bot2\documents\protein i_new_set\work_sources\set_2_dram.v":190:2:190:5|Found ROM, 'datout[3:0]', 12 words by 4 bits 
+---------------------------------------
+Resource Usage Report
+
+Simple gate primitives:
+DFFRH           5 uses
+DFF             4 uses
+DFFSH           1 use
+IBUF            20 uses
+BUFTH           4 uses
+OBUF            7 uses
+AND2            62 uses
+INV             51 uses
+XOR2            3 uses
+
+
+@N: FC100 |Timing Report not generated for this device, please use place and route tools for timing analysis.
+E-2011.03LC
+Mapper successful!
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Sun Jun 16 17:07:41 2013
+
+###########################################################]

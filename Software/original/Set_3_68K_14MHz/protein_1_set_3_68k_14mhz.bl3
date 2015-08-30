@@ -1,0 +1,89 @@
+#$ TOOL ispLEVER Classic 1.5.00.05.39.l1
+#$ DATE Sat Jun 15 13:53:11 2013
+#$ TITLE set_3_68k_14mhz.bls 
+#$ MODULE protein_1_set_3_68k_14mhz
+#$ PINS 13 Turbo_Switch VMA_CPU VMA_'o'  VPA_Out'o'  E'o'  VPA_ E_14MHz DTACKin_ AS_ DTACKout_'o'  \
+#  Clock_7_MHz Clock_7_14_MHz'o'  CDAC
+#$ NODES 5 N_34'o'  N_21'o'  N_7'o'  N_16'o'  N_17'o' 
+.model set_3_68k_14mhz
+.inputs N_34.BLIF N_21.BLIF AS_.BLIF E_14MHz.BLIF CDAC.BLIF Clock_7_MHz.BLIF \
+VMA_CPU.BLIF Turbo_Switch.BLIF DTACKin_.BLIF VPA_.BLIF N_16.BLIF N_7.BLIF \
+N_17.BLIF
+.outputs N_7.REG N_7.AR N_7.C N_21.PR N_21.D N_21.C VMA_ N_34.J N_34.K N_34.C \
+N_16.RE N_16.J N_16.K N_16.C N_17 Clock_7_14_MHz E VPA_Out DTACKout_ \
+DTACKout_.OE
+.names Turbo_Switch.BLIF DTACKin_.BLIF N_7.BLIF N_17
+11- 1
+0-0 1
+10- 0
+0-1 0
+.names N_21.BLIF AS_.BLIF DTACKin_.BLIF N_7.REG
+000 1
+-1- 0
+1-- 0
+--1 0
+.names AS_.BLIF N_7.AR
+1 1
+0 0
+.names Clock_7_MHz.BLIF N_7.C
+0 1
+1 0
+.names AS_.BLIF N_21.PR
+1 1
+0 0
+.names AS_.BLIF N_21.D
+1 1
+0 0
+.names Clock_7_MHz.BLIF N_21.C
+0 1
+1 0
+.names VMA_CPU.BLIF Turbo_Switch.BLIF N_16.BLIF VMA_
+11- 1
+-00 1
+01- 0
+-01 0
+.names N_34.J
+ 1
+.names N_34.K
+ 1
+.names E_14MHz.BLIF N_34.C
+1 1
+0 0
+.names AS_.BLIF N_16.RE
+1 1
+0 0
+.names N_34.BLIF VPA_.BLIF N_16.J
+00 1
+1- 0
+-1 0
+.names N_16.K
+ 0
+.names E_14MHz.BLIF N_16.C
+1 1
+0 0
+.names CDAC.BLIF Clock_7_MHz.BLIF Turbo_Switch.BLIF Clock_7_14_MHz
+100 1
+01- 1
+-11 1
+110 0
+00- 0
+-01 0
+.names N_34.BLIF E_14MHz.BLIF Turbo_Switch.BLIF E
+1-0 1
+-11 1
+0-0 0
+-01 0
+.names Turbo_Switch.BLIF VPA_.BLIF N_16.BLIF VPA_Out
+11- 1
+0-0 1
+10- 0
+0-1 0
+.names Turbo_Switch.BLIF DTACKin_.BLIF N_7.BLIF DTACKout_
+11- 1
+0-0 1
+10- 0
+0-1 0
+.names N_17.BLIF DTACKout_.OE
+0 1
+1 0
+.end

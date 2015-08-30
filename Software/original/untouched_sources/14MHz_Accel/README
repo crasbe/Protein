@@ -1,0 +1,33 @@
+
+   ************************************************************************
+   *                                                                      *
+   *                            DISCLAIMER                                *
+   *                                                                      *
+   *    NO REPRESENTATIONS OR WARRANTIES ARE MADE ABOUT THE               *
+   *    ACCURACY, RELIABILITY, PERFORMANCE OR OPERATION OF THIS           *
+   *    DOCUMENTATION OR OF THE BOARD ITSELF. TO BE CLEARER,              *
+   *    YOU ARE DOING THIS TOTALLY AT YOUR OWN RISK,  IF ANYTHING         *
+   *    WHATSOEVER HAPPENS IT'S NOT MY RESPONSIBILITY, IT'S YOURS.        *
+   *                                                                      *
+   ************************************************************************
+
+      Free and non-commercial realization of the project is permitted.
+      Distribution by disk is permitted for a nominal copying fee,
+      providing that my name is not removed.
+
+This project include:
+
+   Accel.doc
+   Acc64.net
+   Acc68.net
+   Accel.parts
+   Accel.iff
+   All.iff
+   Layout.doc
+   PCB_Layout.iff
+   Components.iff
+   Chips.iff
+   14MHz_Signal.iff
+   Performance (dir with test results and two programs for testing)
+   ReadMe
+

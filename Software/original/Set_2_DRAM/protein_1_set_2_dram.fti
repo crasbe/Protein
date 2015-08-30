@@ -1,0 +1,162 @@
+#PLAFILE protein_1_set_2_dram.tt4
+#DATE    06/16/2013
+#DESIGN  <no design name>
+#DEVICE  mach463a
+
+DATA LOCATION A1:A_*_2	// INP
+DATA LOCATION A16:B_*_15	// INP
+DATA LOCATION A17:A_*_9	// INP
+DATA LOCATION A18:A_*_7	// INP
+DATA LOCATION A19:A_*_5	// INP
+DATA LOCATION A2:A_*_4	// INP
+DATA LOCATION A20:A_*_3	// INP
+DATA LOCATION A21:D_*_43	// INP
+DATA LOCATION A22:D_*_42	// INP
+DATA LOCATION A23:D_*_41	// INP
+DATA LOCATION A3:A_*_6	// INP
+DATA LOCATION A4:A_*_8	// INP
+DATA LOCATION A5:B_*_14	// INP
+DATA LOCATION A6:B_*_16	// INP
+DATA LOCATION C_CS:B_4_21	// OUT
+DATA LOCATION M0_inst_access_cas:A_8	// NOD
+DATA LOCATION M0_inst_access_ras:A_0	// NOD
+DATA LOCATION M0_inst_autoconf_on:A_4	// NOD
+DATA LOCATION M0_inst_cpu_nas_z:D_94_40	// Rin {cpu_nas}
+DATA LOCATION M0_inst_read_cycle:D_8	// NOD
+DATA LOCATION M0_inst_rfsh_cas:C_6	// NOD
+DATA LOCATION M0_inst_write_cycle:D_4	// NOD
+DATA LOCATION M0_rfsh_select_0_:C_2	// NOD
+DATA LOCATION M0_rfsh_select_1_:C_5	// NOD
+DATA LOCATION cpu_clk:*_*_11	// Cin
+DATA LOCATION cpu_d12:C_9_28	// OUT
+DATA LOCATION cpu_d13:C_13_27	// OUT
+DATA LOCATION cpu_d14:C_0_26	// OUT
+DATA LOCATION cpu_d15:C_12_25	// OUT
+DATA LOCATION cpu_nas:D_*_40	// INP
+DATA LOCATION cpu_nlds:D_*_37	// INP
+DATA LOCATION cpu_nuds:D_*_38	// INP
+DATA LOCATION cpu_reset:D_*_39	// INP
+DATA LOCATION dram_nlcas:C_4_30	// OUT
+DATA LOCATION dram_nras0:C_1_31	// OUT
+DATA LOCATION dram_nucas:C_8_29	// OUT
+DATA LOCATION dram_ras1:D_0_36	// OUT
+DATA LOCATION dram_ras2:B_8_18	// OUT
+DATA LOCATION dram_ras3:B_0_19	// OUT
+DATA LOCATION enab:B_*_20	// INP
+DATA LOCATION mux_switch:B_12_17	// OUT
+DATA IO_DIR   A1:IN
+DATA IO_DIR   A16:IN
+DATA IO_DIR   A17:IN
+DATA IO_DIR   A18:IN
+DATA IO_DIR   A19:IN
+DATA IO_DIR   A2:IN
+DATA IO_DIR   A20:IN
+DATA IO_DIR   A21:IN
+DATA IO_DIR   A22:IN
+DATA IO_DIR   A23:IN
+DATA IO_DIR   A3:IN
+DATA IO_DIR   A4:IN
+DATA IO_DIR   A5:IN
+DATA IO_DIR   A6:IN
+DATA IO_DIR   C_CS:OUT
+DATA IO_DIR   cpu_clk:IN
+DATA IO_DIR   cpu_d12:OUT
+DATA IO_DIR   cpu_d13:OUT
+DATA IO_DIR   cpu_d14:OUT
+DATA IO_DIR   cpu_d15:OUT
+DATA IO_DIR   cpu_nas:IN
+DATA IO_DIR   cpu_nlds:IN
+DATA IO_DIR   cpu_nuds:IN
+DATA IO_DIR   cpu_reset:IN
+DATA IO_DIR   dram_nlcas:OUT
+DATA IO_DIR   dram_nras0:OUT
+DATA IO_DIR   dram_nucas:OUT
+DATA IO_DIR   dram_ras1:OUT
+DATA IO_DIR   dram_ras2:OUT
+DATA IO_DIR   dram_ras3:OUT
+DATA IO_DIR   enab:IN
+DATA IO_DIR   mux_switch:OUT
+DATA INPUT_REGISTER  M0_inst_cpu_nas_z
+DATA GLB_CLOCK  cpu_clk
+DATA PW_LEVEL  dram_nlcas:0
+DATA SLEW      dram_nlcas:1
+DATA PW_LEVEL  dram_nucas:0
+DATA SLEW      dram_nucas:1
+DATA PW_LEVEL  dram_ras3:0
+DATA SLEW      dram_ras3:1
+DATA PW_LEVEL  A1:0
+DATA SLEW      A1:0
+DATA PW_LEVEL  A2:0
+DATA SLEW      A2:0
+DATA PW_LEVEL  A3:0
+DATA SLEW      A3:0
+DATA PW_LEVEL  A4:0
+DATA SLEW      A4:0
+DATA PW_LEVEL  A5:0
+DATA SLEW      A5:0
+DATA PW_LEVEL  A6:0
+DATA SLEW      A6:0
+DATA PW_LEVEL  cpu_nas:0
+DATA SLEW      cpu_nas:0
+DATA PW_LEVEL  cpu_nlds:0
+DATA SLEW      cpu_nlds:0
+DATA PW_LEVEL  cpu_nuds:0
+DATA SLEW      cpu_nuds:0
+DATA SLEW      cpu_clk:0
+DATA PW_LEVEL  cpu_reset:0
+DATA SLEW      cpu_reset:0
+DATA PW_LEVEL  enab:0
+DATA SLEW      enab:0
+DATA PW_LEVEL  dram_ras2:0
+DATA SLEW      dram_ras2:1
+DATA PW_LEVEL  dram_ras1:0
+DATA SLEW      dram_ras1:1
+DATA PW_LEVEL  dram_nras0:0
+DATA SLEW      dram_nras0:1
+DATA PW_LEVEL  cpu_d15:0
+DATA SLEW      cpu_d15:1
+DATA PW_LEVEL  cpu_d14:0
+DATA SLEW      cpu_d14:1
+DATA PW_LEVEL  cpu_d13:0
+DATA SLEW      cpu_d13:1
+DATA PW_LEVEL  cpu_d12:0
+DATA SLEW      cpu_d12:1
+DATA PW_LEVEL  C_CS:0
+DATA SLEW      C_CS:1
+DATA PW_LEVEL  A16:0
+DATA SLEW      A16:0
+DATA PW_LEVEL  A17:0
+DATA SLEW      A17:0
+DATA PW_LEVEL  A18:0
+DATA SLEW      A18:0
+DATA PW_LEVEL  A21:0
+DATA SLEW      A21:0
+DATA PW_LEVEL  A19:0
+DATA SLEW      A19:0
+DATA PW_LEVEL  A20:0
+DATA SLEW      A20:0
+DATA PW_LEVEL  A22:0
+DATA SLEW      A22:0
+DATA PW_LEVEL  A23:0
+DATA SLEW      A23:0
+DATA PW_LEVEL  mux_switch:0
+DATA SLEW      mux_switch:1
+DATA PW_LEVEL  M0_inst_access_ras:0
+DATA SLEW      M0_inst_access_ras:0
+DATA PW_LEVEL  M0_inst_rfsh_cas:0
+DATA SLEW      M0_inst_rfsh_cas:0
+DATA PW_LEVEL  M0_rfsh_select_0_:0
+DATA SLEW      M0_rfsh_select_0_:0
+DATA PW_LEVEL  M0_rfsh_select_1_:0
+DATA SLEW      M0_rfsh_select_1_:0
+DATA PW_LEVEL  M0_inst_cpu_nas_z:0
+DATA SLEW      M0_inst_cpu_nas_z:0
+DATA PW_LEVEL  M0_inst_access_cas:0
+DATA SLEW      M0_inst_access_cas:0
+DATA PW_LEVEL  M0_inst_read_cycle:0
+DATA SLEW      M0_inst_read_cycle:0
+DATA PW_LEVEL  M0_inst_write_cycle:0
+DATA SLEW      M0_inst_write_cycle:0
+DATA PW_LEVEL  M0_inst_autoconf_on:0
+DATA SLEW      M0_inst_autoconf_on:0
+END

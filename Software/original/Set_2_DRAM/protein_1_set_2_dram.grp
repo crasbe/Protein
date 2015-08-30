@@ -1,0 +1,8 @@
+
+GROUP MACH_SEG_A M0_inst_autoconf_on M0_inst_access_cas M0_inst_access_ras 
+      
+GROUP MACH_SEG_B mux_switch dram_ras2 dram_ras3 C_CS 
+GROUP MACH_SEG_C M0_rfsh_select_1_ M0_rfsh_select_0_ M0_inst_rfsh_cas cpu_d15 
+      cpu_d14 cpu_d13 cpu_d12 dram_nras0 dram_nucas dram_nlcas 
+GROUP MACH_SEG_D M0_inst_write_cycle M0_inst_read_cycle dram_ras1 cpu_nas 
+      M0_inst_cpu_nas_z 

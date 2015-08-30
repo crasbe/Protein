@@ -1,0 +1,54 @@
+
+
+Design Name = protein_1_set_2_dram.tt4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+*******************
+* TIMING ANALYSIS *
+*******************
+
+Timing Analysis KEY:
+One unit of delay time is equivalent to one pass 
+     through the Central Switch Matrix.
+..   Delay ( in this column ) not applicable to the indicated signal.
+TSU, Set-Up Time ( 0 for input-paired signals ),
+     represents the number of switch matrix passes between
+     an input pin and a register setup before clock.
+     TSU is reported on the register.
+TCO, Clocked Output-to-Pin Time ( 0 for output-paired signals ),
+     represents the number of switch matrix passes between
+     a clocked register and an output pin.
+     TCO is reported on the register.
+TPD, Propagation Delay Time ( calculated only for combinatorial eqns.),
+     represents the number of switch matrix passes between
+     an input pin and an output pin.
+     TPD is reported on the output pin.
+TCR, Clocked Output-to-Register Time,
+     represents the number of switch matrix passes between
+     a clocked register and the register it drives ( before clock ).
+     TCR is reported on the driving register.
+
+                    TSU       TCO       TPD       TCR
+                  #passes   #passes   #passes   #passes
+SIGNAL NAME       min  max  min  max  min  max  min  max
+      dram_nlcas  ..   ..   ..   ..    1    1   ..   ..   
+      dram_nucas  ..   ..   ..   ..    1    1   ..   ..   
+       dram_ras3  ..   ..   ..   ..    1    1   ..   ..   
+M0_inst_cpu_nas_z   0    0   ..   ..   ..   ..    1    1   
+       dram_ras2  ..   ..   ..   ..    1    1   ..   ..   
+       dram_ras1  ..   ..   ..   ..    1    1   ..   ..   
+      dram_nras0  ..   ..   ..   ..    1    1   ..   ..   
+         cpu_d15  ..   ..   ..   ..    1    1   ..   ..   
+         cpu_d14  ..   ..   ..   ..    1    1   ..   ..   
+         cpu_d13  ..   ..   ..   ..    1    1   ..   ..   
+         cpu_d12  ..   ..   ..   ..    1    1   ..   ..   
+            C_CS  ..   ..   ..   ..    1    1   ..   ..   
+M0_inst_access_ras  ..   ..    1    1   ..   ..    1    1   
+M0_inst_rfsh_cas  ..   ..    1    1   ..   ..    1    1   
+M0_rfsh_select_0_  ..   ..    1    1   ..   ..    1    1   
+M0_rfsh_select_1_  ..   ..    1    1   ..   ..   ..   ..   
+M0_inst_access_cas  ..   ..    1    1   ..   ..   ..   ..   
+M0_inst_read_cycle   1    1   ..   ..   ..   ..   ..   ..   
+M0_inst_write_cycle   1    1   ..   ..   ..   ..   ..   ..   
+M0_inst_autoconf_on   1    1   ..   ..   ..   ..   ..   ..   

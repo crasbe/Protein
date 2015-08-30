@@ -1,0 +1,89 @@
+ispLEVER Classic 1.5.00.05.39.l1 Linked Equations File
+Copyright(C), 1992-2011, Lattice Semiconductor Corp.
+All Rights Reserved.
+
+Design clockport_decod created Fri Apr 05 16:48:54 2013
+
+Title: clockport_decod.bls 
+
+ P-Terms   Fan-in  Fan-out  Type  Name (attributes)
+---------  ------  -------  ----  -----------------
+   1/1        1        1    Pin   C_CS 
+   2/1        2        1    Node  N_15 
+   1/4        4        1    Node  N_8 
+   1/4        4        1    Node  N_9 
+   1/1        1        1    Node  N_10 
+   1/1        1        1    Node  N_11 
+   1/1        1        1    Node  N_12 
+   1/1        1        1    Node  N_13 
+   1/1        1        1    Node  N_14 
+   1/1        1        1    Node  N_5 
+   1/1        1        1    Node  N_6 
+   1/1        1        1    Node  N_7 
+=========
+  13/18         Best P-Term Total: 12
+                       Total Pins: 9
+                      Total Nodes: 11
+            Average P-Term/Output: 1
+
+
+Equations:
+
+C_CS = (N_15);
+
+N_15 = (!N_8
+     # !N_9);
+
+N_8 = (N_13 & N_12 & N_11 & N_10);
+
+N_9 = (!N_14 & !N_5 & !N_6 & !N_7);
+
+N_10 = (A23);
+
+N_11 = (A22);
+
+N_12 = (A20);
+
+N_13 = (A19);
+
+N_14 = (A21);
+
+N_5 = (A18);
+
+N_6 = (A17);
+
+N_7 = (A16);
+
+
+Reverse-Polarity Equations:
+
+!C_CS = (!N_15);
+
+!N_15 = (N_8 & N_9);
+
+!N_8 = (!N_11
+     # !N_12
+     # !N_13
+     # !N_10);
+
+!N_9 = (N_6
+     # N_5
+     # N_14
+     # N_7);
+
+!N_10 = (!A23);
+
+!N_11 = (!A22);
+
+!N_12 = (!A20);
+
+!N_13 = (!A19);
+
+!N_14 = (!A21);
+
+!N_5 = (!A18);
+
+!N_6 = (!A17);
+
+!N_7 = (!A16);
+

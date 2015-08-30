@@ -1,0 +1,6 @@
+C:\ISPLEVER_CLASSIC1_5\synpbase\bin\c_ver.exe  -osyn "C:\users\bot2\documents\protein i_new_set\set_2_dram\synwork\Set_2_DRAM_compiler.srs"  -top Set_2_DRAM  -I "c:\users\bot2\documents\protein i_new_set\set_2_dram\"  -I C:\ISPLEVER_CLASSIC1_5\synpbase\lib  -v2001  -encrypt  -pro  -dmgen  "C:\users\bot2\documents\protein i_new_set\set_2_dram\dm"  -ll 2000   -ui -fid2 -ram -sharing on -autosm -lib work C:\ISPLEVER_CLASSIC1_5\synpbase\lib\cpld\lattice.v -lib work C:\ispLEVER_Classic1_5\ispcpld\generic\verilog\synplify\generic.v -lib work "C:\users\bot2\documents\protein i_new_set\set_2_dram\protein_1_set_2_dram.h" -lib work "C:\users\bot2\documents\protein i_new_set\work_sources\Set_2_DRAM.v" -loga  "C:\users\bot2\documents\protein i_new_set\set_2_dram\set_2_dram.srf" 
+rc:0 success:1
+C:\users\bot2\documents\protein i_new_set\set_2_dram\dm|o|1371295446|0
+C:\users\bot2\documents\protein i_new_set\set_2_dram\set_2_dram.srf|o|1371395259|195
+C:\ISPLEVER_CLASSIC1_5\synpbase\bin\c_ver.exe|i|1298472124|1855488
+C:\ISPLEVER_CLASSIC1_5\synpbase\bin64\c_ver.exe|i|1298472130|5528064

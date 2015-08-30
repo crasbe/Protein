@@ -1,0 +1,33 @@
+|--------------------------------------------|
+|- ispLEVER Fitter Report File              -|
+|- Version 1.5.00.05.39.l1                       -|
+|- (c)Copyright, Lattice Semiconductor 2002 -|
+|--------------------------------------------|
+
+
+; Source file protein_1_set_3_68k_14mhz.tt4
+; FITTER-generated Placements.
+; DEVICE   mach463a
+; DATE     Sat Jun 15 13:55:08 2013
+
+
+Pin   30  Turbo_Switch
+Pin   3  VMA_CPU
+Pin   5  VMA_ Comb ; S6=1  S9=1  Pair 63
+Pin   7  VPA_Out Comb ; S6=1  S9=1  Pair 57
+Pin   8  E Comb ; S6=1  S9=1  Pair 51
+Pin   6  VPA_
+Pin   9  E_14MHz
+Pin   18  DTACKin_
+Pin   29  AS_
+Pin   28  DTACKout_ Comb ; S6=1  S9=1  Pair 105
+Pin   11  Clock_7_MHz
+Pin   31  Clock_7_14_MHz Comb ; S6=1  S9=1  Pair 93
+Pin   33  CDAC
+Node  69  N_34 Reg  ; S6=1  S9=0 
+Node  123  N_21 Reg  ; S6=1  S9=1 
+Node  75  N_7 Reg  ; S6=1  S9=1 
+Node  117  N_16 Reg  ; S6=1  S9=0 
+Node  99  N_17 Comb ; S6=1  S9=1 
+; Unused Pins & Nodes
+; -> None Found.

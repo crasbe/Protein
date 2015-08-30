@@ -1,0 +1,56 @@
+#$ TOOL SCH2BLF 1.5.00.01 
+#$ TITLE set_3_68k_14mhz.bls 
+#$ MODULE set_3_68k_14mhz 
+#$ PINS 13  Turbo_Switch VMA_CPU VMA_ VPA_Out E VPA_ E_14MHz DTACKin_ \
+#   AS_ DTACKout_ Clock_7_MHz Clock_7_14_MHz CDAC
+#$ NODES 26 N_37 N_35 N_36 N_30 N_31 N_32 N_33 N_34 N_29 N_26 N_27  \
+#  N_28 N_24 N_23 N_22 N_21 N_1 N_3 N_4 N_6 N_7 N_13 N_15 N_16 N_17  \
+#  N_18 
+#$ INTERFACE g_2nor 3 A'i' B'i' YN'o'
+#$ INTERFACE g_3nor 4 A'i' B'i' C'i' YN'o'
+#$ INTERFACE g_dc 4 C'i' CLK'i' D'i' Q'o'
+#$ INTERFACE g_dp 4 CLK'i' D'i' P'i' Q'o'
+#$ INTERFACE g_input 2 I'i' O'o'
+#$ INTERFACE g_inv 2 A'i' YN'o'
+#$ INTERFACE g_jk 4 CLK'i' J'i' K'i' Q'o'
+#$ INTERFACE g_jkc 5 C'i' CLK'i' J'i' K'i' Q'o'
+#$ INTERFACE g_mux21 4 A'i' B'i' S'i' Y'o'
+#$ INTERFACE g_output 2 I'i' O'o'
+#$ INTERFACE g_tri 3 I'i' OE'i' O'o'
+#$ INTERFACE g_xor 3 A'i' B'i' Y'o'
+#$ INTERFACE gnd 1 x'o'
+#$ INTERFACE vcc 1 x'o'
+#$ PRIMITIVE I16 g_2nor 3 N_30 N_34 N_1
+#$ PRIMITIVE I11 g_3nor 4 N_13 N_21 N_22 N_6
+#$ PRIMITIVE I20 g_dc 4 N_13 N_23 N_6 N_7
+#$ PRIMITIVE I19 g_dp 4 N_23 N_13 N_13 N_21
+#$ PRIMITIVE I29 g_input 2 AS_ N_13
+#$ PRIMITIVE I35 g_input 2 E_14MHz N_32
+#$ PRIMITIVE I39 g_input 2 N_36 VMA_
+#$ PRIMITIVE I6 g_input 2 CDAC N_24
+#$ PRIMITIVE I7 g_input 2 Clock_7_MHz N_28
+#$ PRIMITIVE I71 g_input 2 VMA_CPU N_35
+#$ PRIMITIVE I73 g_input 2 Turbo_Switch N_37
+#$ PRIMITIVE I8 g_input 2 DTACKin_ N_22
+#$ PRIMITIVE I9 g_input 2 VPA_ N_30
+#$ PRIMITIVE I32 g_inv 2 N_16 N_15
+#$ PRIMITIVE I36 g_inv 2 N_7 N_29
+#$ PRIMITIVE I42 g_inv 2 N_17 N_4
+#$ PRIMITIVE I65 g_inv 2 N_28 N_23
+#$ PRIMITIVE I17 g_jk 4 N_32 N_18 N_18 N_34
+#$ PRIMITIVE I18 g_jkc 5 N_13 N_32 N_1 N_3 N_16
+#$ PRIMITIVE I66 g_mux21 4 N_27 N_28 N_37 N_26
+#$ PRIMITIVE I67 g_mux21 4 N_29 N_22 N_37 N_17
+#$ PRIMITIVE I68 g_mux21 4 N_15 N_30 N_37 N_31
+#$ PRIMITIVE I69 g_mux21 4 N_34 N_32 N_37 N_33
+#$ PRIMITIVE I72 g_mux21 4 N_15 N_35 N_37 N_36
+#$ PRIMITIVE I1 g_output 2 N_26 Clock_7_14_MHz
+#$ PRIMITIVE I34 g_output 2 N_33 E
+#$ PRIMITIVE I4 g_output 2 N_31 VPA_Out
+#$ PRIMITIVE I41 g_tri 3 N_17 N_4 DTACKout_
+#$ PRIMITIVE I15 g_xor 3 N_28 N_24 N_27
+#$ PRIMITIVE I30 gnd 1 N_3
+#$ PRIMITIVE I31 vcc 1 N_18
+.model set_3_68k_14mhz
+
+.end

@@ -1,0 +1,169 @@
+ ispLEVER Classic 1.5.00.05.39.l1 Linked Equations File
+Copyright(C), 1992-2011, Lattice Semiconductor Corp.
+All Rights Reserved.
+
+Design clockport_decode created  Sun Jun 16 20:51:04 2013
+
+Title:  clockport_decode.bls 
+
+ P-Terms   Fan-in  Fan-out  Type  Name (attributes)
+---------  ------  -------  ----  -----------------
+   4          6        1    Pin   dram_nlcas- 
+   4          6        1    Pin   dram_nucas- 
+   2          8        1    Pin   dram_ras3- 
+   2          8        1    Pin   dram_ras2- 
+   2          8        1    Pin   dram_ras1- 
+   2          8        1    Pin   dram_nras0- 
+   3          6        1    Pin   cpu_d15- 
+   1         11        1    Pin   cpu_d15.OE 
+   3          6        1    Pin   cpu_d14- 
+   1         11        1    Pin   cpu_d14.OE 
+   2          6        1    Pin   cpu_d13- 
+   1         11        1    Pin   cpu_d13.OE 
+   2          5        1    Pin   cpu_d12- 
+   1         11        1    Pin   cpu_d12.OE 
+   1          8        1    Pin   C_CS- 
+   1          1        1    Pin   mux_switch.AR 
+   1          0        1    Pin   mux_switch.D 
+   1          1        1    Pin   mux_switch.C 
+   1          1        1    Node  M0_inst_access_ras.AR 
+   1          0        1    Node  M0_inst_access_ras.D 
+   1          1        1    Node  M0_inst_access_ras.C 
+   1          2        1    Node  M0_inst_rfsh_cas.D 
+   1          1        1    Node  M0_inst_rfsh_cas.C 
+   3          3        1    Node  M0_rfsh_select_0_.D 
+   1          1        1    Node  M0_rfsh_select_0_.C 
+   4          4        1    Node  M0_rfsh_select_1_.D 
+   1          1        1    Node  M0_rfsh_select_1_.C 
+   1          1        1    Node  M0_inst_cpu_nas_z.D 
+   1          1        1    Node  M0_inst_cpu_nas_z.C 
+   1          1        1    Node  M0_inst_access_cas.AR 
+   1          1        1    Node  M0_inst_access_cas.D 
+   1          1        1    Node  M0_inst_access_cas.C 
+   1          1        1    Node  M0_inst_read_cycle.AR 
+   2          4        1    Node  M0_inst_read_cycle.D- 
+   1          1        1    Node  M0_inst_read_cycle.C 
+   1          1        1    Node  M0_inst_write_cycle.AR 
+   2          4        1    Node  M0_inst_write_cycle.D 
+   1          1        1    Node  M0_inst_write_cycle.C 
+   2         13        1    Node  M0_inst_autoconf_on.D- 
+   1          1        1    Node  M0_inst_autoconf_on.AP 
+   1          1        1    Node  M0_inst_autoconf_on.C 
+=========
+  65                 P-Term Total: 65
+                       Total Pins: 32
+                      Total Nodes: 9
+            Average P-Term/Output: 2
+
+
+Equations:
+
+!dram_nlcas = (M0_inst_rfsh_cas.Q
+     # !A23 & A22 & !cpu_nlds & M0_inst_access_cas.Q
+     # !A23 & !cpu_nlds & A21 & M0_inst_access_cas.Q
+     # A23 & !A22 & !cpu_nlds & !A21 & M0_inst_access_cas.Q);
+
+!dram_nucas = (M0_inst_rfsh_cas.Q
+     # !A23 & !cpu_nuds & A22 & M0_inst_access_cas.Q
+     # !A23 & !cpu_nuds & A21 & M0_inst_access_cas.Q
+     # A23 & !cpu_nuds & !A22 & !A21 & M0_inst_access_cas.Q);
+
+!dram_ras3 = (A23 & !A22 & !A21 & M0_inst_access_ras.Q
+     # cpu_clk & M0_inst_rfsh_cas.Q & M0_rfsh_select_0_.Q & M0_rfsh_select_1_.Q);
+
+!dram_ras2 = (!A23 & A22 & A21 & M0_inst_access_ras.Q
+     # cpu_clk & M0_inst_rfsh_cas.Q & !M0_rfsh_select_0_.Q & M0_rfsh_select_1_.Q);
+
+!dram_ras1 = (!A23 & A22 & !A21 & M0_inst_access_ras.Q
+     # cpu_clk & M0_inst_rfsh_cas.Q & M0_rfsh_select_0_.Q & !M0_rfsh_select_1_.Q);
+
+!dram_nras0 = (!A23 & !A22 & A21 & M0_inst_access_ras.Q
+     # cpu_clk & M0_inst_rfsh_cas.Q & !M0_rfsh_select_0_.Q & !M0_rfsh_select_1_.Q);
+
+!cpu_d15 = (A6 & !A5 & !A4 & !A3 & !A2
+     # !A5 & !A4 & !A3 & !A2 & A1
+     # !A6 & !A5 & !A4 & A3 & !A2 & !A1);
+
+cpu_d15.OE = (A23 & !enab & A22 & !A20 & A19 & A21 & !A18 & !A17 & !A16 & M0_inst_read_cycle.Q & M0_inst_autoconf_on.Q);
+
+!cpu_d14 = (A6 & !A5 & !A4 & !A3 & !A2
+     # !A5 & !A4 & !A3 & !A2 & A1
+     # !A6 & !A5 & !A4 & A3 & !A2 & !A1);
+
+cpu_d14.OE = (A23 & !enab & A22 & !A20 & A19 & A21 & !A18 & !A17 & !A16 & M0_inst_read_cycle.Q & M0_inst_autoconf_on.Q);
+
+!cpu_d13 = (A6 & !A5 & !A4 & !A3 & !A2
+     # !A5 & !A4 & !A3 & !A2 & A1);
+
+cpu_d13.OE = (A23 & !enab & A22 & !A20 & A19 & A21 & !A18 & !A17 & !A16 & M0_inst_read_cycle.Q & M0_inst_autoconf_on.Q);
+
+!cpu_d12 = (!A6 & !A5 & !A3
+     # !A5 & !A4 & !A3 & !A2);
+
+cpu_d12.OE = (A23 & !enab & A22 & !A20 & A19 & A21 & !A18 & !A17 & !A16 & M0_inst_read_cycle.Q & M0_inst_autoconf_on.Q);
+
+!C_CS = (A23 & A22 & A20 & A19 & !A21 & !A18 & !A17 & !A16);
+
+mux_switch.AR = (!M0_inst_access_ras.Q);
+
+mux_switch.D = (1);
+
+mux_switch.C = (!cpu_clk);
+
+M0_inst_access_ras.AR = (cpu_nas);
+
+M0_inst_access_ras.D = (1);
+
+M0_inst_access_ras.C = (cpu_clk);
+
+M0_inst_rfsh_cas.D = (cpu_nas & !M0_inst_rfsh_cas.Q);
+
+M0_inst_rfsh_cas.C = (!cpu_clk);
+
+M0_rfsh_select_0_.D = (!cpu_nas & M0_rfsh_select_0_.Q
+     # M0_inst_rfsh_cas.Q & M0_rfsh_select_0_.Q
+     # cpu_nas & !M0_inst_rfsh_cas.Q & !M0_rfsh_select_0_.Q);
+
+M0_rfsh_select_0_.C = (!cpu_clk);
+
+M0_rfsh_select_1_.D = (!cpu_nas & M0_rfsh_select_1_.Q
+     # M0_inst_rfsh_cas.Q & M0_rfsh_select_1_.Q
+     # !M0_rfsh_select_0_.Q & M0_rfsh_select_1_.Q
+     # cpu_nas & !M0_inst_rfsh_cas.Q & M0_rfsh_select_0_.Q & !M0_rfsh_select_1_.Q);
+
+M0_rfsh_select_1_.C = (!cpu_clk);
+
+M0_inst_cpu_nas_z.D = (cpu_nas);
+
+M0_inst_cpu_nas_z.C = (cpu_clk);
+
+M0_inst_access_cas.AR = (cpu_nas);
+
+M0_inst_access_cas.D = (M0_inst_access_ras.Q);
+
+M0_inst_access_cas.C = (cpu_clk);
+
+M0_inst_read_cycle.AR = (cpu_nas);
+
+!M0_inst_read_cycle.D = (!M0_inst_cpu_nas_z.Q & !M0_inst_read_cycle.Q
+     # cpu_nuds & cpu_nlds & !M0_inst_read_cycle.Q);
+
+M0_inst_read_cycle.C = (cpu_clk);
+
+M0_inst_write_cycle.AR = (cpu_nas);
+
+M0_inst_write_cycle.D = (M0_inst_write_cycle.Q
+     # cpu_nuds & cpu_nlds & M0_inst_cpu_nas_z.Q);
+
+M0_inst_write_cycle.C = (cpu_clk);
+
+!M0_inst_autoconf_on.D = (!M0_inst_autoconf_on.Q
+     # A23 & A22 & A6 & !A5 & !A4 & A3 & !A20 & A19 & A21 & !A18 & !A17 & !A16);
+
+M0_inst_autoconf_on.AP = (!cpu_reset);
+
+M0_inst_autoconf_on.C = (M0_inst_write_cycle.Q);
+
+
+Reverse-Polarity Equations:
+

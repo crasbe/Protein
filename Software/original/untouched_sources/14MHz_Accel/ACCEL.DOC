@@ -1,0 +1,168 @@
+                AMIGA ACCELERATOR SYSTEM                       18. January 1992
+                ========================
+
+THIS IS A NEW BUG-FIXED VERSION OF THE RELEASE 3 !!!
+
+This is the release 3.0 of an accelerator for the Amiga computer,
+based on a 68000 running at 14.32MHz. The original hack was done in
+Summer 1990 . This is not a PD project, it is shareware hardware, so
+you may freely distribute it without earning money on my work, but
+if you use it, please send me 10-15$. Remember this, because I answered
+many questions but I received only few contribute. Money will be used
+to improve design and to add new features.
+No commercial use should be done without my explicit permission.
+
+In this release I am proud to include many changes that Joerg Richter
+made on my original design. He did a good work so to give him the right
+honour I publish it beside my old project without melting it.
+Sometimes this may be difficult to understand but I think that is the
+right thing. (Print the docs and pictures and study them may be the best
+way to understand it)
+
+In the old performance tests there were some mistakes due to wrong supply
+frequency detecting, so you should read test results you find here to
+know what is the real increment of performance.
+There is NO change in performance to the last release !
+
+It uses a 68000/16 and few other components. To use this accelerator
+you have to remove the 68000 from its socket and use the signals of
+it. Now we included a CDAC replace in the schematic and in the PCB layout,
+so there is no need to get CDAC extern. (In the first and second release
+CDAC was taken from the AGNUS or expansion port; if you want you can
+still do that :-)
+
+In the net list I called U6 the socket of the old 68000 as if it were
+a real IC, but they are just contact points with the Amiga motherboard.
+U1 is the new 68000. I used a 16MHz one.
+
+In the picture, the signals from the left side (green) are connected
+to the 68000 socket and the other from the right side (red) with the
+new microprocessor.
+
+You can see that there are three main sections in the pic. The first one
+( U4a ) prepares the 14MHz clock for the 68000 XORing 7M with a 35 ns
+delayed 7 M (done by two RC-circuits), the second ( U2 + U3a ) delays the
+dtack signal for a correct bus cycle timing and the third (U5 + U3b) makes
+the E signal (at 0.7MHz) and synchronizes properly the microprocessor with
+it to do a regular cycle when it uses the 8520.
+
+You should use the net list to build the board and don't yell to me if
+something goes wrong. Be patient and alert, don't make it, if this is your
+first experience with a soldering iron.
+
+
+               Timings & comments
+               ------------------
+
+Memory cycle:
+                                   t1   t2   t3
+                                    |    |    |
+        S1    S2    S2    S3    S4    S5    S6    S7    A           B
+7M      ----______------______------______------______------______------___
+14M     ---___---___---___---___---___---___---___---___---___---___---____
+AS*     -------::::::::________________________:::------:::________________
+DTACK*in  xxxxxxxxxxxxxxxxxxxxxxx--_____________xxxxxxxxxxxxxxxxxxxxxxxxxxx
+DTACK*out --------------------------___________:::-------------------------
+
+In t1 dtack is passed to 68000 at 14MHz that reads it in t2 and latches data
+in t3. 68000 reads data a moment before the falling edge of the S6, but in
+the technical reference I read that data are present 50nS before that falling
+edge, so this is ok.
+
+A problem could be that AS goes down in A because 68000 begins a new cycle
+after the end of the first. These seems not to be a problem as I think that
+Amiga doesn't look at it until B.
+
+E cycle:
+                    t1                          t2
+                     |                           |
+7M      _--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__-
+14M     -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+AS*     ---_______________________________________------------------------
+E14     -____________--------____________--------____________--------_____
+E7      -____________________--------------------____________________-----
+VPA*    ::::::::::::______________________________------------------------
+VMA*    --------------____________________________------------------------
+
+In t1 glue logic inform microprocessor that it has to perform a sync-cycle
+(assert VPA* of 68000-14MHz) and assert VMA* (inform 8520 to send data on
+the falling edge of E7). In t2 (falling edge of E7) 68000 end its cycle.
+No strange behavior of drives because board sends the right frequency
+to 8520s (0.7MHz).
+
+":::" means that signal goes down or up in this zone.
+
+
+               Problems
+               --------
+
+This board was made by me in some slice of time so you must take it
+as is. I use it, because I have no money to buy an accelerator with
+68030/40 (I'll make it myself) and I want more speed. You can see a
+great increment of performance if you have a fast memory expansion and if
+you have to make a lot of mathematical operations. It could have some
+problems, but it is free and only if you are satisfied you have to
+send me some money.
+It could be better but I'm not interested in a board with a 68000/14
+for 200$. For who think it could be more simple I say that this is
+the simplest way to make it running fine.
+
+With the first release of my hack I see some problems on GVP Impact II
+and other boards configuration. Now the problem should be solved: you
+may boot your system at 7MHz and then switch to 14MHz.
+For an unknown reason now my hd controller and memory expansion on it
+boots fine also at 14MHz.
+
+Owners of a PC bridge board card : The virtual drives done with jlink
+will not work under 14 MHz. It's possible that they will be destroyed
+(data will be lost) ! So if you powerup the PC with 'binddrivers'
+switch back to 7 MHz before. I don't know if this problem is only with
+the PC/XT 2088 and not with the PC/AT 2286, but I think it's the problem
+of the janus.library. (Joerg)
+
+This hack now was successfully tested on A500 and A2000B with GVP Impact II
+card, A2090a with ST506 hd drive, on A2091, Supra ram expansion for 2000 and
+500, Alf HD controller and some other hardware that I don't remember.
+
+Send me the names of hardware boards tested with it so I can compile
+a list of board that doesn't give any problems.
+
+
+Using a 68010 :
+The highest available version of the 68010 is 12 MHz. If you want to use
+the 68010 in our 14 MHz hack, replace the 74LS86 against a 74F86. This
+must be done because the 68010 has a faster timing. You should also put
+a very big heat sink on the 68010 because otherwise your Amiga will do
+funny (or not so funny) things after some seconds. Finally the Amiga
+crashes. But even with a heat sink on it it's possible that after hours
+the Amiga suddenly crashes. (The minimum time it worked at 14 MHz was 3 hours
+and the maximum time was 14 hours (turned the Amiga off :-))
+
+So I would say it depend on what you are doing with your Amiga. The
+68010 is faster (see results in performance directory) than the 68000
+and you can put the VBR into fastram, etc. (Joerg)
+
+
+              How to contact me
+              -----------------
+
+If you want to know something more about this project E-mail me
+(livio@alessia.dei.unipd.it ) or Joerg or write at our physical address
+specifying that you are writing about release 3.0 .
+
+My home address is:
+
+                     Livio Plos
+                     via Amalteo 15
+                     33170 Pordenone
+                     Italy
+
+Comments are welcomed.
+
+Remember that I don't assume any responsibility on the accuracy,
+performance or reliability of this board and its documentation.
+Thanks to my friends Marco Pontil, Andrea Gottardo, Eugenio
+Castellani and Piergiorgio Sartor that supported me and to
+Joerg Richter that sent me his excellent work.
+
+

@@ -1,0 +1,8 @@
+C:\ISPLEVER_CLASSIC1_5\synpbase\bin\m_cpld.exe  -prodtype synplify_pro -encrypt  -pro  -part M4A5-64   -areadelay 0 -minc       -top_level_module  Set_2_DRAM  -oedif  "C:\users\bot2\documents\protein i_new_set\set_2_dram\Set_2_DRAM.edi"  -freq 1.000  "C:\users\bot2\documents\protein i_new_set\set_2_dram\Set_2_DRAM.srs"  -ologparam  "C:\users\bot2\documents\protein i_new_set\set_2_dram\syntmp\Set_2_DRAM.plg"  -osyn  "C:\users\bot2\documents\protein i_new_set\set_2_dram\Set_2_DRAM.srm"  -prjdir "c:\users\bot2\documents\protein i_new_set\set_2_dram\"  -log  "C:\users\bot2\documents\protein i_new_set\set_2_dram\synlog\set_2_dram_mach_Mapper.srr" 
+rc:0 success:1
+C:\users\bot2\documents\protein i_new_set\set_2_dram\Set_2_DRAM.edi|o|1371395261|50885
+C:\users\bot2\documents\protein i_new_set\set_2_dram\Set_2_DRAM.srs|i|1371395259|10092
+"C:\users\bot2\documents\protein i_new_set\set_2_dram\syntmp\Set_2_DRAM.plg"|o|0|0
+C:\users\bot2\documents\protein i_new_set\set_2_dram\Set_2_DRAM.srm|o|1371395261|18692
+C:\users\bot2\documents\protein i_new_set\set_2_dram\synlog\set_2_dram_mach_Mapper.srr|o|1371395261|1142
+C:\ISPLEVER_CLASSIC1_5\synpbase\bin\m_cpld.exe|i|1298983234|8884224

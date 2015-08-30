@@ -1,0 +1,57 @@
+68000  7 MHz :
+
+CPU/FPU performance results:
+
+        Integer        String    Float(FFP)   Float(ieee)    Trig(ieee)
+CPU         99%          104%           99%          101%          101%
+FPU       -----         -----         -----         -----         -----
+
+Program execution speed:                  Memory copy speed:
+
+       CHIP RAM      FAST RAM                    CHIP RAM      FAST RAM
+CPU         98%           99%                         99%          103%
+
+************************************************************************
+
+68010  7 MHz :
+
+CPU/FPU performance results:
+
+        Integer        String    Float(FFP)   Float(ieee)    Trig(ieee)
+CPU        118%          102%          105%          105%          104%
+
+Program execution speed:                  Memory copy speed:
+
+       CHIP RAM      FAST RAM                    CHIP RAM      FAST RAM
+CPU         96%           97%                        129%          137%
+
+************************************************************************
+
+68000  14 MHz :
+
+CPU/FPU performance results:
+
+        Integer        String    Float(FFP)   Float(ieee)    Trig(ieee)
+CPU        171%          115%          124%          132%          121%
+FPU       -----         -----         -----         -----         -----
+
+Program execution speed:                  Memory copy speed:
+
+       CHIP RAM      FAST RAM                    CHIP RAM      FAST RAM
+CPU        100%          100%                        111%          110%
+
+************************************************************************
+
+68010  14 MHz :
+
+CPU/FPU performance results:
+
+        Integer        String    Float(FFP)   Float(ieee)    Trig(ieee)
+CPU        200%          113%          133%          134%          124%
+
+Program execution speed:                  Memory copy speed:
+
+       CHIP RAM      FAST RAM                    CHIP RAM      FAST RAM
+CPU         97%           98%                        155%          168%
+
+
